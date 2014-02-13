@@ -4,12 +4,12 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
 
-public class DiscussionBoard extends Activity {
+public class StudentStartUp extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_discussion_board);
+		setContentView(R.layout.student_startup);
 	}
 
 	@Override
