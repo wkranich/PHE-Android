@@ -9,7 +9,7 @@
     tools:context=".StudentStartUp" >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/welcometext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -19,32 +19,41 @@
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
+        android:id="@+id/discBoardButton"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView1"
+        android:layout_below="@+id/welcometext"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
         android:text="Discussion Board" />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
+        android:id="@+id/faqButton"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/button1"
-        android:layout_alignRight="@+id/button1"
-        android:layout_below="@+id/button1"
-        android:layout_marginTop="30dp"
-        android:text="Activities" />
+        android:layout_alignLeft="@+id/discBoardButton"
+        android:layout_alignRight="@+id/discBoardButton"
+        android:layout_below="@+id/discBoardButton"
+        android:layout_marginTop="31dp"
+        android:text="FAQs" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/resourcesButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/button2"
-        android:layout_alignRight="@+id/button2"
-        android:layout_below="@+id/button2"
+        android:layout_alignLeft="@+id/activitiesButton"
+        android:layout_alignRight="@+id/activitiesButton"
+        android:layout_below="@+id/activitiesButton"
         android:layout_marginTop="31dp"
         android:text="Resources" />
+
+    <Button
+        android:id="@+id/activitiesButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/faqButton"
+        android:layout_below="@+id/faqButton"
+        android:layout_marginTop="31dp"
+        android:text="Activities" />
 
 </RelativeLayout>
