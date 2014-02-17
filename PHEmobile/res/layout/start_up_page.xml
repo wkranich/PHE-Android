@@ -9,11 +9,21 @@
     tools:context=".StartUp" >
 
     <Button
+        android:id="@+id/teacher_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="130dp"
+        android:text="Teacher" />
+
+    <Button
         android:id="@+id/student_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/teacher_button"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginBottom="46dp"
         android:text="Student" />
 
 </RelativeLayout>

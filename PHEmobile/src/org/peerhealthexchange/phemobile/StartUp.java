@@ -13,17 +13,30 @@ public class StartUp extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.start_up_page);
-		Button discussion_board = (Button) findViewById(R.id.student_button);
-		
-		discussion_board.setOnClickListener(new View.OnClickListener() {
-			
+		Button student_start = (Button) findViewById(R.id.student_button);
+		Button teacher_login = (Button) findViewById(R.id.teacher_button);
+
+		student_start.setOnClickListener(new View.OnClickListener() {
+
 			@Override
 			public void onClick(View v) {
 				Intent intent = new Intent(v.getContext(), StudentStartUp.class);
 				intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 				startActivity(intent);
 				// TODO Auto-generated method stub
-				
+
+			}
+		});
+
+		teacher_login.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(v.getContext(), teacher_login.class);
+				intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+				startActivity(intent);
+				// TODO Auto-generated method stub
+
 			}
 		});
 	}

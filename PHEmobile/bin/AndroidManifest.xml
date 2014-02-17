@@ -43,6 +43,11 @@
             </intent-filter>
         </activity>
         <activity android:name="StudentStartUp"></activity>
+        <activity android:name="teacher_login"></activity>
+        <activity android:name="discussion_board"></activity>
+        <activity android:name="faq"></activity>
+        <activity android:name="activities"></activity>
+        <activity android:name="resources"></activity>
     </application>
 
 </manifest>
