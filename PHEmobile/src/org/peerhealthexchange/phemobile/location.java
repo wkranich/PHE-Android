@@ -5,6 +5,7 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Context;
 import android.view.Menu;
@@ -19,6 +20,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public class location extends Activity implements LocationListener {
 	// change this as you please, this is the update interval
 	private static final int TWO_MINUTES = 1000 * 60 * 2;
+	private static final LatLng buSHS = new LatLng(42.35144,-71.1153548);
 	private LocationManager locationManager;
 	private GoogleMap map;
 	private LatLng myLocation;
@@ -28,6 +30,10 @@ public class location extends Activity implements LocationListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.location_page);
+		
+		ActionBar locationPage = getActionBar();
+		locationPage.setTitle("Locations");
+		
 		locationManager = (LocationManager) this
 				.getSystemService(Context.LOCATION_SERVICE);
 		map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map))
@@ -36,10 +42,12 @@ public class location extends Activity implements LocationListener {
 
 		if (locationManager.isProviderEnabled(locationManager.GPS_PROVIDER)) {
 			locationManager.requestLocationUpdates(
-					locationManager.GPS_PROVIDER, TWO_MINUTES, 300, this);
+					locationManager.GPS_PROVIDER, 0, 0, this);
 			Location location = locationManager
 					.getLastKnownLocation(locationManager.GPS_PROVIDER);
-			onLocationChanged(location);
+			Marker kiel = map.addMarker(new MarkerOptions().position(buSHS).title("BU SHS").snippet("BU Student Health Services"));
+			map.moveCamera(CameraUpdateFactory.newLatLngZoom(buSHS, 14));
+			//onLocationChanged(location);
 		} else {
 			// do nothing... for now....
 		}
@@ -54,9 +62,9 @@ public class location extends Activity implements LocationListener {
 
 	@Override
 	public void onLocationChanged(Location location) {
-		myLocation = new LatLng(location.getLatitude(), location.getLongitude());
+		/*myLocation = new LatLng(location.getLatitude(), location.getLongitude());
 		myMarker = map.addMarker(new MarkerOptions().position(myLocation));
-		map.moveCamera(CameraUpdateFactory.newLatLngZoom(myLocation, 15));
+		map.moveCamera(CameraUpdateFactory.newLatLngZoom(myLocation, 15));*/
 	}
 
 	@Override
@@ -82,7 +90,7 @@ public class location extends Activity implements LocationListener {
 	public void onResume() {
 		super.onResume();
 		locationManager.requestLocationUpdates(locationManager.GPS_PROVIDER,
-				TWO_MINUTES, 300, this);
+				0, 0, this);
 	}
 
 	// code to stop the gps when the user hides the app
