@@ -221,17 +221,25 @@ containing a value of this type.
         public static final int ic_plusone_tall_off_client=0x7f02001c;
     }
     public static final class id {
+<<<<<<< HEAD
         public static final int action_settings=0x7f050029;
         public static final int activitiesButton=0x7f05001b;
         public static final int alcoholAndDrugs_button=0x7f050026;
         public static final int discBoardButton=0x7f050018;
         public static final int drawer_layout=0x7f05001c;
         public static final int eatingDisorder_button=0x7f050027;
+=======
+        public static final int action_settings=0x7f050022;
+        public static final int activitiesButton=0x7f05001d;
+        public static final int answerText=0x7f050010;
+        public static final int discBoardButton=0x7f05001a;
+>>>>>>> 40aa3739a89b6447ecb64be56319c1b7937629f0
         public static final int eatingDisordersText=0x7f050009;
         public static final int faq1Button=0x7f05000b;
         public static final int faq2Button=0x7f05000c;
         public static final int faq3Button=0x7f05000d;
         public static final int faq4Button=0x7f05000e;
+<<<<<<< HEAD
         public static final int faqButton=0x7f050019;
         public static final int fitness_button=0x7f050023;
         public static final int frame_container=0x7f05001d;
@@ -239,30 +247,40 @@ containing a value of this type.
         public static final int healthText=0x7f050007;
         public static final int health_button=0x7f050024;
         public static final int hotlinesButt=0x7f050013;
+=======
+        public static final int faqButton=0x7f05001b;
+        public static final int healthText=0x7f050007;
+        public static final int hotlinesButt=0x7f050015;
+>>>>>>> 40aa3739a89b6447ecb64be56319c1b7937629f0
         public static final int hybrid=0x7f050004;
-        public static final int list_slidermenu=0x7f05001e;
-        public static final int locationButt=0x7f050011;
-        public static final int loginButt=0x7f050021;
-        public static final int loginPageText=0x7f050022;
-        public static final int map=0x7f05000f;
+        public static final int locationButt=0x7f050013;
+        public static final int loginButt=0x7f050020;
+        public static final int loginPageText=0x7f050021;
+        public static final int map=0x7f050011;
         public static final int none=0x7f050000;
         public static final int normal=0x7f050001;
         public static final int nutritionText=0x7f050008;
+<<<<<<< HEAD
         public static final int nutrition_button=0x7f050025;
         public static final int passBox=0x7f050020;
         public static final int poiButt=0x7f050014;
+=======
+        public static final int passBox=0x7f05001f;
+        public static final int poiButt=0x7f050016;
+>>>>>>> 40aa3739a89b6447ecb64be56319c1b7937629f0
         public static final int postButt=0x7f050005;
+        public static final int questionText=0x7f05000f;
         public static final int recentButt=0x7f050006;
-        public static final int resourcesButton=0x7f05001a;
-        public static final int resourcesText=0x7f050010;
+        public static final int resourcesButton=0x7f05001c;
+        public static final int resourcesText=0x7f050012;
         public static final int satellite=0x7f050002;
-        public static final int student_button=0x7f050016;
-        public static final int teacher_button=0x7f050015;
+        public static final int student_button=0x7f050018;
+        public static final int teacher_button=0x7f050017;
         public static final int terrain=0x7f050003;
         public static final int topicNameText=0x7f05000a;
-        public static final int userNameBox=0x7f05001f;
-        public static final int videoButt=0x7f050012;
-        public static final int welcometext=0x7f050017;
+        public static final int userNameBox=0x7f05001e;
+        public static final int videoButt=0x7f050014;
+        public static final int welcometext=0x7f050019;
     }
     public static final class integer {
         public static final int google_play_services_version=0x7f070000;
@@ -271,11 +289,11 @@ containing a value of this type.
         public static final int activities=0x7f030000;
         public static final int discussion_board=0x7f030001;
         public static final int faq=0x7f030002;
-        public static final int location_page=0x7f030003;
-        public static final int resources=0x7f030004;
-        public static final int start_up_page=0x7f030005;
-        public static final int student_startup=0x7f030006;
-        public static final int student_startup2=0x7f030007;
+        public static final int faq_info_page=0x7f030003;
+        public static final int location_page=0x7f030004;
+        public static final int resources=0x7f030005;
+        public static final int start_up_page=0x7f030006;
+        public static final int student_startup=0x7f030007;
         public static final int teacher_login=0x7f030008;
         public static final int videos=0x7f030009;
     }
