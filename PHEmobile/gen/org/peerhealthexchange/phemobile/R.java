@@ -265,12 +265,13 @@ containing a value of this type.
         public static final int activities=0x7f030000;
         public static final int discussion_board=0x7f030001;
         public static final int faq=0x7f030002;
-        public static final int location_page=0x7f030003;
-        public static final int resources=0x7f030004;
-        public static final int start_up_page=0x7f030005;
-        public static final int student_startup=0x7f030006;
-        public static final int student_startup2=0x7f030007;
-        public static final int teacher_login=0x7f030008;
+        public static final int faq_info_page=0x7f030003;
+        public static final int location_page=0x7f030004;
+        public static final int resources=0x7f030005;
+        public static final int start_up_page=0x7f030006;
+        public static final int student_startup=0x7f030007;
+        public static final int student_startup2=0x7f030008;
+        public static final int teacher_login=0x7f030009;
     }
     public static final class menu {
         public static final int start_up=0x7f0a0000;

@@ -49,6 +49,7 @@
         <activity android:name="activities"></activity>
         <activity android:name="resources"></activity>
         <activity android:name="location"></activity>
+        <activity android:name="faq_info_page"></activity>
     </application>
 
 </manifest>
