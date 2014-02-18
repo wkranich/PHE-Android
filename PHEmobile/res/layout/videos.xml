@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <Button
+        android:id="@+id/fitness_button"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="34dp"
+        android:text="Fitness" />
+
+    <Button
+        android:id="@+id/health_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/fitness_button"
+        android:layout_marginTop="30dp"
+        android:text="Health" />
+
+    <Button
+        android:id="@+id/nutrition_button"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/health_button"
+        android:layout_below="@+id/health_button"
+        android:layout_marginTop="30dp"
+        android:text="Nutrition" />
+
+    <Button
+        android:id="@+id/eatingDisorder_button"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/alcoholAndDrugs_button"
+        android:layout_marginTop="14dp"
+        android:text="Eating Disorders" />
+
+    <Button
+        android:id="@+id/alcoholAndDrugs_button"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/nutrition_button"
+        android:layout_marginTop="24dp"
+        android:text="Alcohol &amp; Drugs" />
+
+    <Button
+        android:id="@+id/glbt_button"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/eatingDisorder_button"
+        android:layout_marginTop="18dp"
+        android:text="GLBT" />
+
+</RelativeLayout>

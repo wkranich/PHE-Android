@@ -14,12 +14,27 @@ public class resources extends Activity{
 		setContentView(R.layout.resources);
 		
 		Button location = (Button) findViewById(R.id.locationButt);
+		Button videos = (Button) findViewById(R.id.videoButt);
 		
 		location.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 				Intent intent = new Intent(v.getContext(), location.class);
+				intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+				startActivity(intent);
+				// TODO Auto-generated method stub
+
+			}
+		});
+		
+
+		
+		videos.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(v.getContext(), videos.class);
 				intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 				startActivity(intent);
 				// TODO Auto-generated method stub
