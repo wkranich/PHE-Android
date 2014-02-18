@@ -1,5 +1,6 @@
 package org.peerhealthexchange.phemobile;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +14,10 @@ public class faq extends Activity{
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.faq);
+		
+		ActionBar title = getActionBar();
+		title.setTitle("FAQs");
+		
 		TextView healthText = (TextView) findViewById(R.id.healthText);
 		TextView nutritionText = (TextView) findViewById(R.id.nutritionText);
 		TextView eatingDisordersText = (TextView) findViewById(R.id.eatingDisordersText);
