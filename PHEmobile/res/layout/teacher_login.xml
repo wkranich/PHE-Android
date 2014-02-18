@@ -36,7 +36,7 @@
         android:inputType="numberPassword" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/nutritionText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/userNameBox"
