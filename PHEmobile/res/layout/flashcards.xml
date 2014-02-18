@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <Button
+        android:id="@+id/alcAndDrugsButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:text="Alcohol and Drugs" />
+
+    <Button
+        android:id="@+id/eatingDisordersButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/alcAndDrugsButton"
+        android:layout_marginTop="25dp"
+        android:text="Eating Disorders" />
+
+    <Button
+        android:id="@+id/glbtButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/eatingDisordersButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:text="GLBT" />
+
+    <Button
+        android:id="@+id/nutrAndFitButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/glbtButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:text="Nutrition and Fitness" />
+
+    <Button
+        android:id="@+id/sexButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nutrAndFitButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:text="Sex" />
+
+</RelativeLayout>

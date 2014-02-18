@@ -53,6 +53,9 @@
         <activity android:name="videos"></activity>
 
         <activity android:name="faq_info_page"></activity>
+        <activity android:name="Flash"></activity>
+        <activity android:name="Flashcards"></activity>
+        <activity android:name="Messages"></activity>
 
     </application>
 
