@@ -58,37 +58,23 @@ int drawable ic_plusone_medium_off_client 0x7f020019
 int drawable ic_plusone_small_off_client 0x7f02001a
 int drawable ic_plusone_standard_off_client 0x7f02001b
 int drawable ic_plusone_tall_off_client 0x7f02001c
-<<<<<<< HEAD
-int id action_settings 0x7f050029
-int id activitiesButton 0x7f05001b
-int id alcoholAndDrugs_button 0x7f050026
-int id discBoardButton 0x7f050018
-int id drawer_layout 0x7f05001c
-int id eatingDisorder_button 0x7f050027
-=======
-int id action_settings 0x7f050022
+int id action_settings 0x7f050028
 int id activitiesButton 0x7f05001d
+int id alcoholAndDrugs_button 0x7f050026
 int id answerText 0x7f050010
 int id discBoardButton 0x7f05001a
->>>>>>> 40aa3739a89b6447ecb64be56319c1b7937629f0
+int id eatingDisorder_button 0x7f050025
 int id eatingDisordersText 0x7f050009
 int id faq1Button 0x7f05000b
 int id faq2Button 0x7f05000c
 int id faq3Button 0x7f05000d
 int id faq4Button 0x7f05000e
-<<<<<<< HEAD
-int id faqButton 0x7f050019
-int id fitness_button 0x7f050023
-int id frame_container 0x7f05001d
-int id glbt_button 0x7f050028
-int id healthText 0x7f050007
-int id health_button 0x7f050024
-int id hotlinesButt 0x7f050013
-=======
 int id faqButton 0x7f05001b
+int id fitness_button 0x7f050022
+int id glbt_button 0x7f050027
 int id healthText 0x7f050007
+int id health_button 0x7f050023
 int id hotlinesButt 0x7f050015
->>>>>>> 40aa3739a89b6447ecb64be56319c1b7937629f0
 int id hybrid 0x7f050004
 int id locationButt 0x7f050013
 int id loginButt 0x7f050020
@@ -97,14 +83,9 @@ int id map 0x7f050011
 int id none 0x7f050000
 int id normal 0x7f050001
 int id nutritionText 0x7f050008
-<<<<<<< HEAD
-int id nutrition_button 0x7f050025
-int id passBox 0x7f050020
-int id poiButt 0x7f050014
-=======
+int id nutrition_button 0x7f050024
 int id passBox 0x7f05001f
 int id poiButt 0x7f050016
->>>>>>> 40aa3739a89b6447ecb64be56319c1b7937629f0
 int id postButt 0x7f050005
 int id questionText 0x7f05000f
 int id recentButt 0x7f050006
