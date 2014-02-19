@@ -22,6 +22,7 @@
         android:id="@+id/discBoardButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
         android:layout_below="@+id/welcometext"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
@@ -31,29 +32,27 @@
         android:id="@+id/faqButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/discBoardButton"
-        android:layout_alignRight="@+id/discBoardButton"
+        android:layout_alignParentLeft="true"
         android:layout_below="@+id/discBoardButton"
-        android:layout_marginTop="31dp"
+        android:layout_marginTop="25dp"
         android:text="FAQs" />
 
     <Button
         android:id="@+id/resourcesButton"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/activitiesButton"
-        android:layout_alignRight="@+id/activitiesButton"
         android:layout_below="@+id/activitiesButton"
-        android:layout_marginTop="31dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
         android:text="Resources" />
 
     <Button
         android:id="@+id/activitiesButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/faqButton"
+        android:layout_alignParentLeft="true"
         android:layout_below="@+id/faqButton"
-        android:layout_marginTop="31dp"
+        android:layout_marginTop="25dp"
         android:text="Activities" />
 
 </RelativeLayout>

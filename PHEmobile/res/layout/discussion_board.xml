@@ -5,7 +5,7 @@
 
     <Button
         android:id="@+id/postButt"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
@@ -14,7 +14,7 @@
 
     <Button
         android:id="@+id/recentButt"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/postButt"
         android:layout_centerHorizontal="true"

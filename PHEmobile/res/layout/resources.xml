@@ -15,7 +15,7 @@
 
     <Button
         android:id="@+id/locationButt"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/resourcesText"
         android:layout_centerHorizontal="true"
@@ -24,29 +24,29 @@
 
     <Button
         android:id="@+id/videoButt"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/locationButt"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="25dp"
         android:text="Videos" />
 
     <Button
         android:id="@+id/hotlinesButt"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_below="@+id/videoButt"
-        android:layout_marginTop="29dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
         android:text="Hotlines" />
 
     <Button
         android:id="@+id/poiButt"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_below="@+id/hotlinesButt"
-        android:layout_marginTop="32dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
         android:text="Points of Interest" />
 
 </RelativeLayout>
