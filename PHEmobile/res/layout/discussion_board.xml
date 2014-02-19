@@ -1,24 +1,159 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
 
-    <Button
-        android:id="@+id/postButt"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="134dp"
-        android:text="Post a Question" />
+        android:orientation="vertical" >
 
-    <Button
-        android:id="@+id/recentButt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/postButt"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="56dp"
-        android:text="Recent Activity" />
+        <Button
+            android:id="@+id/healthButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#FFFFFF"
+            android:text="Health"
+            android:textColor="#000000"
+            tools:ignore="HardcodedText" />
 
-</RelativeLayout>
+        <Button
+            android:id="@+id/question1Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#72CCF2"
+            android:text="[Question 1]"
+            android:textColor="#FFFFFF"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/question2Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#72CCF2"
+            android:text="[Question 2]"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/question3Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#72CCF2"
+            android:text="[Question 3]"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/sexEdButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#FFFFFF"
+            android:text="Sex Education"
+            android:textColor="#000000" />
+
+        <Button
+            android:id="@+id/question4Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#72CCF2"
+            android:text="[Question 4]"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/question5Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#72CCF2"
+            android:text="[Question 5]"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/question6Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#72CCF2"
+            android:text="[Question 6]"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/fitnessButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#FFFFFF"
+            android:text="Fitness"
+            android:textColor="#000000" />
+
+        <Button
+            android:id="@+id/question7Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#72CCF2"
+            android:text="[Question 7]"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/question8Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#72CCF2"
+            android:text="[Question 8]"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/question9Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#72CCF2"
+            android:text="[Question 9]"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/substanceButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#FFFFFF"
+            android:text="Substance Abuse"
+            android:textColor="#000000" />
+
+        <Button
+            android:id="@+id/question10Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#72CCF2"
+            android:text="[Question 10]"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/question11Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#72CCF2"
+            android:text="[Question 11]"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/question12Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#72CCF2"
+            android:text="[Question 12]"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+</ScrollView>
