@@ -223,13 +223,15 @@ containing a value of this type.
         public static final int ic_plusone_tall_off_client=0x7f02001e;
     }
     public static final class id {
-        public static final int action_settings=0x7f06004a;
+        public static final int action_settings=0x7f06004f;
         public static final int activitiesButton=0x7f06003d;
+        public static final int afterclasssurvey=0x7f060046;
         public static final int alcAndDrugsButton=0x7f060021;
-        public static final int alcoholAndDrugs_button=0x7f060046;
+        public static final int alcoholAndDrugs_button=0x7f06004b;
         public static final int answerText=0x7f060020;
+        public static final int answerquestions=0x7f060044;
         public static final int discBoardButton=0x7f06003a;
-        public static final int eatingDisorder_button=0x7f060045;
+        public static final int eatingDisorder_button=0x7f06004a;
         public static final int eatingDisordersButton=0x7f060022;
         public static final int eatingDisordersText=0x7f060019;
         public static final int faq1Button=0x7f06001b;
@@ -238,16 +240,18 @@ containing a value of this type.
         public static final int faq4Button=0x7f06001e;
         public static final int faqButton=0x7f06003b;
         public static final int fitnessButton=0x7f06000f;
-        public static final int fitness_button=0x7f060042;
+        public static final int fitness_button=0x7f060047;
         public static final int flashcardsButton=0x7f060005;
+        public static final int forteaching=0x7f060042;
         public static final int glbtButton=0x7f060023;
-        public static final int glbt_button=0x7f060047;
+        public static final int glbt_button=0x7f06004c;
         public static final int healthButton=0x7f060007;
         public static final int healthText=0x7f060017;
-        public static final int health_button=0x7f060043;
+        public static final int health_button=0x7f060048;
         public static final int historyButton=0x7f060031;
         public static final int hotlinesButt=0x7f060035;
         public static final int hybrid=0x7f060004;
+        public static final int lessonplans=0x7f060045;
         public static final int linearLayout1=0x7f06002d;
         public static final int linearLayout2=0x7f060029;
         public static final int linearLayout3=0x7f060027;
@@ -262,12 +266,12 @@ containing a value of this type.
         public static final int messageText3=0x7f06002c;
         public static final int messageText4=0x7f06002e;
         public static final int messagesButton=0x7f060006;
-        public static final int newPost=0x7f060049;
+        public static final int newPost=0x7f06004e;
         public static final int none=0x7f060000;
         public static final int normal=0x7f060001;
         public static final int nutrAndFitButton=0x7f060024;
         public static final int nutritionText=0x7f060018;
-        public static final int nutrition_button=0x7f060044;
+        public static final int nutrition_button=0x7f060049;
         public static final int passBox=0x7f06003f;
         public static final int poiButt=0x7f060036;
         public static final int question10Button=0x7f060014;
@@ -286,13 +290,14 @@ containing a value of this type.
         public static final int resourcesButton=0x7f06003c;
         public static final int resourcesText=0x7f060032;
         public static final int satellite=0x7f060002;
-        public static final int search=0x7f060048;
+        public static final int search=0x7f06004d;
         public static final int sexButton=0x7f060025;
         public static final int sexEdButton=0x7f06000b;
         public static final int shuffleButton=0x7f060030;
         public static final int student_button=0x7f060038;
         public static final int substanceButton=0x7f060013;
         public static final int teacher_button=0x7f060037;
+        public static final int teachingaids=0x7f060043;
         public static final int terrain=0x7f060003;
         public static final int topicNameText=0x7f06001a;
         public static final int userNameBox=0x7f06003e;
@@ -315,7 +320,8 @@ containing a value of this type.
         public static final int start_up_page=0x7f030009;
         public static final int student_startup=0x7f03000a;
         public static final int teacher_login=0x7f03000b;
-        public static final int videos=0x7f03000c;
+        public static final int teacher_startup=0x7f03000c;
+        public static final int videos=0x7f03000d;
     }
     public static final class menu {
         public static final int discussion_board=0x7f0b0000;

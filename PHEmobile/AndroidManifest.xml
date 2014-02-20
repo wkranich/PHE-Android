@@ -57,6 +57,7 @@
         <activity android:name="Flashcards"></activity>
         <activity android:name="Messages"></activity>
         <activity android:name="MessageHistory"></activity>
+        <activity android:name="TeacherStartUp"></activity>
 
     </application>
 
