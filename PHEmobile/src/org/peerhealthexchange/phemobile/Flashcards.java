@@ -1,5 +1,6 @@
 package org.peerhealthexchange.phemobile;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,19 +13,25 @@ public class Flashcards extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.flashcards);
 		
-		Button alcAndDrugsButton = (Button) findViewById(R.id.alcAndDrugsButton);
-		Button eatingDisordersButton = (Button) findViewById(R.id.eatingDisordersButton);
-		Button glbtButton = (Button) findViewById(R.id.glbtButton);
-		Button nutrAndFitButton = (Button) findViewById(R.id.nutrAndFitButton);
-		Button sexButton = (Button) findViewById(R.id.sexButton);
+		ActionBar locationPage = getActionBar();
+		locationPage.setTitle("Flashcards");
+		
+		final Button alcAndDrugsButton = (Button) findViewById(R.id.alcAndDrugsButton);
+		final Button eatingDisordersButton = (Button) findViewById(R.id.eatingDisordersButton);
+		final Button glbtButton = (Button) findViewById(R.id.glbtButton);
+		final Button nutrAndFitButton = (Button) findViewById(R.id.nutrAndFitButton);
+		final Button sexButton = (Button) findViewById(R.id.sexButton);
+		
+		
 	
 	
 	alcAndDrugsButton.setOnClickListener(new View.OnClickListener() {
 
 		@Override
 		public void onClick(View v) {
-			Intent intent = new Intent(v.getContext(), Flash.class);
+			Intent intent = new Intent(v.getContext(), question_cards.class);
 			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+			intent.putExtra("activity", alcAndDrugsButton.getText());
 			startActivity(intent);
 		}
 	});
@@ -33,8 +40,9 @@ public class Flashcards extends Activity {
 
 		@Override
 		public void onClick(View v) {
-			Intent intent = new Intent(v.getContext(), Flash.class);
+			Intent intent = new Intent(v.getContext(), question_cards.class);
 			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+			intent.putExtra("activity", eatingDisordersButton.getText());
 			startActivity(intent);
 		}
 	});
@@ -43,8 +51,9 @@ public class Flashcards extends Activity {
 
 		@Override
 		public void onClick(View v) {
-			Intent intent = new Intent(v.getContext(), Flash.class);
+			Intent intent = new Intent(v.getContext(), question_cards.class);
 			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+			intent.putExtra("activity", glbtButton.getText());
 			startActivity(intent);
 		}
 	});
@@ -53,8 +62,9 @@ public class Flashcards extends Activity {
 
 		@Override
 		public void onClick(View v) {
-			Intent intent = new Intent(v.getContext(), Flash.class);
+			Intent intent = new Intent(v.getContext(), question_cards.class);
 			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+			intent.putExtra("activity", nutrAndFitButton.getText());
 			startActivity(intent);
 		}
 	});
@@ -63,8 +73,9 @@ public class Flashcards extends Activity {
 
 		@Override
 		public void onClick(View v) {
-			Intent intent = new Intent(v.getContext(), Flash.class);
+			Intent intent = new Intent(v.getContext(), question_cards.class);
 			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+			intent.putExtra("activity", sexButton.getText());
 			startActivity(intent);
 		}
 	});

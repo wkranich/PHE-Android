@@ -61,6 +61,14 @@
 
         <activity android:name="MessageHistory"></activity>
         <activity android:name="TeacherStartUp"></activity>
+        <activity android:name="alcohol_videos"></activity>
+        <activity android:name="eatingdisorder_videos"></activity>
+        <activity android:name="glbt_videos"></activity>
+        <activity android:name="fitness_videos"></activity>
+        <activity android:name="health_videos"></activity>
+        <activity android:name="nutrition_videos"></activity>
+        <activity android:name="answer_cards"></activity>
+        <activity android:name="question_cards"></activity>
 
 
     </application>
