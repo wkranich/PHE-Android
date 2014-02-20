@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <Button
+        android:id="@+id/glbt_vid1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="42dp"
+        android:layout_marginTop="54dp"
+        android:text="Video One" />
+
+    <Button
+        android:id="@+id/glbt_vid2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/glbt_vid1"
+        android:layout_marginLeft="41dp"
+        android:layout_toRightOf="@+id/glbt_vid1"
+        android:text="Video Two" />
+
+    <Button
+        android:id="@+id/glbt_vid3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/glbt_vid1"
+        android:layout_below="@+id/glbt_vid1"
+        android:layout_marginTop="54dp"
+        android:text="Video Three" />
+
+    <Button
+        android:id="@+id/glbt_vid4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/glbt_vid3"
+        android:layout_alignBottom="@+id/glbt_vid3"
+        android:layout_alignLeft="@+id/glbt_vid2"
+        android:text="Video Four" />
+
+    <Button
+        android:id="@+id/glbt_vid5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/glbt_vid3"
+        android:layout_below="@+id/glbt_vid3"
+        android:layout_marginTop="59dp"
+        android:text="Video Five" />
+
+    <Button
+        android:id="@+id/glbt_vid6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/glbt_vid5"
+        android:layout_alignLeft="@+id/glbt_vid4"
+        android:text="Video Six" />
+
+</RelativeLayout>
