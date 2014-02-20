@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/ed_vid1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="38dp"
+        android:layout_marginTop="46dp"
+        android:text="Video One" />
+
+    <Button
+        android:id="@+id/ed_vid2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/ed_vid1"
+        android:layout_marginLeft="34dp"
+        android:layout_toRightOf="@+id/ed_vid1"
+        android:text="Video Two" />
+
+    <Button
+        android:id="@+id/ed_vid3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/ed_vid1"
+        android:layout_below="@+id/ed_vid1"
+        android:layout_marginTop="55dp"
+        android:text="Video Three" />
+
+    <Button
+        android:id="@+id/ed_vid4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/ed_vid3"
+        android:layout_alignBottom="@+id/ed_vid3"
+        android:layout_alignRight="@+id/ed_vid2"
+        android:text="Video Four" />
+
+    <Button
+        android:id="@+id/ed_vid5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/ed_vid3"
+        android:layout_below="@+id/ed_vid3"
+        android:layout_marginTop="76dp"
+        android:text="Video Five" />
+
+    <Button
+        android:id="@+id/ed_vid6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/ed_vid5"
+        android:layout_alignBottom="@+id/ed_vid5"
+        android:layout_alignLeft="@+id/ed_vid2"
+        android:layout_marginLeft="14dp"
+        android:text="Video Six" />
+
+</RelativeLayout>

@@ -20,12 +20,12 @@ public class videos extends Activity {
 		Button eatingDisorders = (Button) findViewById(R.id.eatingDisorder_button);
 		Button glbt = (Button) findViewById(R.id.glbt_button);
 	
-	/*
+	
 	fitness.setOnClickListener(new View.OnClickListener() {
 
 		@Override
 		public void onClick(View v) {
-			Intent intent = new Intent(v.getContext(), fitnessVideos.class);
+			Intent intent = new Intent(v.getContext(), fitness_videos.class);
 			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 			startActivity(intent);
 		}
@@ -35,7 +35,7 @@ public class videos extends Activity {
 
 		@Override
 		public void onClick(View v) {
-			Intent intent = new Intent(v.getContext(), healthVideos.class);
+			Intent intent = new Intent(v.getContext(), health_videos.class);
 			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 			startActivity(intent);
 		}
@@ -45,7 +45,7 @@ public class videos extends Activity {
 
 		@Override
 		public void onClick(View v) {
-			Intent intent = new Intent(v.getContext(), nutritionVideos.class);
+			Intent intent = new Intent(v.getContext(), nutrition_videos.class);
 			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 			startActivity(intent);
 		}
@@ -55,7 +55,7 @@ public class videos extends Activity {
 
 		@Override
 		public void onClick(View v) {
-			Intent intent = new Intent(v.getContext(), alcoholDrugsVideos.class);
+			Intent intent = new Intent(v.getContext(), alcohol_videos.class);
 			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 			startActivity(intent);
 		}
@@ -65,7 +65,7 @@ public class videos extends Activity {
 
 		@Override
 		public void onClick(View v) {
-			Intent intent = new Intent(v.getContext(), eatingDisordersVideos.class);
+			Intent intent = new Intent(v.getContext(), eatingdisorders_videos.class);
 			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 			startActivity(intent);
 		}
@@ -75,12 +75,12 @@ public class videos extends Activity {
 
 		@Override
 		public void onClick(View v) {
-			Intent intent = new Intent(v.getContext(), glbt.class);
+			Intent intent = new Intent(v.getContext(), glbt_videos.class);
 			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 			startActivity(intent);
 		}
 	});
 	
-	*/
+	
 	}
 }

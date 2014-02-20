@@ -56,7 +56,12 @@
         <activity android:name="Flash"></activity>
         <activity android:name="Flashcards"></activity>
         <activity android:name="Messages"></activity>
+<<<<<<< HEAD
         <activity android:name="new_post"></activity>
+=======
+        <activity android:name="MessageHistory"></activity>
+        <activity android:name="TeacherStartUp"></activity>
+>>>>>>> 76617c7ba71679f7b018aec71bc967d7f69d984e
 
     </application>
 

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <Button
+        android:id="@+id/healthvid1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="29dp"
+        android:layout_marginTop="44dp"
+        android:text="Video One" />
+
+    <Button
+        android:id="@+id/healthvid2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/healthvid1"
+        android:layout_marginLeft="52dp"
+        android:layout_toRightOf="@+id/healthvid1"
+        android:text="Video Two" />
+
+    <Button
+        android:id="@+id/healthvid3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/healthvid1"
+        android:layout_below="@+id/healthvid1"
+        android:layout_marginTop="46dp"
+        android:text="Video Three" />
+
+    <Button
+        android:id="@+id/healthvid4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/healthvid3"
+        android:layout_alignLeft="@+id/healthvid2"
+        android:text="Video Four" />
+
+    <Button
+        android:id="@+id/healthvid5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/healthvid3"
+        android:layout_below="@+id/healthvid3"
+        android:layout_marginTop="51dp"
+        android:text="Video Five" />
+
+    <Button
+        android:id="@+id/healthvid6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/healthvid5"
+        android:layout_alignBottom="@+id/healthvid5"
+        android:layout_alignLeft="@+id/healthvid4"
+        android:text="Video Six" />
+
+</RelativeLayout>

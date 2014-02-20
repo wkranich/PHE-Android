@@ -18,14 +18,14 @@ public class Messages extends Activity {
 		Button historyButton = (Button) findViewById(R.id.historyButton);
 		
 		messageText.setText("No new messages!");
-	/*historyButton.setOnClickListener(new View.OnClickListener() {
+	historyButton.setOnClickListener(new View.OnClickListener() {
 
 		@Override
 		public void onClick(View v) {
-			Intent intent = new Intent(v.getContext(), History.class);
+			Intent intent = new Intent(v.getContext(), MessageHistory.class);
 			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 			startActivity(intent);
 		}
-	});*/
+	});
 	}
 }

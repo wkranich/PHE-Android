@@ -19,7 +19,7 @@ public class teacher_login extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				Intent intent = new Intent(v.getContext(), StudentStartUp.class);
+				Intent intent = new Intent(v.getContext(), TeacherStartUp.class);
 				intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 				startActivity(intent);
 			}
