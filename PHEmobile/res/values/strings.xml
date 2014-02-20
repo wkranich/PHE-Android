@@ -4,5 +4,11 @@
     <string name="app_name">PHEmobile</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string-array name="categories">
+        <item>Fitness</item>
+        <item>Health</item>
+        <item>Sex Education</item>
+        <item>Substance Abuse</item>
+    </string-array>
 
 </resources>

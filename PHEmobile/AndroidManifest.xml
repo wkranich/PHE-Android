@@ -56,6 +56,7 @@
         <activity android:name="Flash"></activity>
         <activity android:name="Flashcards"></activity>
         <activity android:name="Messages"></activity>
+        <activity android:name="new_post"></activity>
 
     </application>
 
