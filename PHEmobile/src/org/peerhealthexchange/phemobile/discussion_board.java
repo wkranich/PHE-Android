@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.SearchView;
 
 public class discussion_board extends Activity {
+	SearchView searchView; 
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -33,7 +34,7 @@ public class discussion_board extends Activity {
 		final MenuItem searchMenuItem = menu.findItem(R.id.search);
 
 		SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-		final SearchView searchView = (SearchView) menu.findItem(R.id.search)
+		searchView = (SearchView) menu.findItem(R.id.search)
 				.getActionView();
 		searchView.setSearchableInfo(searchManager
 				.getSearchableInfo(getComponentName()));
@@ -64,6 +65,15 @@ public class discussion_board extends Activity {
 		}
 
 		return true;
+	}
+	
+	@Override
+	public void onBackPressed() {
+	    if (!searchView.isIconified()) {
+	        searchView.setIconified(true);
+	    } else {
+	        super.onBackPressed();
+	    }
 	}
 
 }
