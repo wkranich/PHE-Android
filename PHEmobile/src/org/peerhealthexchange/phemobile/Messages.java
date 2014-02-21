@@ -1,5 +1,6 @@
 package org.peerhealthexchange.phemobile;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +12,8 @@ public class Messages extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		ActionBar locationPage = getActionBar();
+		locationPage.setTitle("Messages");
 		setContentView(R.layout.messages);
 		
 		TextView messageText = (TextView) findViewById(R.id.messageText);

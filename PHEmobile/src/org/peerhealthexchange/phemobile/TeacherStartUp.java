@@ -1,6 +1,7 @@
 package org.peerhealthexchange.phemobile;
 
 import android.os.Bundle;
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
@@ -12,6 +13,8 @@ public class TeacherStartUp extends Activity{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		ActionBar locationPage = getActionBar();
+		locationPage.setTitle("Teachers");
 		setContentView(R.layout.teacher_startup);
 		
 		Button discussion = (Button) findViewById(R.id.discBoardButton);

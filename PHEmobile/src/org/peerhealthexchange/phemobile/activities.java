@@ -1,5 +1,6 @@
 package org.peerhealthexchange.phemobile;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +12,8 @@ public class activities extends Activity{
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		ActionBar locationPage = getActionBar();
+		locationPage.setTitle("Activities");
 		setContentView(R.layout.activities);
 		Button flashcardsButton = (Button) findViewById(R.id.flashcardsButton);
 		Button messagesButton = (Button) findViewById(R.id.messagesButton);
