@@ -27,8 +27,8 @@ public class StartUp extends Activity {
 
 			}
 		});
-
-		teacher_login.setOnClickListener(new View.OnClickListener() {
+		// Teacher button disabled for time being.
+		/*teacher_login.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
@@ -38,7 +38,7 @@ public class StartUp extends Activity {
 				// TODO Auto-generated method stub
 
 			}
-		});
+		});*/
 	}
 
 	@Override
