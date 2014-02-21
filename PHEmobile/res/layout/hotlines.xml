@@ -88,6 +88,166 @@
             android:text="Contact Resource"
             android:textColor="#FFFFFF"
             tools:ignore="HardcodedText" />
+        
+        <Button
+            android:id="@+id/GLBTButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#FFFFFF"
+            android:text="GLBT"
+            android:textColor="#000000"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/resource5Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#72CCF2"
+            android:text="Contact Resource"
+            android:textColor="#FFFFFF"
+            tools:ignore="HardcodedText" />
+        
+        <Button
+            android:id="@+id/generalSupportButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#FFFFFF"
+            android:text="GLBT"
+            android:textColor="#000000"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/resource6Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#72CCF2"
+            android:text="Contact Resource"
+            android:textColor="#FFFFFF"
+            tools:ignore="HardcodedText" />
+        
+        <Button
+            android:id="@+id/legalButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#FFFFFF"
+            android:text="GLBT"
+            android:textColor="#000000"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/resource7Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#72CCF2"
+            android:text="Contact Resource"
+            android:textColor="#FFFFFF"
+            tools:ignore="HardcodedText" />
+        
+        <Button
+            android:id="@+id/stiButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#FFFFFF"
+            android:text="STIs and HIV"
+            android:textColor="#000000"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/resource8Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#72CCF2"
+            android:text="Contact Resource"
+            android:textColor="#FFFFFF"
+            tools:ignore="HardcodedText" />
+        
+        <Button
+            android:id="@+id/sexualAssualtButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#FFFFFF"
+            android:text="Rape and Sexual Assault"
+            android:textColor="#000000"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/resource9Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#72CCF2"
+            android:text="Contact Resource"
+            android:textColor="#FFFFFF"
+            tools:ignore="HardcodedText" />
+        
+        <Button
+            android:id="@+id/pregnacyButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#FFFFFF"
+            android:text="Pregnancy and Prevention"
+            android:textColor="#000000"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/resource10Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#72CCF2"
+            android:text="Contact Resource"
+            android:textColor="#FFFFFF"
+            tools:ignore="HardcodedText" />
+        
+        <Button
+            android:id="@+id/nutritionButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#FFFFFF"
+            android:text="Pregnancy and Prevention"
+            android:textColor="#000000"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/resource11Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#72CCF2"
+            android:text="Contact Resource"
+            android:textColor="#FFFFFF"
+            tools:ignore="HardcodedText" />
+        
+        <Button
+            android:id="@+id/tobaccoButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#FFFFFF"
+            android:text="Tobacco"
+            android:textColor="#000000"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/resource12Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#72CCF2"
+            android:text="Contact Resource"
+            android:textColor="#FFFFFF"
+            tools:ignore="HardcodedText" />
     </LinearLayout>
 
 </ScrollView>
