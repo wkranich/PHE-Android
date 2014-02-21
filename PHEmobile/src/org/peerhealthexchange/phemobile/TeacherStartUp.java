@@ -19,7 +19,7 @@ public class TeacherStartUp extends Activity{
 		Button activities = (Button) findViewById(R.id.activitiesButton);
 		Button resources = (Button) findViewById(R.id.resourcesButton);
 
-		discussion.setOnClickListener(new View.OnClickListener() {
+		/*discussion.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 		public void onClick(View v) {
@@ -65,7 +65,7 @@ public class TeacherStartUp extends Activity{
 				// TODO Auto-generated method stub
 
 			}
-		});
+		}); */
 
 	}
 

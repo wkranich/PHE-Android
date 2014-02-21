@@ -69,6 +69,7 @@
         <activity android:name="nutrition_videos"></activity>
         <activity android:name="answer_cards"></activity>
         <activity android:name="question_cards"></activity>
+        <activity android:name="hotlines"></activity>
 
 
     </application>

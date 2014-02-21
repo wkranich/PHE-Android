@@ -31,18 +31,9 @@
         android:layout_height="wrap_content"
         android:layout_alignRight="@+id/userNameBox"
         android:layout_below="@+id/userNameBox"
-        android:layout_marginTop="47dp"
+        android:layout_marginTop="87dp"
         android:ems="10"
-        android:inputType="numberPassword" />
-
-    <TextView
-        android:id="@+id/nutritionText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/userNameBox"
-        android:layout_centerVertical="true"
-        android:text="Password"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:inputType="textPassword" />
 
     <Button
         android:id="@+id/loginButt"
@@ -62,5 +53,14 @@
         android:layout_marginTop="22dp"
         android:text="Welcome Teachers"
         android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/nutritionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="Password"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
 </RelativeLayout>
