@@ -167,6 +167,7 @@ containing a value of this type.
         public static final int zOrderOnTop=0x7f010010;
     }
     public static final class color {
+        public static final int backgroundBlue=0x7f05000a;
         public static final int common_action_bar_splitter=0x7f050009;
         /**  Sign-in Button Colors 
          */
@@ -179,8 +180,8 @@ containing a value of this type.
         public static final int common_signin_btn_light_text_disabled=0x7f050006;
         public static final int common_signin_btn_light_text_focused=0x7f050007;
         public static final int common_signin_btn_light_text_pressed=0x7f050005;
-        public static final int common_signin_btn_text_dark=0x7f05000a;
-        public static final int common_signin_btn_text_light=0x7f05000b;
+        public static final int common_signin_btn_text_dark=0x7f05000b;
+        public static final int common_signin_btn_text_light=0x7f05000c;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -219,34 +220,35 @@ containing a value of this type.
         public static final int common_signin_btn_text_pressed_light=0x7f020017;
         public static final int ic_action_new=0x7f020018;
         public static final int ic_action_search=0x7f020019;
-        public static final int ic_launcher=0x7f02001a;
-        public static final int ic_plusone_medium_off_client=0x7f02001b;
-        public static final int ic_plusone_small_off_client=0x7f02001c;
-        public static final int ic_plusone_standard_off_client=0x7f02001d;
-        public static final int ic_plusone_tall_off_client=0x7f02001e;
-        public static final int logo_phe=0x7f02001f;
+        public static final int ic_action_send_now=0x7f02001a;
+        public static final int ic_launcher=0x7f02001b;
+        public static final int ic_plusone_medium_off_client=0x7f02001c;
+        public static final int ic_plusone_small_off_client=0x7f02001d;
+        public static final int ic_plusone_standard_off_client=0x7f02001e;
+        public static final int ic_plusone_tall_off_client=0x7f02001f;
+        public static final int logo_phe=0x7f020020;
     }
     public static final class id {
         public static final int GLBTButton=0x7f06004d;
         public static final int abussiveRelationButton=0x7f060046;
         public static final int action_settings=0x7f06008f;
-        public static final int activitiesButton=0x7f06007d;
+        public static final int activitiesButton=0x7f06007c;
         public static final int ad_vid1=0x7f060007;
         public static final int ad_vid2=0x7f060008;
         public static final int ad_vid3=0x7f060009;
         public static final int ad_vid4=0x7f06000a;
         public static final int ad_vid5=0x7f06000b;
         public static final int ad_vid6=0x7f06000c;
-        public static final int afterclasssurvey=0x7f060086;
+        public static final int afterclasssurvey=0x7f060085;
         public static final int alcAndDrugsButton=0x7f060035;
-        public static final int alcoholAndDrugs_button=0x7f06008b;
-        public static final int answerButton=0x7f060071;
+        public static final int alcoholAndDrugs_button=0x7f06008a;
+        public static final int answerButton=0x7f060070;
         public static final int answerText=0x7f06000e;
-        public static final int answerquestions=0x7f060084;
-        public static final int categoriesSpinner=0x7f060069;
-        public static final int discBoardButton=0x7f06007a;
+        public static final int answerquestions=0x7f060083;
+        public static final int categoriesSpinner=0x7f060068;
+        public static final int discBoardButton=0x7f060079;
         public static final int drugsButton=0x7f06004b;
-        public static final int eatingDisorder_button=0x7f06008a;
+        public static final int eatingDisorder_button=0x7f060089;
         public static final int eatingDisordersButton=0x7f060036;
         public static final int eatingDisordersText=0x7f060028;
         public static final int ed_vid1=0x7f060020;
@@ -255,14 +257,14 @@ containing a value of this type.
         public static final int ed_vid4=0x7f060023;
         public static final int ed_vid5=0x7f060024;
         public static final int ed_vid6=0x7f060025;
-        public static final int editText1=0x7f06006a;
+        public static final int editText1=0x7f060069;
         public static final int faq1Button=0x7f06002a;
         public static final int faq2Button=0x7f06002b;
         public static final int faq3Button=0x7f06002c;
         public static final int faq4Button=0x7f06002d;
-        public static final int faqButton=0x7f06007b;
+        public static final int faqButton=0x7f06007a;
         public static final int fitnessButton=0x7f060018;
-        public static final int fitness_button=0x7f060087;
+        public static final int fitness_button=0x7f060086;
         public static final int fitvid1=0x7f06002f;
         public static final int fitvid2=0x7f060030;
         public static final int fitvid3=0x7f060031;
@@ -270,10 +272,10 @@ containing a value of this type.
         public static final int fitvid5=0x7f060033;
         public static final int fitvid6=0x7f060034;
         public static final int flashcardsButton=0x7f060005;
-        public static final int forteaching=0x7f060082;
+        public static final int forteaching=0x7f060081;
         public static final int generalSupportButton=0x7f06004f;
         public static final int glbtButton=0x7f060037;
-        public static final int glbt_button=0x7f06008c;
+        public static final int glbt_button=0x7f06008b;
         public static final int glbt_vid1=0x7f06003a;
         public static final int glbt_vid2=0x7f06003b;
         public static final int glbt_vid3=0x7f06003c;
@@ -282,7 +284,7 @@ containing a value of this type.
         public static final int glbt_vid6=0x7f06003f;
         public static final int healthButton=0x7f060010;
         public static final int healthText=0x7f060026;
-        public static final int health_button=0x7f060088;
+        public static final int health_button=0x7f060087;
         public static final int healthvid1=0x7f060040;
         public static final int healthvid2=0x7f060041;
         public static final int healthvid3=0x7f060042;
@@ -290,18 +292,18 @@ containing a value of this type.
         public static final int healthvid5=0x7f060044;
         public static final int healthvid6=0x7f060045;
         public static final int historyButton=0x7f060067;
-        public static final int hotlinesButt=0x7f060075;
+        public static final int hotlinesButt=0x7f060074;
         public static final int hybrid=0x7f060004;
-        public static final int imageView1=0x7f060078;
+        public static final int imageView1=0x7f060077;
         public static final int legalButton=0x7f060051;
-        public static final int lessonplans=0x7f060085;
+        public static final int lessonplans=0x7f060084;
         public static final int linearLayout1=0x7f06000d;
         public static final int linearLayout2=0x7f060060;
         public static final int linearLayout3=0x7f06005e;
         public static final int linearLayout4=0x7f060062;
-        public static final int locationButt=0x7f060073;
-        public static final int loginButt=0x7f060080;
-        public static final int loginPageText=0x7f060081;
+        public static final int locationButt=0x7f060072;
+        public static final int loginButt=0x7f06007f;
+        public static final int loginPageText=0x7f060080;
         public static final int map=0x7f06005d;
         public static final int mentalHealthButton=0x7f060048;
         public static final int messageText=0x7f060065;
@@ -310,21 +312,21 @@ containing a value of this type.
         public static final int messageText3=0x7f060063;
         public static final int messageText4=0x7f060064;
         public static final int messagesButton=0x7f060006;
-        public static final int newPost=0x7f06008e;
+        public static final int newPost=0x7f06008d;
         public static final int none=0x7f060000;
         public static final int normal=0x7f060001;
         public static final int nutrAndFitButton=0x7f060038;
         public static final int nutritionButton=0x7f060059;
         public static final int nutritionText=0x7f060027;
-        public static final int nutrition_button=0x7f060089;
-        public static final int nutvid1=0x7f06006b;
-        public static final int nutvid2=0x7f06006c;
-        public static final int nutvid3=0x7f06006d;
-        public static final int nutvid4=0x7f06006e;
-        public static final int nutvid5=0x7f06006f;
-        public static final int nutvid6=0x7f060070;
-        public static final int passBox=0x7f06007f;
-        public static final int postButt=0x7f060068;
+        public static final int nutrition_button=0x7f060088;
+        public static final int nutvid1=0x7f06006a;
+        public static final int nutvid2=0x7f06006b;
+        public static final int nutvid3=0x7f06006c;
+        public static final int nutvid4=0x7f06006d;
+        public static final int nutvid5=0x7f06006e;
+        public static final int nutvid6=0x7f06006f;
+        public static final int passBox=0x7f06007e;
+        public static final int post=0x7f06008e;
         public static final int pregnacyButton=0x7f060057;
         public static final int question10Button=0x7f06001d;
         public static final int question11Button=0x7f06001e;
@@ -352,25 +354,25 @@ containing a value of this type.
         public static final int resource7Button=0x7f060052;
         public static final int resource8Button=0x7f060054;
         public static final int resource9Button=0x7f060056;
-        public static final int resourcesButton=0x7f06007c;
-        public static final int resourcesText=0x7f060072;
+        public static final int resourcesButton=0x7f06007b;
+        public static final int resourcesText=0x7f060071;
         public static final int satellite=0x7f060002;
-        public static final int search=0x7f06008d;
+        public static final int search=0x7f06008c;
         public static final int sexButton=0x7f060039;
         public static final int sexEdButton=0x7f060014;
         public static final int sexualAssualtButton=0x7f060055;
         public static final int shuffleButton=0x7f060066;
         public static final int stiButton=0x7f060053;
-        public static final int student_button=0x7f060076;
+        public static final int student_button=0x7f060075;
         public static final int substanceButton=0x7f06001c;
-        public static final int teacher_button=0x7f060077;
-        public static final int teachingaids=0x7f060083;
+        public static final int teacher_button=0x7f060076;
+        public static final int teachingaids=0x7f060082;
         public static final int terrain=0x7f060003;
         public static final int tobaccoButton=0x7f06005b;
         public static final int topicNameText=0x7f060029;
-        public static final int userNameBox=0x7f06007e;
-        public static final int videoButt=0x7f060074;
-        public static final int welcometext=0x7f060079;
+        public static final int userNameBox=0x7f06007d;
+        public static final int videoButt=0x7f060073;
+        public static final int welcometext=0x7f060078;
     }
     public static final class integer {
         public static final int google_play_services_version=0x7f080000;
@@ -403,7 +405,8 @@ containing a value of this type.
     }
     public static final class menu {
         public static final int discussion_board=0x7f0c0000;
-        public static final int start_up=0x7f0c0001;
+        public static final int new_post=0x7f0c0001;
+        public static final int start_up=0x7f0c0002;
     }
     public static final class string {
         public static final int action_settings=0x7f07001b;
@@ -508,29 +511,46 @@ containing a value of this type.
         /** 
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+
     
 
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
+
         
 
-        Base application theme for API 11+. This theme completely replaces
-        AppBaseTheme from res/values/styles.xml on API 11+ devices.
-    
- API 11 theme customizations can go here. 
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
 
-        Base application theme for API 14+. This theme completely replaces
-        AppBaseTheme from BOTH res/values/styles.xml and
-        res/values-v11/styles.xml on API 14+ devices.
     
- API 14 theme customizations can go here. 
+
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+
+        
+
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+
+    
+
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+
+        
          */
         public static final int AppBaseTheme=0x7f0b0000;
         /**  Application theme. 
- All customizations that are NOT specific to a particular API-level can go here. 
+ Application theme. 
+ Application theme. 
          */
         public static final int AppTheme=0x7f0b0001;
+        public static final int MyActionBar=0x7f0b0003;
+        public static final int MyTheme=0x7f0b0002;
+        public static final int pheButton=0x7f0b0004;
     }
     public static final class xml {
         public static final int searchable=0x7f040000;
