@@ -1,15 +1,27 @@
 package org.peerhealthexchange.phemobile;
 
+import java.util.ArrayList;
+
+import org.peerhealthexchange.phemobile.slidingmenu.adapter.NavDrawerListAdapter;
+import org.peerhealthexchange.phemobile.slidingmenu.model.NavDrawerItem;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.res.TypedArray;
+import android.support.v4.app.ActionBarDrawerToggle;
+import android.support.v4.widget.DrawerLayout;
 import android.view.Menu;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.ListView;
 
 public class StartUp extends Activity {
+	
+	
+    
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
