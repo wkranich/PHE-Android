@@ -123,6 +123,7 @@ public class StudentStartUp extends Activity {
 			}
 		};
 		mDrawerLayout.setDrawerListener(mDrawerToggle);
+		mDrawerList.setOnItemClickListener(new SlideMenuClickListener());
 
 		/*
 		 * if (savedInstanceState == null) { // on first time display view for
@@ -259,7 +260,9 @@ public class StudentStartUp extends Activity {
 	        Fragment fragment = null;
 	        switch (position) {
 	        case 0:
-	            fragment = new discussion_board();
+	        	Intent intent = new Intent(getApplicationContext(), teacher_login.class);
+				intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+				startActivity(intent);
 	            break;
 	        case 1:
 	            fragment = new faq();
@@ -274,7 +277,7 @@ public class StudentStartUp extends Activity {
 	            fragment = new location();
 	            break;
 	        case 5:
-	            fragment = new videost();
+	            fragment = new videos();
 	            break;
 	 
 	        default:
