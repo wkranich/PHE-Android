@@ -254,55 +254,51 @@ public class StudentStartUp extends Activity {
 			// display view for selected nav drawer item
 			displayView(position);
 		}
-		
+
 		private void displayView(int position) {
-	        // update the main content by replacing fragments
-	        Fragment fragment = null;
-	        switch (position) {
-	        case 0:
-<<<<<<< HEAD
-	            //fragment = new discussion_board();
-=======
-	        	Intent intent = new Intent(getApplicationContext(), teacher_login.class);
-				intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-				startActivity(intent);
->>>>>>> 76153a1843f2adb66ce3e77db61a44b1a497d9f1
-	            break;
-	        case 1:
-	            fragment = new faq();
-	            break;
-	        case 2:
-	            fragment = new Flashcards();
-	            break;
-	        case 3:
-	            fragment = new Messages();
-	            break;
-	        case 4:
-	            fragment = new location();
-	            break;
-	        case 5:
-	            fragment = new videos();
-	            break;
-	 
-	        default:
-	            break;
-	        }
-	 
-	        if (fragment != null) {
-	            FragmentManager fragmentManager = getFragmentManager();
-	            fragmentManager.beginTransaction()
-	                    .replace(R.id.frame_container, fragment).commit();
-	 
-	            // update selected item and title, then close the drawer
-	            mDrawerList.setItemChecked(position, true);
-	            mDrawerList.setSelection(position);
-	            setTitle(navMenuTitles[position]);
-	            mDrawerLayout.closeDrawer(mDrawerList);
-	        } else {
-	            // error in creating fragment
-	            Log.e("MainActivity", "Error in creating fragment");
-	        }
-	    }
+			// update the main content by replacing fragments
+			Fragment fragment = null;
+			switch (position) {
+			case 0:
+
+				fragment = new discussion_board();
+
+				break;
+			case 1:
+				fragment = new faq();
+				break;
+			case 2:
+				fragment = new Flashcards();
+				break;
+			case 3:
+				fragment = new Messages();
+				break;
+			case 4:
+				fragment = new location();
+				break;
+			case 5:
+				fragment = new videos();
+				break;
+
+			default:
+				break;
+			}
+
+			if (fragment != null) {
+				FragmentManager fragmentManager = getFragmentManager();
+				fragmentManager.beginTransaction()
+						.replace(R.id.frame_container, fragment).commit();
+
+				// update selected item and title, then close the drawer
+				mDrawerList.setItemChecked(position, true);
+				mDrawerList.setSelection(position);
+				setTitle(navMenuTitles[position]);
+				mDrawerLayout.closeDrawer(mDrawerList);
+			} else {
+				// error in creating fragment
+				Log.e("MainActivity", "Error in creating fragment");
+			}
+		}
 
 	}
 

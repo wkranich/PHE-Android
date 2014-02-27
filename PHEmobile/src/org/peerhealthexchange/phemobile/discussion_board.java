@@ -12,7 +12,9 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.SearchView;
 
 public class discussion_board extends Fragment{
@@ -21,12 +23,12 @@ public class discussion_board extends Fragment{
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, 
 			Bundle savedInstanceState) {
-		RelativeLayout mRelative = (RelativeLayout) inflater.inflate(R.layout.discussion_board, container, false);
+		ScrollView mRelative = (ScrollView) inflater.inflate(R.layout.discussion_board, container, false);
 		
 		//ActionBar locationPage = getActionBar();
 		//locationPage.setTitle("Discussion Board");
-		// Button postQuestion = (Button) findViewById(R.id.postButt);
-		// Button recentActivity = (Button) findViewById(R.id.recentButt);
+		 //Button postQuestion = (Button) mRelative.findViewById(R.id.postButt);
+		 //Button recentActivity = (Button) mRelative.findViewById(R.id.recentButt);
 		return mRelative;
 	}
 
