@@ -8,21 +8,23 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class Messages extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		View rootView = inflater.inflate(R.layout.messages, container, false);
+		RelativeLayout mRelative = (RelativeLayout) inflater.inflate(R.layout.messages,container,false);
+		//View rootView = inflater.inflate(R.layout.messages, container, false);
 		// ActionBar locationPage = getActionBar();
 		// locationPage.setTitle("Messages");
 
-		TextView messageText = (TextView) getView().findViewById(
+		TextView messageText = (TextView) mRelative.findViewById(
 				R.id.messageText);
-		Button shuffleButton = (Button) getView().findViewById(
+		Button shuffleButton = (Button) mRelative.findViewById(
 				R.id.shuffleButton);
-		Button historyButton = (Button) getView().findViewById(
+		Button historyButton = (Button) mRelative.findViewById(
 				R.id.historyButton);
 
 		messageText.setText("No new messages!");
@@ -35,6 +37,6 @@ public class Messages extends Fragment {
 				startActivity(intent);
 			}
 		});
-		return rootView;
+		return mRelative;
 	}
 }

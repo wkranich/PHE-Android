@@ -123,6 +123,7 @@ public class StudentStartUp extends Activity {
 			}
 		};
 		mDrawerLayout.setDrawerListener(mDrawerToggle);
+		mDrawerList.setOnItemClickListener(new SlideMenuClickListener());
 
 		/*
 		 * if (savedInstanceState == null) { // on first time display view for
@@ -259,7 +260,13 @@ public class StudentStartUp extends Activity {
 	        Fragment fragment = null;
 	        switch (position) {
 	        case 0:
+<<<<<<< HEAD
 	            //fragment = new discussion_board();
+=======
+	        	Intent intent = new Intent(getApplicationContext(), teacher_login.class);
+				intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+				startActivity(intent);
+>>>>>>> 76153a1843f2adb66ce3e77db61a44b1a497d9f1
 	            break;
 	        case 1:
 	            fragment = new faq();
