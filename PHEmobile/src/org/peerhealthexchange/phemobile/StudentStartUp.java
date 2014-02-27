@@ -259,7 +259,7 @@ public class StudentStartUp extends Activity {
 	        Fragment fragment = null;
 	        switch (position) {
 	        case 0:
-	            fragment = new discussion_board();
+	            //fragment = new discussion_board();
 	            break;
 	        case 1:
 	            fragment = new faq();
@@ -274,7 +274,7 @@ public class StudentStartUp extends Activity {
 	            fragment = new location();
 	            break;
 	        case 5:
-	            fragment = new videost();
+	            fragment = new videos();
 	            break;
 	 
 	        default:

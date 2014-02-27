@@ -86,7 +86,7 @@ int drawable logo_phe 0x7f02002b
 int id GLBTButton 0x7f060050
 int id abussiveRelationButton 0x7f060049
 int id action_settings 0x7f060095
-int id activitiesButton 0x7f06007e
+int id activitiesButton 0x7f06007d
 int id ad_vid1 0x7f060007
 int id ad_vid2 0x7f060008
 int id ad_vid3 0x7f060009
@@ -213,7 +213,7 @@ int id resource6Button 0x7f060053
 int id resource7Button 0x7f060055
 int id resource8Button 0x7f060057
 int id resource9Button 0x7f060059
-int id resourcesButton 0x7f06007d
+int id resourcesButton 0x7f06007e
 int id resourcesText 0x7f060074
 int id satellite 0x7f060002
 int id search 0x7f060092

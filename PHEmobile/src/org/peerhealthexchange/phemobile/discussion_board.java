@@ -1,33 +1,36 @@
 package org.peerhealthexchange.phemobile;
 
 import android.app.ActionBar;
-import android.app.Activity;
+import android.app.Fragment;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
+import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import android.widget.SearchView;
 
-public class discussion_board extends Activity {
+public class discussion_board extends Fragment{
 	SearchView searchView; 
 
 	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.discussion_board);
-		ActionBar locationPage = getActionBar();
-		locationPage.setTitle("Discussion Board");
+	public View onCreateView(LayoutInflater inflater, ViewGroup container, 
+			Bundle savedInstanceState) {
+		RelativeLayout mRelative = (RelativeLayout) inflater.inflate(R.layout.discussion_board, container, false);
+		
+		//ActionBar locationPage = getActionBar();
+		//locationPage.setTitle("Discussion Board");
 		// Button postQuestion = (Button) findViewById(R.id.postButt);
 		// Button recentActivity = (Button) findViewById(R.id.recentButt);
-
+		return mRelative;
 	}
 
-	@Override
+	/*@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		MenuInflater inflater = getMenuInflater();
 		inflater.inflate(R.menu.discussion_board, menu);
@@ -56,9 +59,9 @@ public class discussion_board extends Activity {
 		});
 
 		return true;
-	}
+	}*/
 
-	@Override
+	/*@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 		case R.id.newPost:
@@ -77,6 +80,6 @@ public class discussion_board extends Activity {
 	    } else {
 	        super.onBackPressed();
 	    }
-	}
+	}*/
 
 }

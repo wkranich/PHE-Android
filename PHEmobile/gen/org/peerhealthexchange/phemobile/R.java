@@ -256,7 +256,7 @@ containing a value of this type.
         public static final int GLBTButton=0x7f060050;
         public static final int abussiveRelationButton=0x7f060049;
         public static final int action_settings=0x7f060095;
-        public static final int activitiesButton=0x7f06007e;
+        public static final int activitiesButton=0x7f06007d;
         public static final int ad_vid1=0x7f060007;
         public static final int ad_vid2=0x7f060008;
         public static final int ad_vid3=0x7f060009;
@@ -383,7 +383,7 @@ containing a value of this type.
         public static final int resource7Button=0x7f060055;
         public static final int resource8Button=0x7f060057;
         public static final int resource9Button=0x7f060059;
-        public static final int resourcesButton=0x7f06007d;
+        public static final int resourcesButton=0x7f06007e;
         public static final int resourcesText=0x7f060074;
         public static final int satellite=0x7f060002;
         public static final int search=0x7f060092;
