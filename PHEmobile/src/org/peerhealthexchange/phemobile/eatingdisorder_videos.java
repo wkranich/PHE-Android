@@ -1,24 +1,24 @@
 package org.peerhealthexchange.phemobile;
 
-import android.app.Activity;
-import android.content.Intent;
+import android.app.Fragment;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 
-public class eatingdisorder_videos extends Activity {
+public class eatingdisorder_videos extends Fragment {
 	
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.eatingdisorder_videos);
+	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+		View rootView = inflater.inflate(R.layout.eatingdisorder_videos, container, false);
 		
-		Button vid1 = (Button) findViewById(R.id.ed_vid1);
-		Button vid2 = (Button) findViewById(R.id.ed_vid2);
-		Button vid3 = (Button) findViewById(R.id.ed_vid3);
-		Button vid4 = (Button) findViewById(R.id.ed_vid4);
-		Button vid5 = (Button) findViewById(R.id.ed_vid5);
-		Button vid6 = (Button) findViewById(R.id.ed_vid6);
+		Button vid1 = (Button) getView().findViewById(R.id.ed_vid1);
+		Button vid2 = (Button) getView().findViewById(R.id.ed_vid2);
+		Button vid3 = (Button) getView().findViewById(R.id.ed_vid3);
+		Button vid4 = (Button) getView().findViewById(R.id.ed_vid4);
+		Button vid5 = (Button) getView().findViewById(R.id.ed_vid5);
+		Button vid6 = (Button) getView().findViewById(R.id.ed_vid6);
 		
 		/*
 		vid1.setOnClickListener(new View.OnClickListener() {
@@ -81,5 +81,6 @@ public class eatingdisorder_videos extends Activity {
 			}
 		});
 		*/
+		return rootView;
 	}
 }

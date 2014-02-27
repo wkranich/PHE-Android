@@ -1,23 +1,24 @@
 package org.peerhealthexchange.phemobile;
 
-import android.location.Criteria;
+import android.app.Fragment;
+import android.content.Context;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
-import android.app.ActionBar;
-import android.app.Activity;
-import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.View;
+import android.view.ViewGroup;
+
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class location extends Activity implements LocationListener {
+public class location extends Fragment implements LocationListener {
 	// change this as you please, this is the update interval
 	private static final int TWO_MINUTES = 1000 * 60 * 2;
 	private static final LatLng buSHS = new LatLng(42.35144,-71.1153548);
@@ -27,15 +28,15 @@ public class location extends Activity implements LocationListener {
 	private Marker myMarker;
 
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.location_page);
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+            Bundle savedInstanceState) {
+	
+		View rootView = inflater.inflate(R.layout.location_page, container, false);
 		
-		ActionBar locationPage = getActionBar();
-		locationPage.setTitle("Locations");
+		//ActionBar locationPage = getActionBar();
+		//locationPage.setTitle("Locations");
 		
-		locationManager = (LocationManager) this
-				.getSystemService(Context.LOCATION_SERVICE);
+		locationManager = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
 		map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map))
 				.getMap();
 		map.setMyLocationEnabled(true);
@@ -51,14 +52,9 @@ public class location extends Activity implements LocationListener {
 		} else {
 			// do nothing... for now....
 		}
+		return rootView;
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.start_up, menu);
-		return true;
-	}
 
 	@Override
 	public void onLocationChanged(Location location) {
