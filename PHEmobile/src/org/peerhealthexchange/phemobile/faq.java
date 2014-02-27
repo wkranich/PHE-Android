@@ -1,32 +1,35 @@
 package org.peerhealthexchange.phemobile;
 
 import android.app.ActionBar;
-import android.app.Activity;
+import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class faq extends Activity{
+public class faq extends Fragment{
 
 	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.faq);
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+            Bundle savedInstanceState) {
 		
-		ActionBar title = getActionBar();
-		title.setTitle("FAQs");
+		 View rootView = inflater.inflate(R.layout.faq, container, false);
 		
-		TextView healthText = (TextView) findViewById(R.id.healthText);
-		TextView nutritionText = (TextView) findViewById(R.id.nutritionText);
-		TextView eatingDisordersText = (TextView) findViewById(R.id.eatingDisordersText);
-		TextView topicNameText = (TextView) findViewById(R.id.topicNameText);
+		//ActionBar title = getActionBar();
+		//title.setTitle("FAQs");
 		
-		Button faq1Button = (Button) findViewById(R.id.faq1Button);
-		Button faq2Button = (Button) findViewById(R.id.faq2Button);
-		Button faq3Button = (Button) findViewById(R.id.faq3Button);
-		Button faq4Button = (Button) findViewById(R.id.faq4Button);
+		TextView healthText = (TextView) getView().findViewById(R.id.healthText);
+		TextView nutritionText = (TextView) getView().findViewById(R.id.nutritionText);
+		TextView eatingDisordersText = (TextView) getView().findViewById(R.id.eatingDisordersText);
+		TextView topicNameText = (TextView) getView().findViewById(R.id.topicNameText);
+		
+		Button faq1Button = (Button) getView().findViewById(R.id.faq1Button);
+		Button faq2Button = (Button) getView().findViewById(R.id.faq2Button);
+		Button faq3Button = (Button) getView().findViewById(R.id.faq3Button);
+		Button faq4Button = (Button) getView().findViewById(R.id.faq4Button);
 		
 		faq1Button.setOnClickListener(new View.OnClickListener() {
 
@@ -73,6 +76,7 @@ public class faq extends Activity{
 
 			}
 		});
+		return rootView;
 	}
 	
 }
