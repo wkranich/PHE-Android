@@ -6,13 +6,10 @@
 
     <!-- The main content view -->
 
-    <RelativeLayout
+    <FrameLayout
+        android:id="@+id/frame_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingBottom="@dimen/activity_vertical_margin"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin" >
+        android:layout_height="match_parent" >
 
         <TextView
         android:id="@+id/welcometext"
@@ -44,23 +41,20 @@
         android:text="FAQs" />
 
     <Button
-        android:id="@+id/resourcesButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/activitiesButton"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="25dp"
-        android:text="Resources" />
-
-    <Button
         android:id="@+id/activitiesButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/faqButton"
         android:layout_marginTop="25dp"
         android:text="Activities" />
-    </RelativeLayout>
+
+    <Button
+        android:id="@+id/resourcesButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="Resources" />
+
+    </FrameLayout>
 
     <!-- Listview to display slider menu -->
     <ListView
