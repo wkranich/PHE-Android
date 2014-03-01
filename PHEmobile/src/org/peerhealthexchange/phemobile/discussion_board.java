@@ -25,25 +25,24 @@ public class discussion_board extends Fragment{
 			Bundle savedInstanceState) {
 		ScrollView mRelative = (ScrollView) inflater.inflate(R.layout.discussion_board, container, false);
 		
-		//ActionBar locationPage = getActionBar();
-		//locationPage.setTitle("Discussion Board");
+		ActionBar locationPage = getActivity().getActionBar();
+		locationPage.setTitle("Discussion Board");
 		 //Button postQuestion = (Button) mRelative.findViewById(R.id.postButt);
 		 //Button recentActivity = (Button) mRelative.findViewById(R.id.recentButt);
 		return mRelative;
 	}
 
-	/*@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		MenuInflater inflater = getMenuInflater();
+		MenuInflater inflater = getActivity().getMenuInflater();
 		inflater.inflate(R.menu.discussion_board, menu);
 
 		final MenuItem searchMenuItem = menu.findItem(R.id.search);
 
-		SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+		SearchManager searchManager = (SearchManager) getActivity().getSystemService(Context.SEARCH_SERVICE);
 		searchView = (SearchView) menu.findItem(R.id.search)
 				.getActionView();
 		searchView.setSearchableInfo(searchManager
-				.getSearchableInfo(getComponentName()));
+				.getSearchableInfo(getActivity().getComponentName()));
 
 		searchView.setOnFocusChangeListener(new View.OnFocusChangeListener() {
 
@@ -54,14 +53,14 @@ public class discussion_board extends Fragment{
 					searchView.setQuery("", false);
 					searchMenuItem.collapseActionView();
 					searchView.setFocusable(false);
-					invalidateOptionsMenu();
+					getActivity().invalidateOptionsMenu();
 				}
 
 			}
 		});
 
 		return true;
-	}*/
+	}
 
 	/*@Override
 	public boolean onOptionsItemSelected(MenuItem item) {

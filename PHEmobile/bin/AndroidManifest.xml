@@ -8,6 +8,16 @@
         android:minSdkVersion="14"
         android:targetSdkVersion="18" />
 
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <permission
+        android:name="org.peerhealthexchange.phemobile.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="org.peerhealthexchange.phemobile.permission.C2D_MESSAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
@@ -42,36 +52,73 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="StudentStartUp"></activity>
-        <activity android:name="teacher_login"></activity>
-        <activity android:name="discussion_board"></activity>
-        <activity android:name="faq"></activity>
-        <activity android:name="activities"></activity>
-        <activity android:name="resources"></activity>
-        <activity android:name="location"></activity>
+        <activity android:name="StudentStartUp" >
+        </activity>
+        <activity android:name="teacher_login" >
+        </activity>
+        <activity android:name="discussion_board" >
+        </activity>
+        <activity android:name="faq" >
+        </activity>
+        <activity android:name="activities" >
+        </activity>
+        <activity android:name="resources" >
+        </activity>
+        <activity android:name="location" >
+        </activity>
+        <activity android:name="videos" >
+        </activity>
+        <activity android:name="faq_info_page" >
+        </activity>
+        <activity android:name="Flash" >
+        </activity>
+        <activity android:name="Flashcards" >
+        </activity>
+        <activity android:name="Messages" >
+        </activity>
+        <activity android:name="new_post" >
+        </activity>
+        <activity android:name="MessageHistory" >
+        </activity>
+        <activity android:name="TeacherStartUp" >
+        </activity>
+        <activity android:name="alcohol_videos" >
+        </activity>
+        <activity android:name="eatingdisorder_videos" >
+        </activity>
+        <activity android:name="glbt_videos" >
+        </activity>
+        <activity android:name="fitness_videos" >
+        </activity>
+        <activity android:name="health_videos" >
+        </activity>
+        <activity android:name="nutrition_videos" >
+        </activity>
+        <activity android:name="answer_cards" >
+        </activity>
+        <activity android:name="question_cards" >
+        </activity>
+        <activity android:name="hotlines" >
+        </activity>
 
-        <activity android:name="videos"></activity>
+        <service android:name="com.parse.PushService" />
 
-        <activity android:name="faq_info_page"></activity>
-        <activity android:name="Flash"></activity>
-        <activity android:name="Flashcards"></activity>
-        <activity android:name="Messages"></activity>
+        <receiver android:name="com.parse.ParseBroadcastReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.parse.GcmBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
 
-        <activity android:name="new_post"></activity>
-
-        <activity android:name="MessageHistory"></activity>
-        <activity android:name="TeacherStartUp"></activity>
-        <activity android:name="alcohol_videos"></activity>
-        <activity android:name="eatingdisorder_videos"></activity>
-        <activity android:name="glbt_videos"></activity>
-        <activity android:name="fitness_videos"></activity>
-        <activity android:name="health_videos"></activity>
-        <activity android:name="nutrition_videos"></activity>
-        <activity android:name="answer_cards"></activity>
-        <activity android:name="question_cards"></activity>
-        <activity android:name="hotlines"></activity>
-
-
+                <category android:name="org.peerhealthexchange.phemobile" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
