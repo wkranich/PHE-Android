@@ -8,25 +8,26 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 
 public class Flashcards extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		View rootView = inflater.inflate(R.layout.flashcards, container, false);
+		RelativeLayout mRelative = (RelativeLayout) inflater.inflate(R.layout.flashcards, container, false);
 
 		ActionBar locationPage = getActivity().getActionBar();
 		locationPage.setTitle("Flashcards");
 
-		final Button alcAndDrugsButton = (Button) getView().findViewById(
+		final Button alcAndDrugsButton = (Button) mRelative.findViewById(
 				R.id.alcAndDrugsButton);
-		final Button eatingDisordersButton = (Button) getView().findViewById(
+		final Button eatingDisordersButton = (Button) mRelative.findViewById(
 				R.id.eatingDisordersButton);
-		final Button glbtButton = (Button) getView().findViewById(
+		final Button glbtButton = (Button) mRelative.findViewById(
 				R.id.glbtButton);
-		final Button nutrAndFitButton = (Button) getView().findViewById(
+		final Button nutrAndFitButton = (Button) mRelative.findViewById(
 				R.id.nutrAndFitButton);
-		final Button sexButton = (Button) getView()
+		final Button sexButton = (Button) mRelative
 				.findViewById(R.id.sexButton);
 
 		alcAndDrugsButton.setOnClickListener(new View.OnClickListener() {
@@ -83,7 +84,7 @@ public class Flashcards extends Fragment {
 				startActivity(intent);
 			}
 		});
-		return rootView;
+		return mRelative;
 	}
 
 }

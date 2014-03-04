@@ -7,23 +7,24 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 
 public class videos extends Fragment {
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		View rootView = inflater.inflate(R.layout.videos, container, false);
+		RelativeLayout mRelative = (RelativeLayout) inflater.inflate(R.layout.videos, container, false);
 
-		Button fitness = (Button) getView().findViewById(R.id.fitness_button);
-		Button health = (Button) getView().findViewById(R.id.health_button);
-		Button nutrition = (Button) getView().findViewById(
+		Button fitness = (Button) mRelative.findViewById(R.id.fitness_button);
+		Button health = (Button) mRelative.findViewById(R.id.health_button);
+		Button nutrition = (Button) mRelative.findViewById(
 				R.id.nutrition_button);
-		Button alcoholDrugs = (Button) getView().findViewById(
+		Button alcoholDrugs = (Button) mRelative.findViewById(
 				R.id.alcoholAndDrugs_button);
-		Button eatingDisorders = (Button) getView().findViewById(
+		Button eatingDisorders = (Button) mRelative.findViewById(
 				R.id.eatingDisorder_button);
-		Button glbt = (Button) getView().findViewById(R.id.glbt_button);
+		Button glbt = (Button) mRelative.findViewById(R.id.glbt_button);
 
 		fitness.setOnClickListener(new View.OnClickListener() {
 
@@ -86,7 +87,7 @@ public class videos extends Fragment {
 				startActivity(intent);
 			}
 		});
-		return rootView;
+		return mRelative;
 
 	}
 }

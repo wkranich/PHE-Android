@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class faq extends Fragment{
@@ -16,20 +17,15 @@ public class faq extends Fragment{
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
 		
-		 View rootView = inflater.inflate(R.layout.faq, container, false);
+		 RelativeLayout mRelative = (RelativeLayout) inflater.inflate(R.layout.faq, container, false);
 		
 		//ActionBar title = getActionBar();
 		//title.setTitle("FAQs");
 		
-		TextView healthText = (TextView) getView().findViewById(R.id.healthText);
-		TextView nutritionText = (TextView) getView().findViewById(R.id.nutritionText);
-		TextView eatingDisordersText = (TextView) getView().findViewById(R.id.eatingDisordersText);
-		TextView topicNameText = (TextView) getView().findViewById(R.id.topicNameText);
-		
-		Button faq1Button = (Button) getView().findViewById(R.id.faq1Button);
-		Button faq2Button = (Button) getView().findViewById(R.id.faq2Button);
-		Button faq3Button = (Button) getView().findViewById(R.id.faq3Button);
-		Button faq4Button = (Button) getView().findViewById(R.id.faq4Button);
+		Button faq1Button = (Button) mRelative.findViewById(R.id.faq1Button);
+		Button faq2Button = (Button) mRelative.findViewById(R.id.faq2Button);
+		Button faq3Button = (Button) mRelative.findViewById(R.id.faq3Button);
+		Button faq4Button = (Button) mRelative.findViewById(R.id.faq4Button);
 		
 		faq1Button.setOnClickListener(new View.OnClickListener() {
 
@@ -75,8 +71,8 @@ public class faq extends Fragment{
 				// TODO Auto-generated method stub
 
 			}
-		});
-		return rootView;
+		}); 
+		return mRelative;
 	}
 	
 }
