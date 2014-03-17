@@ -18,6 +18,11 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.ListView;
 
+import com.parse.Parse;
+import com.parse.ParseAnalytics;
+import com.parse.ParseInstallation;
+import com.parse.PushService;
+
 public class StartUp extends Activity {
 	
 	
@@ -29,6 +34,8 @@ public class StartUp extends Activity {
 		getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
 	    getActionBar().hide();
 		setContentView(R.layout.start_up_page);
+		//Parse.initialize(this,"DYgXFCYiB9j2MTxqL4FvNscHYhFs4r9TkRZbCi35", "H8on7fpB4BcFlYvcQqQ7yjsqhSFQcPUjdqO4SYnu");
+		//PushService.setDefaultPushCallback(this,TeacherStartUp.class);
 		setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);     //  Fixed Portrait orientation
 		Button student_start = (Button) findViewById(R.id.student_button);
 		Button teacher_login = (Button) findViewById(R.id.teacher_button);
@@ -37,7 +44,7 @@ public class StartUp extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				Intent intent = new Intent(v.getContext(), StudentStartUp.class);
+				Intent intent = new Intent(v.getContext(), location.class);
 				intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 				startActivity(intent);
 				// TODO Auto-generated method stub
@@ -58,11 +65,11 @@ public class StartUp extends Activity {
 		});
 	}
 
-	@Override
+	/*@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.start_up, menu);
 		return true;
-	}
+	}*/
 
 }

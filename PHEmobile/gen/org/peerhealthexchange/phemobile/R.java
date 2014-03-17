@@ -256,7 +256,7 @@ containing a value of this type.
         public static final int GLBTButton=0x7f060050;
         public static final int abussiveRelationButton=0x7f060049;
         public static final int action_settings=0x7f060095;
-        public static final int activitiesButton=0x7f06007d;
+        public static final int activitiesButton=0x7f060085;
         public static final int ad_vid1=0x7f060007;
         public static final int ad_vid2=0x7f060008;
         public static final int ad_vid3=0x7f060009;
@@ -271,7 +271,7 @@ containing a value of this type.
         public static final int answerquestions=0x7f060089;
         public static final int categoriesSpinner=0x7f06006b;
         public static final int counter=0x7f060022;
-        public static final int discBoardButton=0x7f06007b;
+        public static final int discBoardButton=0x7f060083;
         public static final int drawer_layout=0x7f060078;
         public static final int drugsButton=0x7f06004e;
         public static final int eatingDisorder_button=0x7f06008f;
@@ -288,7 +288,7 @@ containing a value of this type.
         public static final int faq2Button=0x7f06002e;
         public static final int faq3Button=0x7f06002f;
         public static final int faq4Button=0x7f060030;
-        public static final int faqButton=0x7f06007c;
+        public static final int faqButton=0x7f060084;
         public static final int fitnessButton=0x7f060018;
         public static final int fitness_button=0x7f06008c;
         public static final int fitvid1=0x7f060032;
@@ -322,17 +322,17 @@ containing a value of this type.
         public static final int hotlinesButt=0x7f060077;
         public static final int hybrid=0x7f060004;
         public static final int icon=0x7f060020;
-        public static final int imageView1=0x7f060082;
+        public static final int imageView1=0x7f06007d;
         public static final int legalButton=0x7f060054;
         public static final int lessonplans=0x7f06008a;
         public static final int linearLayout1=0x7f06000d;
         public static final int linearLayout2=0x7f060063;
         public static final int linearLayout3=0x7f060061;
         public static final int linearLayout4=0x7f060065;
-        public static final int list_slidermenu=0x7f06007f;
+        public static final int list_slidermenu=0x7f06007a;
         public static final int locationButt=0x7f060075;
-        public static final int loginButt=0x7f060085;
-        public static final int loginPageText=0x7f060086;
+        public static final int loginButt=0x7f060080;
+        public static final int loginPageText=0x7f060081;
         public static final int map=0x7f060060;
         public static final int mentalHealthButton=0x7f06004b;
         public static final int messageText=0x7f060068;
@@ -354,7 +354,7 @@ containing a value of this type.
         public static final int nutvid4=0x7f060070;
         public static final int nutvid5=0x7f060071;
         public static final int nutvid6=0x7f060072;
-        public static final int passBox=0x7f060084;
+        public static final int passBox=0x7f06007f;
         public static final int post=0x7f060094;
         public static final int pregnacyButton=0x7f06005a;
         public static final int question10Button=0x7f06001d;
@@ -383,7 +383,7 @@ containing a value of this type.
         public static final int resource7Button=0x7f060055;
         public static final int resource8Button=0x7f060057;
         public static final int resource9Button=0x7f060059;
-        public static final int resourcesButton=0x7f06007e;
+        public static final int resourcesButton=0x7f060086;
         public static final int resourcesText=0x7f060074;
         public static final int satellite=0x7f060002;
         public static final int search=0x7f060092;
@@ -392,17 +392,17 @@ containing a value of this type.
         public static final int sexualAssualtButton=0x7f060058;
         public static final int shuffleButton=0x7f060069;
         public static final int stiButton=0x7f060056;
-        public static final int student_button=0x7f060080;
+        public static final int student_button=0x7f06007b;
         public static final int substanceButton=0x7f06001c;
-        public static final int teacher_button=0x7f060081;
+        public static final int teacher_button=0x7f06007c;
         public static final int teachingaids=0x7f060088;
         public static final int terrain=0x7f060003;
         public static final int title=0x7f060021;
         public static final int tobaccoButton=0x7f06005e;
         public static final int topicNameText=0x7f06002c;
-        public static final int userNameBox=0x7f060083;
+        public static final int userNameBox=0x7f06007e;
         public static final int videoButt=0x7f060076;
-        public static final int welcometext=0x7f06007a;
+        public static final int welcometext=0x7f060082;
     }
     public static final class integer {
         public static final int google_play_services_version=0x7f080000;
