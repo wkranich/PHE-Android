@@ -2,7 +2,6 @@ package org.peerhealthexchange.phemobile;
 
 import java.util.ArrayList;
 
-import org.peerhealthexchange.phemobile.slidingmenu.adapter.NavDrawerListAdapter;
 import org.peerhealthexchange.phemobile.slidingmenu.adapter.TabsPagerAdapter;
 import org.peerhealthexchange.phemobile.slidingmenu.model.NavDrawerItem;
 

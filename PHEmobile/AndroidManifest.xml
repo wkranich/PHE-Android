@@ -119,6 +119,7 @@
                 <category android:name="org.peerhealthexchange.phemobile" />
             </intent-filter>
         </receiver>
+        <activity android:name="hospitalPage"></activity>
     </application>
 
 </manifest>
