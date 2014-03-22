@@ -2,12 +2,13 @@ package org.peerhealthexchange.phemobile;
 
 import android.app.ActionBar;
 import android.app.Activity;
-import android.app.Fragment;
 import android.content.Context;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
@@ -22,9 +23,33 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class location extends Activity implements LocationListener {
+public class location extends Fragment implements LocationListener {
+
+	@Override
+	public void onLocationChanged(Location location) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onProviderDisabled(String provider) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onProviderEnabled(String provider) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onStatusChanged(String provider, int status, Bundle extras) {
+		// TODO Auto-generated method stub
+		
+	}
 	// change this as you please, this is the update interval
-	private static final int TWO_MINUTES = 1000 * 60 * 2;
+	/*private static final int TWO_MINUTES = 1000 * 60 * 2;
 	private static final LatLng buSHS = new LatLng(42.35144, -71.1153548);
 	private LocationManager locationManager;
 	private GoogleMap map;
@@ -80,7 +105,7 @@ public class location extends Activity implements LocationListener {
 		 * MarkerOptions().position(myLocation));
 		 * map.moveCamera(CameraUpdateFactory.newLatLngZoom(myLocation, 15));
 		 */
-	}
+/*	}
 
 	@Override
 	public void onProviderDisabled(String provider) {
@@ -114,5 +139,5 @@ public class location extends Activity implements LocationListener {
 		super.onPause();
 		locationManager.removeUpdates(this);
 	}
-
+	*/
 }
