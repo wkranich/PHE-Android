@@ -51,10 +51,33 @@ public class StartUp extends FragmentActivity implements ActionBar.TabListener {
 		for (String tab_name : tabs) {
 			actionBar.addTab(actionBar.newTab().setText(tab_name).setTabListener(this));
 		}
-		//Parse.initialize(this,"DYgXFCYiB9j2MTxqL4FvNscHYhFs4r9TkRZbCi35", "H8on7fpB4BcFlYvcQqQ7yjsqhSFQcPUjdqO4SYnu");
+		
+		viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+
+			@Override
+			public void onPageScrollStateChanged(int arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void onPageScrolled(int arg0, float arg1, int arg2) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void onPageSelected(int position) {
+				actionBar.setSelectedNavigationItem(position);
+				
+			}
+			
+		});
+		Parse.initialize(this,"DYgXFCYiB9j2MTxqL4FvNscHYhFs4r9TkRZbCi35", "H8on7fpB4BcFlYvcQqQ7yjsqhSFQcPUjdqO4SYnu");
 		//PushService.setDefaultPushCallback(this,TeacherStartUp.class);
 		setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);     //  Fixed Portrait orientation
 	}
+	
 
 
 	@Override
@@ -76,5 +99,7 @@ public class StartUp extends FragmentActivity implements ActionBar.TabListener {
 		// TODO Auto-generated method stub
 		
 	}
+	
+	
 
 }

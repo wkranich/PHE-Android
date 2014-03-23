@@ -10,13 +10,9 @@ package org.peerhealthexchange.phemobile;
 public final class R {
     public static final class array {
         public static final int categories=0x7f0a0000;
-        /**  Nav Drawer List Item Icons 
- Keep them in order as the titles are in 
+        /**  Map Dialog Options 
          */
-        public static final int nav_drawer_icons=0x7f0a0002;
-        /**  Nav Drawer Menu Items 
-         */
-        public static final int nav_drawer_items=0x7f0a0001;
+        public static final int mapDiagOpts=0x7f0a0001;
     }
     public static final class attr {
         /** 
@@ -254,47 +250,54 @@ containing a value of this type.
         public static final int logo_phe=0x7f02002c;
     }
     public static final class id {
-        public static final int action_settings=0x7f06001a;
-        public static final int button1=0x7f060014;
-        public static final int button3=0x7f060015;
-        public static final int drawer_layout=0x7f060010;
-        public static final int frame_container=0x7f060011;
-        public static final int hotlinesButt=0x7f06000f;
+        public static final int action_settings=0x7f06001f;
+        public static final int address=0x7f060009;
+        public static final int button1=0x7f06001a;
+        public static final int carrot=0x7f060007;
+        public static final int drawer_layout=0x7f060016;
+        public static final int frame_container=0x7f060017;
+        public static final int hotlinesButt=0x7f060015;
+        public static final int hours=0x7f060008;
+        public static final int hoursTxt=0x7f06000a;
         public static final int hybrid=0x7f060004;
-        public static final int imageView1=0x7f060006;
-        public static final int imageView2=0x7f060009;
-        public static final int imageView3=0x7f06000a;
-        public static final int linearLayout1=0x7f060005;
-        public static final int list_slidermenu=0x7f060012;
-        public static final int locationButt=0x7f06000d;
-        public static final int map=0x7f060016;
-        public static final int mapviewz=0x7f06000b;
-        public static final int newPost=0x7f060018;
+        public static final int imageView1=0x7f06000c;
+        public static final int imageView2=0x7f06000f;
+        public static final int imageView3=0x7f060010;
+        public static final int linearLayout1=0x7f06000b;
+        public static final int list_slidermenu=0x7f060018;
+        public static final int locationButt=0x7f060013;
+        public static final int map=0x7f06001b;
+        public static final int mapviewz=0x7f060011;
+        public static final int name=0x7f060005;
+        public static final int newPost=0x7f06001d;
         public static final int none=0x7f060000;
         public static final int normal=0x7f060001;
-        public static final int pager=0x7f060013;
-        public static final int post=0x7f060019;
-        public static final int resourcesText=0x7f06000c;
+        public static final int pager=0x7f060019;
+        public static final int post=0x7f06001e;
+        public static final int resourcesText=0x7f060012;
         public static final int satellite=0x7f060002;
-        public static final int search=0x7f060017;
+        public static final int search=0x7f06001c;
+        public static final int star=0x7f060006;
         public static final int terrain=0x7f060003;
-        public static final int textView1=0x7f060007;
-        public static final int videoButt=0x7f06000e;
-        public static final int view1=0x7f060008;
+        public static final int textView1=0x7f06000d;
+        public static final int videoButt=0x7f060014;
+        public static final int view1=0x7f06000e;
     }
     public static final class integer {
         public static final int google_play_services_version=0x7f080000;
     }
     public static final class layout {
-        public static final int hotlines=0x7f030000;
-        public static final int hotlines_layout=0x7f030001;
-        public static final int location_page=0x7f030002;
-        public static final int resources=0x7f030003;
-        public static final int sliding_drawer=0x7f030004;
-        public static final int start_up_page=0x7f030005;
-        public static final int student_startup=0x7f030006;
-        public static final int test_hospital_list=0x7f030007;
-        public static final int test_speific_hospital=0x7f030008;
+        public static final int custom_info=0x7f030000;
+        public static final int custom_maps_dialog=0x7f030001;
+        public static final int hotlines=0x7f030002;
+        public static final int hotlines_layout=0x7f030003;
+        public static final int location_page=0x7f030004;
+        public static final int resources=0x7f030005;
+        public static final int sliding_drawer=0x7f030006;
+        public static final int start_up_page=0x7f030007;
+        public static final int student_startup=0x7f030008;
+        public static final int test_hospital_list=0x7f030009;
+        public static final int test_speific_hospital=0x7f03000a;
     }
     public static final class menu {
         public static final int discussion_board=0x7f0c0000;

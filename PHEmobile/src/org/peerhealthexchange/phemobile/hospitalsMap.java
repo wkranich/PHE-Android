@@ -29,8 +29,6 @@ public class hospitalsMap extends Fragment {
 		
 		RelativeLayout rootView = (RelativeLayout) inflater.inflate(R.layout.test_hospital_list, container, false);
 		
-		ActionBar locationPage = getActivity().getActionBar();
-		locationPage.setTitle("Hospitals");
 		Button testButton = (Button) rootView.findViewById(R.id.button1);
 		
 		testButton.setOnClickListener(new View.OnClickListener() {
