@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:minHeight="?android:attr/listPreferredItemHeight" >
+    android:minHeight="?android:attr/listPreferredItemHeightSmall" >
 
     <LinearLayout
         android:id="@+id/linearLayout1"
@@ -17,27 +17,31 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/linearLayout1"
-        android:layout_toRightOf="@+id/linearLayout1" >
+        android:layout_toRightOf="@+id/linearLayout1"
+        android:layout_toLeftOf="@+id/linearLayout3"
+        android:orientation="vertical" >
 
         <TextView
             android:id="@+id/textView1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
             android:layout_weight=".75"
             android:layout_marginBottom="14dp"
             android:text="TextView" />
-        <View
+        <!-- <View
             android:id="@+id/view1"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_weight=".25" />
+            android:layout_weight=".25" />) -->
             
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"

@@ -35,19 +35,7 @@ public class hotlines extends ListFragment {
 		String[] values = new String[] {
 				"Hospital",
 				"Peer Health",
-				"Clinic",
-				"Landmark",
-				"Fenway Health",
-				"MGH",
-				"Boston University SHS",
-				"Brigham",
-				"Dentist",
-				"Neurologist",
-				"Blah",
-				"Yeah",
-				"Haha",
-				"Boom",
-				"What happens when I make the string so long that it would go over to the next line?" };
+				"Clinic"};
 		HotlinesAdapter adapter = new HotlinesAdapter(getActivity(), values);
 		setListAdapter(adapter);
 
