@@ -1,42 +1,77 @@
 package org.peerhealthexchange.phemobile;
 
-import android.app.ActionBar;
-import android.support.v4.app.ListFragment;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
+import android.widget.Toast;
 
 public class hotlines extends ListFragment {
+	private ListView mListView;
 
-	/*@Override
-	public void onActivityCreated(Bundle savedInstanceState) {
-		super.onActivityCreated(savedInstanceState);
-		String[] values = new String[] { "Android", "iPhone", "WindowsMobile",
-				"Blackberry", "WebOS", "Ubuntu", "Windows7", "Max OS X",
-				"Linux", "OS/2" };
-		HotlinesAdapter adapter = new HotlinesAdapter(getActivity(), values);
-		setListAdapter(adapter);
-		ActionBar locationPage = getActivity().getActionBar();
-		locationPage.setTitle("Hotlines");
-
-	}*/
+	/*
+	 * @Override public void onActivityCreated(Bundle savedInstanceState) {
+	 * super.onActivityCreated(savedInstanceState); String[] values = new
+	 * String[] { "Android", "iPhone", "WindowsMobile", "Blackberry", "WebOS",
+	 * "Ubuntu", "Windows7", "Max OS X", "Linux", "OS/2" }; HotlinesAdapter
+	 * adapter = new HotlinesAdapter(getActivity(), values);
+	 * setListAdapter(adapter); ActionBar locationPage =
+	 * getActivity().getActionBar(); locationPage.setTitle("Hotlines");
+	 * 
+	 * }
+	 */
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		View rootView = (View) inflater.inflate(R.layout.hotlines, container,
+		mListView = (ListView) inflater.inflate(R.layout.hotlines, container,
 				false);
-		
-		
-		String[] values = new String[] { "Hospital", "Peer Health", "Clinic",
-				"Landmark", "Fenway Health", "MGH", "Boston University SHS", "Brigham",
-				"Dentist", "Neurologist", "Blah", "Yeah", "Haha", "Boom", "What happens when I make the string so long that it would go over to the next line?"};
+
+		String[] values = new String[] {
+				"Hospital",
+				"Peer Health",
+				"Clinic",
+				"Landmark",
+				"Fenway Health",
+				"MGH",
+				"Boston University SHS",
+				"Brigham",
+				"Dentist",
+				"Neurologist",
+				"Blah",
+				"Yeah",
+				"Haha",
+				"Boom",
+				"What happens when I make the string so long that it would go over to the next line?" };
 		HotlinesAdapter adapter = new HotlinesAdapter(getActivity(), values);
 		setListAdapter(adapter);
-		
 
-		return rootView;
+		/*mListView.setOnItemClickListener(new OnItemClickListener() {
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				Toast.makeText(getActivity(),
+						"Click ListItem Number " + position, Toast.LENGTH_LONG)
+						.show();
+			}
+		});*/
+
+		return mListView;
+	}
+
+	@Override
+	public void onListItemClick(ListView l, View v, int position, long id) {
+		/*Toast.makeText(getActivity(),
+				"Click ListItem Number " + position, Toast.LENGTH_LONG)
+				.show();*/
+		Intent intent = new Intent(getActivity(), hospitalPage.class);
+		intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+		intent.putExtra("position", position);
+	    this.startActivity(intent);
 	}
 }
