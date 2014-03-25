@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+<<<<<<< HEAD
     android:layout_height="match_parent"
     android:minHeight="?android:attr/listPreferredItemHeightSmall" >
 
@@ -42,22 +43,42 @@
 
     <LinearLayout
         android:id="@+id/linearLayout3"
+=======
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="14dp"
+        android:text="TextView" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+>>>>>>> 81ebafc9fae4987308acf87f2ff107c260b1fd31
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true" >
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="67dp"
+        android:layout_marginTop="67dp"
+        android:src="@drawable/common_signin_btn_icon_dark" />
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/common_signin_btn_icon_dark" />
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="56dp"
+        android:src="@drawable/common_signin_btn_icon_dark" />
 
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/common_signin_btn_icon_dark" />
-    </LinearLayout>
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView2"
+        android:layout_toLeftOf="@+id/imageView3"
+        android:src="@drawable/common_signin_btn_icon_dark" />
 
 </RelativeLayout>
