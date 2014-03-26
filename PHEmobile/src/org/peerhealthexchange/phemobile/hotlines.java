@@ -1,8 +1,11 @@
 package org.peerhealthexchange.phemobile;
 
+import com.parse.ParseObject;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +15,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 public class hotlines extends ListFragment {
+	//String[] values = new String[globalVars.lHospitals.size()];
 	private ListView mListView;
 
 	/*
@@ -31,12 +35,10 @@ public class hotlines extends ListFragment {
 			Bundle savedInstanceState) {
 		mListView = (ListView) inflater.inflate(R.layout.hotlines, container,
 				false);
-
-		String[] values = new String[] {
-				"Hospital",
-				"Peer Health",
-				"Clinic"};
-		HotlinesAdapter adapter = new HotlinesAdapter(getActivity(), values);
+		
+		
+	
+		HotlinesAdapter adapter = new HotlinesAdapter(getActivity(), globalVars.hospitalNames);
 		setListAdapter(adapter);
 
 		/*mListView.setOnItemClickListener(new OnItemClickListener() {

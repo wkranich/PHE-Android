@@ -5,17 +5,23 @@ public class hospitals {
 	private String Name;
 	private String Address;
 	private String Hours;
-	private int Phone;
+	private String Phone;
+	private String Details;
+	private Boolean Confidential,LowCost,Reproductive;
 	
 	// empty constructor
 	public hospitals(){};
 	
 	// this is the constructor to use
-	public hospitals(String Name, String Address, String Hours, int Phone){
+	public hospitals(String Name, String Address, String Hours, String Phone, String Details, Boolean Confidential, Boolean LowCost, Boolean Reproductive){
 		this.Name = Name;
 		this.Address = Address;
 		this.Hours = Hours;
 		this.Phone = Phone;
+		this.Details = Details;
+		this.Confidential = Confidential;
+		this.LowCost = LowCost;
+		this.Reproductive = Reproductive;
 	}
 	
 	// your getters
@@ -31,7 +37,11 @@ public class hospitals {
 		return this.Hours;
 	}
 	
-	public int getPhone(){
+	public String getPhone(){
 		return this.Phone;
+	}
+	
+	public String getDetails(){
+		return this.Details;
 	}
 }

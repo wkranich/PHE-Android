@@ -22,11 +22,6 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.ListView;
 
-import com.parse.Parse;
-import com.parse.ParseAnalytics;
-import com.parse.ParseInstallation;
-import com.parse.PushService;
-
 public class StartUp extends FragmentActivity implements ActionBar.TabListener {
 	
 	private ViewPager viewPager;
@@ -73,8 +68,6 @@ public class StartUp extends FragmentActivity implements ActionBar.TabListener {
 			}
 			
 		});
-		Parse.initialize(this,"DYgXFCYiB9j2MTxqL4FvNscHYhFs4r9TkRZbCi35", "H8on7fpB4BcFlYvcQqQ7yjsqhSFQcPUjdqO4SYnu");
-		//PushService.setDefaultPushCallback(this,TeacherStartUp.class);
 		setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);     //  Fixed Portrait orientation
 	}
 	
