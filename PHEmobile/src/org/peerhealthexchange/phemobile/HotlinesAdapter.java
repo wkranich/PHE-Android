@@ -23,14 +23,14 @@ public class HotlinesAdapter extends ArrayAdapter<String> {
     LayoutInflater inflater = (LayoutInflater) context
         .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     View rowView = inflater.inflate(R.layout.hotlines_layout, parent, false);
-    ImageView imageView1 = (ImageView) rowView.findViewById(R.id.imageView1);
+
     TextView textView = (TextView) rowView.findViewById(R.id.textView1);
     ImageView imageView2 = (ImageView) rowView.findViewById(R.id.imageView2);
     ImageView imageView3 = (ImageView) rowView.findViewById(R.id.imageView3);
     
     textView.setText(values[position]);
     
-    imageView1.setImageResource(R.drawable.common_signin_btn_icon_dark);
+
     imageView2.setImageResource(R.drawable.common_signin_btn_icon_dark);
     imageView3.setImageResource(R.drawable.common_signin_btn_icon_dark);
 
