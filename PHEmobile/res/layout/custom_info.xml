@@ -16,7 +16,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Hospital Name here"
-            android:textColor="@android:color/black"
+            android:textColor="#f37510"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <ImageView
@@ -38,14 +38,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Hours here"
-            android:textColor="@android:color/black"
+             android:textColor="#f37510"
+           
              />
         <TextView
             android:id="@+id/address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Address here"
-            android:textColor="@android:color/black"
+            android:textColor="#f37510"
+            
              />
 
 </LinearLayout>
