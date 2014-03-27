@@ -41,8 +41,9 @@ public class loading extends Activity {
 		}
 		
 		for (ParseObject hospital : listHospitals) {
-			globalVars.lHospitals.add(new hospitals(hospital
-					.getString("name"), hospital
+			globalVars.lHospitals.add(new hospitals(hospital.getString("objectId"),
+					hospital.getString("cityId"),
+					hospital.getString("name"), hospital
 					.getString("address"), hospital
 					.getString("hoursDetails"), hospital
 					.getString("phone"), hospital
