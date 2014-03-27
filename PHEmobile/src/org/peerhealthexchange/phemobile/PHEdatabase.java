@@ -1,5 +1,6 @@
 package org.peerhealthexchange.phemobile;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
@@ -84,4 +85,16 @@ public class PHEdatabase extends SQLiteOpenHelper {
 		onCreate(db);
 	}
 
+	
+	public Long createCities(Cities city, Long[] city_ids){
+		SQLiteDatabase db = this.getWritableDatabase();
+		
+		ContentValues values = new ContentValues();
+		values.put(KEY_ID, city.getId());
+		values.put(KEY_NAME, city.getName());
+		
+		// insert row
+		Long city_id = db.insert(TABLE_CITIES, null, values);
+		return city_id;
+	}
 }
