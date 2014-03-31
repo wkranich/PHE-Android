@@ -1,46 +1,67 @@
 package org.peerhealthexchange.phemobile;
 
-import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapFragment;
-import com.google.android.gms.maps.MapView;
-import com.google.android.gms.maps.MapsInitializer;
-import com.google.android.gms.maps.SupportMapFragment;
+import com.parse.ParseObject;
 
-
-import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import android.support.v4.app.ListFragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ListView;
+import android.widget.Toast;
 
-public class hospitalsMap extends Fragment {
+public class hospitalsMap extends ListFragment {
+	//String[] values = new String[globalVars.lHospitals.size()];
+	private ListView mListView;
+
+	/*
+	 * @Override public void onActivityCreated(Bundle savedInstanceState) {
+	 * super.onActivityCreated(savedInstanceState); String[] values = new
+	 * String[] { "Android", "iPhone", "WindowsMobile", "Blackberry", "WebOS",
+	 * "Ubuntu", "Windows7", "Max OS X", "Linux", "OS/2" }; HotlinesAdapter
+	 * adapter = new HotlinesAdapter(getActivity(), values);
+	 * setListAdapter(adapter); ActionBar locationPage =
+	 * getActivity().getActionBar(); locationPage.setTitle("Hotlines");
+	 * 
+	 * }
+	 */
+
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		mListView = (ListView) inflater.inflate(R.layout.hotlines, container,
+				false);
+		
+		
 	
-	private MapView mapView;
-	private GoogleMap map;
-	
-	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		
-		RelativeLayout rootView = (RelativeLayout) inflater.inflate(R.layout.test_hospital_list, container, false);
-		
-		Button testButton = (Button) rootView.findViewById(R.id.button1);
-		
-		testButton.setOnClickListener(new View.OnClickListener() {
-			
+		HotlinesAdapter adapter = new HotlinesAdapter(getActivity(), globalVars.hospitalNames);
+		setListAdapter(adapter);
+
+		/*mListView.setOnItemClickListener(new OnItemClickListener() {
 			@Override
-			public void onClick(View v) {
-				Intent intent = new Intent(v.getContext(), hospitalPage.class);
-				intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-				startActivity(intent);
-				
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				Toast.makeText(getActivity(),
+						"Click ListItem Number " + position, Toast.LENGTH_LONG)
+						.show();
 			}
-		});
-		return rootView;
+		});*/
+
+		return mListView;
+	}
+
+	@Override
+	public void onListItemClick(ListView l, View v, int position, long id) {
+		/*Toast.makeText(getActivity(),
+				"Click ListItem Number " + position, Toast.LENGTH_LONG)
+				.show();*/
+		Intent intent = new Intent(getActivity(), hospitalPage.class);
+		intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+		intent.putExtra("position", position);
+	    this.startActivity(intent);
 	}
 }

@@ -38,7 +38,7 @@ public class hotlines extends ListFragment {
 		
 		
 	
-		HotlinesAdapter adapter = new HotlinesAdapter(getActivity(), globalVars.hospitalNames);
+		HotlinesAdapter adapter = new HotlinesAdapter(getActivity(), globalVars.categoryNames);
 		setListAdapter(adapter);
 
 		/*mListView.setOnItemClickListener(new OnItemClickListener() {

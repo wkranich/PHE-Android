@@ -1,13 +1,18 @@
 package org.peerhealthexchange.phemobile;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 public class PHEdatabase extends SQLiteOpenHelper {
-
+	// + KEY_NUM + " INTEGER PRIMARY KEY,"
 	private static final String TABLE_CITIES = "cities";
 	private static final String TABLE_CLINICS = "clinics";
 	private static final String TABLE_CATEGORIES = "categories";
@@ -17,6 +22,7 @@ public class PHEdatabase extends SQLiteOpenHelper {
 	private static final int DATABASE_VERSION = 1;
 
 	// Common column names
+	private static final String KEY_NUM = "num";
 	private static final String KEY_ID = "id";
 	private static final String KEY_NAME = "name";
 	private static final String KEY_CITY = "city_id";
@@ -40,27 +46,29 @@ public class PHEdatabase extends SQLiteOpenHelper {
 
 	// Cities table create statement
 	private static final String CREATE_TABLE_CITIES = "CREATE TABLE "
-			+ TABLE_CITIES + "(" + KEY_ID + " STRING PRIMARY KEY," + KEY_NAME
-			+ " TEXT" + ")";
+			+ TABLE_CITIES + "(" + KEY_NUM + " INTEGER PRIMARY KEY," + KEY_ID
+			+ " TEXT," + KEY_NAME + " TEXT" + ")";
 
 	// Clinics table create statement
 	private static final String CREATE_TABLE_CLINICS = "CREATE TABLE "
-			+ TABLE_CLINICS + "(" + KEY_ID + " STRING PRIMARY KEY," + KEY_NAME
-			+ " TEXT," + KEY_ADDRESS + " TEXT," + KEY_HOURS + " TEXT,"
-			+ KEY_PHONE + " TEXT," + KEY_EXTRA + " TEXT," + KEY_CONFIDENTIAL
-			+ " INTEGER," + KEY_LOWCOST + " INTEGER," + KEY_REPRODUCTIVE
-			+ " INTEGER," + KEY_GEOPOINT + " TEXT" + ")";
+			+ TABLE_CLINICS + "(" + KEY_NUM + " INTEGER PRIMARY KEY," + KEY_ID
+			+ " TEXT," + KEY_CITY + " TEXT," + KEY_NAME + " TEXT,"
+			+ KEY_ADDRESS + " TEXT," + KEY_HOURS + " TEXT," + KEY_PHONE
+			+ " TEXT," + KEY_EXTRA + " TEXT," + KEY_CONFIDENTIAL + " INTEGER,"
+			+ KEY_LOWCOST + " INTEGER," + KEY_REPRODUCTIVE + " INTEGER,"
+			+ KEY_GEOPOINT + " TEXT" + ")";
 
 	// HOTLINECAT table create statement
 	private static final String CREATE_TABLE_CATEGORIES = "CREATE TABLE "
-			+ TABLE_CATEGORIES + "(" + KEY_ID + " STRING PRIMARY KEY,"
-			+ KEY_NAME + " TEXT" + ")";
+			+ TABLE_CATEGORIES + "(" + KEY_NUM + " INTEGER PRIMARY KEY,"
+			+ KEY_ID + " TEXT," + KEY_NAME + " TEXT" + ")";
 
 	// Hotlines table create statement
 	private static final String CREATE_TABLE_HOTLINES = "CREATE TABLE "
-			+ TABLE_HOTLINES + "(" + KEY_ID + " STRING PRIMARY KEY," + KEY_CITY
-			+ " TEXT," + KEY_HOTLINE + " TEXT," + KEY_NAME + " TEXT,"
-			+ KEY_PHONE + " TEXT," + KEY_EXTRA + " TEXT" + ")";
+			+ TABLE_HOTLINES + "(" + KEY_NUM + " INTEGER PRIMARY KEY," + KEY_ID
+			+ " TEXT," + KEY_CITY + " TEXT," + KEY_HOTLINE + " TEXT,"
+			+ KEY_NAME + " TEXT," + KEY_PHONE + " TEXT," + KEY_EXTRA + " TEXT"
+			+ ")";
 
 	public PHEdatabase(Context context) {
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -81,20 +89,221 @@ public class PHEdatabase extends SQLiteOpenHelper {
 		db.execSQL("DROP TABLE IF EXISTS " + TABLE_CLINICS);
 		db.execSQL("DROP TABLE IF EXISTS " + TABLE_CATEGORIES);
 		db.execSQL("DROP TABLE IF EXISTS " + TABLE_HOTLINES);
-		
+
 		onCreate(db);
 	}
 
-	
-	public Long createCities(Cities city, Long[] city_ids){
+	/*
+	 * Functions related to cities
+	 */
+	public void createCities(Cities city) {
 		SQLiteDatabase db = this.getWritableDatabase();
-		
+
 		ContentValues values = new ContentValues();
 		values.put(KEY_ID, city.getId());
 		values.put(KEY_NAME, city.getName());
-		
+		Log.d("cityId", city.getId());
 		// insert row
-		Long city_id = db.insert(TABLE_CITIES, null, values);
-		return city_id;
+		db.insert(TABLE_CITIES, null, values);
+		db.close();
 	}
+
+	public Cities getCity(String city_name) {
+		SQLiteDatabase db = this.getReadableDatabase();
+
+		String selectQuery = "SELECT * FROM " + TABLE_CITIES + " WHERE "
+				+ KEY_NAME + " = " + "'" + city_name + "'";
+
+		Cursor c = db.rawQuery(selectQuery, null);
+		if (c != null) {
+			c.moveToFirst();
+		}
+
+		Cities city = new Cities(c.getString(c.getColumnIndex(KEY_ID)),
+				c.getString(c.getColumnIndex(KEY_NAME)));
+
+		return city;
+	}
+
+	/*
+	 * Functions related to hospitals
+	 */
+	public void createClinics(Clinics clinic) {
+		SQLiteDatabase db = this.getWritableDatabase();
+
+		ContentValues values = new ContentValues();
+		values.put(KEY_ID, clinic.getId());
+		values.put(KEY_CITY, clinic.getCityId());
+		values.put(KEY_NAME, clinic.getName());
+		values.put(KEY_ADDRESS, clinic.getAddress());
+		values.put(KEY_HOURS, clinic.getHours());
+		values.put(KEY_PHONE, clinic.getPhone());
+		values.put(KEY_EXTRA, clinic.getDetails());
+		values.put(KEY_CONFIDENTIAL, (clinic.getConfidential()) ? 1 : 0);
+		values.put(KEY_LOWCOST, (clinic.getLowCost()) ? 1 : 0);
+		values.put(KEY_REPRODUCTIVE, (clinic.getReproductive()) ? 1 : 0);
+		values.put(KEY_GEOPOINT, clinic.getGeoPoint());
+
+		// insert row
+		db.insert(TABLE_CLINICS, null, values);
+		db.close();
+	}
+
+	public Clinics getClinic(String clinic_name) {
+		SQLiteDatabase db = this.getReadableDatabase();
+
+		String selectQuery = "SELECT * FROM " + TABLE_CLINICS + " WHERE "
+				+ KEY_NAME + " = " + "'" + clinic_name + "'";
+
+		Cursor c = db.rawQuery(selectQuery, null);
+		if (c != null) {
+			c.moveToFirst();
+		}
+
+		Clinics clinic = new Clinics();
+		clinic.setId(c.getString(c.getColumnIndex(KEY_ID)));
+		clinic.setCityId(c.getString(c.getColumnIndex(KEY_CITY)));
+		clinic.setName(c.getString(c.getColumnIndex(KEY_NAME)));
+		clinic.setAddress(c.getString(c.getColumnIndex(KEY_ADDRESS)));
+		clinic.setHours(c.getString(c.getColumnIndex(KEY_HOURS)));
+		clinic.setPhone(c.getString(c.getColumnIndex(KEY_PHONE)));
+		clinic.setDetails(c.getString(c.getColumnIndex(KEY_EXTRA)));
+		clinic.setConfidential((c.getInt(c.getColumnIndex(KEY_CONFIDENTIAL)) == 1) ? true
+				: false);
+		clinic.setLowCost((c.getInt(c.getColumnIndex(KEY_LOWCOST)) == 1) ? true
+				: false);
+		clinic.setReproductive((c.getInt(c.getColumnIndex(KEY_REPRODUCTIVE)) == 1) ? true
+				: false);
+		clinic.setGeoPoint(c.getString(c.getColumnIndex(KEY_GEOPOINT)));
+		return clinic;
+	}
+
+	public List<Clinics> getCityClinics(String city_id) {
+		List<Clinics> cityClinics = new ArrayList<Clinics>();
+
+		String selectQuery = "SELECT * FROM " + TABLE_CLINICS + " WHERE "
+				+ KEY_CITY + " = " + "'" + city_id + "'";
+		SQLiteDatabase db = this.getReadableDatabase();
+
+		Cursor c = db.rawQuery(selectQuery, null);
+
+		if (c.moveToFirst()) {
+			do {
+				Clinics clinic = new Clinics();
+				clinic.setId(c.getString(c.getColumnIndex(KEY_ID)));
+				clinic.setCityId(c.getString(c.getColumnIndex(KEY_CITY)));
+				clinic.setName(c.getString(c.getColumnIndex(KEY_NAME)));
+				clinic.setAddress(c.getString(c.getColumnIndex(KEY_ADDRESS)));
+				clinic.setHours(c.getString(c.getColumnIndex(KEY_HOURS)));
+				clinic.setPhone(c.getString(c.getColumnIndex(KEY_PHONE)));
+				clinic.setDetails(c.getString(c.getColumnIndex(KEY_EXTRA)));
+				clinic.setConfidential((c.getInt(c
+						.getColumnIndex(KEY_CONFIDENTIAL)) == 1) ? true : false);
+				clinic.setLowCost((c.getInt(c.getColumnIndex(KEY_LOWCOST)) == 1) ? true
+						: false);
+				clinic.setReproductive((c.getInt(c
+						.getColumnIndex(KEY_REPRODUCTIVE)) == 1) ? true : false);
+				clinic.setGeoPoint(c.getString(c.getColumnIndex(KEY_GEOPOINT)));
+
+				cityClinics.add(clinic);
+			} while (c.moveToNext());
+		}
+
+		return cityClinics;
+	}
+
+	/*
+	 * Functions related to hotline categories
+	 */
+
+	public void createCategories(HotlineCategories category) {
+		SQLiteDatabase db = this.getWritableDatabase();
+
+		ContentValues values = new ContentValues();
+		values.put(KEY_ID, category.getId());
+		values.put(KEY_NAME, category.getHotlineTitle());
+
+		db.insert(TABLE_CATEGORIES, null, values);
+		db.close();
+	}
+
+	public List<HotlineCategories> getHotlineCategories() {
+		List<HotlineCategories> categories = new ArrayList<HotlineCategories>();
+
+		String selectQuery = "SELECT * FROM " + TABLE_CATEGORIES;
+		SQLiteDatabase db = this.getReadableDatabase();
+
+		Cursor c = db.rawQuery(selectQuery, null);
+
+		if (c.moveToFirst()) {
+			do {
+				HotlineCategories category = new HotlineCategories();
+				category.setId(c.getString(c.getColumnIndex(KEY_ID)));
+				category.setName(c.getString(c.getColumnIndex(KEY_NAME)));
+
+				categories.add(category);
+			} while (c.moveToNext());
+		}
+
+		return categories;
+	}
+	
+	/*
+	 * Functions related to hotlines
+	 */
+	
+	public void createHotlines(HotlinesInfo hotline){
+		SQLiteDatabase db = this.getWritableDatabase();
+		
+		ContentValues values = new ContentValues();
+		values.put(KEY_ID, hotline.getId());
+		values.put(KEY_CITY, hotline.getCityId());
+		values.put(KEY_HOTLINE, hotline.getHotlineId());
+		values.put(KEY_NAME, hotline.getName());
+		values.put(KEY_PHONE, hotline.getPhoneNumber());
+		values.put(KEY_EXTRA, hotline.getExtraDetails());
+		
+		db.insert(TABLE_HOTLINES, null, values);
+		db.close();
+	}
+	
+	public List<HotlinesInfo> getHotlines(String cityId, String hotlineCatId) {
+		List<HotlinesInfo> hotlines = new ArrayList<HotlinesInfo>();
+		String selectQuery = "SELECT * FROM " + TABLE_CLINICS + " WHERE "
+				+ KEY_CITY + " = " + "'" + cityId + "'" + " AND " + KEY_HOTLINE + " = " + "'" + hotlineCatId + "'";
+		SQLiteDatabase db = this.getReadableDatabase();
+		
+		Cursor c = db.rawQuery(selectQuery, null);
+		
+		if(c.moveToFirst()){
+			do {
+				HotlinesInfo hotline = new HotlinesInfo();
+				hotline.setId(c.getString(c.getColumnIndex(KEY_ID)));
+				hotline.setCityId(c.getString(c.getColumnIndex(KEY_CITY)));
+				hotline.setHotlineTitleId(c.getString(c.getColumnIndex(KEY_HOTLINE)));
+				hotline.setName(c.getString(c.getColumnIndex(KEY_NAME)));
+				hotline.setPhoneNumber(c.getString(c.getColumnIndex(KEY_PHONE)));
+				hotline.setExtraDetails(c.getString(c.getColumnIndex(KEY_EXTRA)));
+				
+				
+			} while(c.moveToNext());
+		}
+		
+		return hotlines;
+	}
+
+	/*
+	 * Miscellaneous functions
+	 */
+	public void closeDB() {
+		SQLiteDatabase db = this.getReadableDatabase();
+		if (db != null && db.isOpen()) {
+			db.close();
+		}
+	}
+
+	public boolean deleteDB(Context context) {
+		return context.deleteDatabase(this.getDatabaseName());
+	}
+
 }
