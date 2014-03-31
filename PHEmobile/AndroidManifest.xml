@@ -74,6 +74,7 @@
         </receiver>
         <activity android:name="hospitalPage"></activity>
         <activity android:name="StartUp"></activity>
+        <activity android:name="SpecificHotlines"></activity>
     </application>
 
 </manifest>

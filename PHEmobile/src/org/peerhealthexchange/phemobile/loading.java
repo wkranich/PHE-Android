@@ -100,12 +100,13 @@ public class loading extends Activity {
 		Cities Boston = new Cities();
 		Boston = db.getCity("Boston");
 
+		globalVars.city_id = Boston.getId();
 		globalVars.lHospitals.addAll(db.getCityClinics(Boston.getId()));
 		globalVars.lCategories.addAll(db.getHotlineCategories());
 
 		db.close();
-		globalVars.hospitalNamesInflater(globalVars.lHospitals);
-		globalVars.categoryNamesInflater(globalVars.lCategories);
+		globalVars.hospitalNamesInflater();
+		globalVars.categoryNamesInflater();
 
 		Intent intent = new Intent(getApplicationContext(), StartUp.class);
 		intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

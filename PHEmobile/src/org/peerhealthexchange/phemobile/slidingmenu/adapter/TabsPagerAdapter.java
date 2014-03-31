@@ -1,7 +1,7 @@
 package org.peerhealthexchange.phemobile.slidingmenu.adapter;
 
 import org.peerhealthexchange.phemobile.hospitalsMap;
-import org.peerhealthexchange.phemobile.hotlines;
+import org.peerhealthexchange.phemobile.Categories;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -23,7 +23,7 @@ public class TabsPagerAdapter extends FragmentPagerAdapter {
             return new hospitalsMap();
         case 1:
             // Games fragment activity
-            return new hotlines();
+            return new Categories();
         }
  
         return null;

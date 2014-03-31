@@ -269,7 +269,7 @@ public class PHEdatabase extends SQLiteOpenHelper {
 	
 	public List<HotlinesInfo> getHotlines(String cityId, String hotlineCatId) {
 		List<HotlinesInfo> hotlines = new ArrayList<HotlinesInfo>();
-		String selectQuery = "SELECT * FROM " + TABLE_CLINICS + " WHERE "
+		String selectQuery = "SELECT * FROM " + TABLE_HOTLINES + " WHERE "
 				+ KEY_CITY + " = " + "'" + cityId + "'" + " AND " + KEY_HOTLINE + " = " + "'" + hotlineCatId + "'";
 		SQLiteDatabase db = this.getReadableDatabase();
 		
@@ -285,7 +285,7 @@ public class PHEdatabase extends SQLiteOpenHelper {
 				hotline.setPhoneNumber(c.getString(c.getColumnIndex(KEY_PHONE)));
 				hotline.setExtraDetails(c.getString(c.getColumnIndex(KEY_EXTRA)));
 				
-				
+				hotlines.add(hotline);
 			} while(c.moveToNext());
 		}
 		

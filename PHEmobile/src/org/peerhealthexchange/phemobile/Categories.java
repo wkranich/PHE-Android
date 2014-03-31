@@ -14,7 +14,8 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.Toast;
 
-public class hotlines extends ListFragment {
+public class Categories extends ListFragment {
+	PHEdatabase db;
 	//String[] values = new String[globalVars.lHospitals.size()];
 	private ListView mListView;
 
@@ -33,33 +34,28 @@ public class hotlines extends ListFragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
+		
 		mListView = (ListView) inflater.inflate(R.layout.hotlines, container,
 				false);
-		
-		
-	
 		HotlinesAdapter adapter = new HotlinesAdapter(getActivity(), globalVars.categoryNames);
 		setListAdapter(adapter);
-
-		/*mListView.setOnItemClickListener(new OnItemClickListener() {
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view,
-					int position, long id) {
-				Toast.makeText(getActivity(),
-						"Click ListItem Number " + position, Toast.LENGTH_LONG)
-						.show();
-			}
-		});*/
 
 		return mListView;
 	}
 
 	@Override
 	public void onListItemClick(ListView l, View v, int position, long id) {
+		db = new PHEdatabase(getActivity());
 		/*Toast.makeText(getActivity(),
 				"Click ListItem Number " + position, Toast.LENGTH_LONG)
 				.show();*/
-		Intent intent = new Intent(getActivity(), hospitalPage.class);
+		Log.d("nameSize",globalVars.lCategories.get(position).getId());
+		Log.d("nameSize",globalVars.city_id);
+		globalVars.lHotlines.clear();
+		globalVars.lHotlines.addAll(db.getHotlines(globalVars.city_id, globalVars.lCategories.get(position).getId()));
+		globalVars.hotlineNamesInflater();
+		db.close();
+		Intent intent = new Intent(getActivity(), SpecificHotlines.class);
 		intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 		intent.putExtra("position", position);
 	    this.startActivity(intent);
