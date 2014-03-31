@@ -1,7 +1,11 @@
 package org.peerhealthexchange.phemobile;
 
+import org.peerhealthexchange.phemobile.dialogbox.HotlinesDialog;
+
 import android.app.Activity;
+import android.app.DialogFragment;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
 import android.util.Log;
@@ -13,20 +17,42 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.Toast;
 
-public class SpecificHotlines extends Activity {
-	
+public class SpecificHotlines extends Activity implements
+		HotlinesDialog.HotlinesDialogListener {
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.hotline_categorized);
-		
+
 		ListView listview = (ListView) findViewById(R.id.listview);
-		HotlinesAdapter adapter = new HotlinesAdapter(getApplicationContext(), globalVars.hotlineNames);
-		Log.d("nameSize",Integer.toString(globalVars.lHotlines.size()));
+		HotlinesAdapter adapter = new HotlinesAdapter(getApplicationContext(),
+				globalVars.hotlineNames);
+		Log.d("nameSize", Integer.toString(globalVars.lHotlines.size()));
 		listview.setAdapter(adapter);
+
+		listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View arg1,
+					int position, long id) {
+				hotlineOptions(globalVars.lHotlines.get(position)
+						.getExtraDetails(), globalVars.lHotlines.get(position)
+						.getName(), position);
+			}
+
+		});
 	}
-	
-	
-	
-	
+
+	public void onChoiceClick(int which) {
+		Intent callIntent = new Intent(Intent.ACTION_CALL,
+				Uri.parse("tel:"+globalVars.lHotlines.get(which).getPhoneNumber()));
+		startActivity(callIntent);
+	}
+
+	public void hotlineOptions(String Hours, String Name, int position) {
+		DialogFragment newFragment = HotlinesDialog.newInstance(Hours, Name,
+				position);
+		newFragment.show(getFragmentManager(), "options");
+	}
 }

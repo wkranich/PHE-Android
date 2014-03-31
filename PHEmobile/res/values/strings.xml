@@ -19,6 +19,11 @@
         <item>Navigate to&#8230;</item>
         <item>Call</item>
     </string-array>
+    
+    <!-- Hotlines Dialog Options -->
+    <string-array name="hotDiagOpts">
+        <item>Call</item>
+    </string-array>
 
     <!-- Content Description -->
     <string name="desc_list_item_icon">Item Icon</string>

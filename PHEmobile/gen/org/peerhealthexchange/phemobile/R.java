@@ -10,6 +10,9 @@ package org.peerhealthexchange.phemobile;
 public final class R {
     public static final class array {
         public static final int categories=0x7f0a0000;
+        /**  Hotlines Dialog Options 
+         */
+        public static final int hotDiagOpts=0x7f0a0002;
         /**  Map Dialog Options 
          */
         public static final int mapDiagOpts=0x7f0a0001;

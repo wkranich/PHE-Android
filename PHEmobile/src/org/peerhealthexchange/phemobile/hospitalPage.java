@@ -25,7 +25,7 @@ public class hospitalPage extends Activity implements
 
 	private GoogleMap map;
 	private LatLng buSHS = new LatLng(42.35144, -71.1153548);
-	private String number = "tel:6106533136";
+	private String number = "tel:610-653-3136";
 	private String Name = "BU SHS";
 	private String Hours = "General Hours: Mon/Fri 8:45am-5pm, Tues/Thurs 8:45am-7pm, Wed 1pm-7pm Walk-In Hours: Fri 10am-4:30pm";
 	private String Address = "130 Boylston St, Boston, MA";
