@@ -23,6 +23,8 @@ public class loading extends Activity {
 	List<ParseObject> listHotlineCategories;
 	List<ParseObject> listHotlines;
 	List<ParseObject> listCities;
+	
+	boolean databaseQuery = true;
 
 	String DB_FULL_PATH = "//data/data/org.peerhealthexchange.phemobile/databases/pheDatabase";
 
@@ -95,22 +97,29 @@ public class loading extends Activity {
 				
 				db.createHotlines(aHotline);
 			}
+			
+			globalVars.ran=false;
+		}
+		
+		if(!globalVars.ran){
+			Cities Boston = new Cities();
+			Boston = db.getCity("Boston");
+
+			globalVars.city_id = Boston.getId();
+			globalVars.lHospitals.addAll(db.getCityClinics(Boston.getId()));
+			globalVars.lCategories.addAll(db.getHotlineCategories());
+
+			db.close();
+			globalVars.hospitalNamesInflater();
+			globalVars.categoryNamesInflater();
+			
+			globalVars.ran = true;
 		}
 
-		Cities Boston = new Cities();
-		Boston = db.getCity("Boston");
-
-		globalVars.city_id = Boston.getId();
-		globalVars.lHospitals.addAll(db.getCityClinics(Boston.getId()));
-		globalVars.lCategories.addAll(db.getHotlineCategories());
-
-		db.close();
-		globalVars.hospitalNamesInflater();
-		globalVars.categoryNamesInflater();
-
 		Intent intent = new Intent(getApplicationContext(), StartUp.class);
-		intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+		intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
 		startActivity(intent);
+		finish();
 	}
 
 	private boolean checkDataBase() {

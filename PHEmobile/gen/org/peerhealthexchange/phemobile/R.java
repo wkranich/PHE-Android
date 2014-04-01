@@ -419,11 +419,13 @@ containing a value of this type.
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
 
+
     
 
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
+
 
         
 
@@ -456,8 +458,11 @@ containing a value of this type.
          */
         public static final int AppTheme=0x7f0b0001;
         public static final int MyActionBar=0x7f0b0003;
+        /**  ActionBar tabs text styles 
+         */
+        public static final int MyActionBarTabText=0x7f0b0004;
         public static final int MyTheme=0x7f0b0002;
-        public static final int pheButton=0x7f0b0004;
+        public static final int pheButton=0x7f0b0005;
     }
     public static final class xml {
         public static final int searchable=0x7f040000;

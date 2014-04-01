@@ -13,6 +13,7 @@ public class globalVars {
 	public static String[] hospitalNames;
 	public static String[] categoryNames;
 	public static String[] hotlineNames;
+	public static boolean ran = false;
 
 	public static void hospitalNamesInflater() {
 		hospitalNames = new String[lHospitals.size()];

@@ -77,7 +77,6 @@ public class HotlinesDialog extends DialogFragment {
 						// zero, thus we can get the position by adding position
 						// to which
 						mListener.onChoiceClick(which + position);
-
 					}
 				});
 		return builder.create();
