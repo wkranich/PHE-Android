@@ -13,6 +13,7 @@ import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.TypedArray;
+import android.graphics.drawable.ColorDrawable;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
@@ -37,6 +38,7 @@ public class StartUp extends FragmentActivity implements ActionBar.TabListener {
 		
 		viewPager = (ViewPager) findViewById(R.id.pager);
 		actionBar = getActionBar();
+		actionBar.setStackedBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.black)));
 		mAdapter = new TabsPagerAdapter(getSupportFragmentManager());
 		
 		viewPager.setAdapter(mAdapter);

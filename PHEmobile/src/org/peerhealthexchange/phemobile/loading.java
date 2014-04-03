@@ -23,8 +23,6 @@ public class loading extends Activity {
 	List<ParseObject> listHotlineCategories;
 	List<ParseObject> listHotlines;
 	List<ParseObject> listCities;
-	
-	boolean databaseQuery = true;
 
 	String DB_FULL_PATH = "//data/data/org.peerhealthexchange.phemobile/databases/pheDatabase";
 
