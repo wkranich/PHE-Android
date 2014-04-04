@@ -38,6 +38,7 @@ int color list_background 0x7f05000c
 int color list_background_pressed 0x7f05000d
 int color list_divider 0x7f05000e
 int color list_item_title 0x7f05000b
+int color tab_text_color 0x7f050014
 int dimen activity_horizontal_margin 0x7f090000
 int dimen activity_vertical_margin 0x7f090001
 int drawable common_signin_btn_icon_dark 0x7f020000

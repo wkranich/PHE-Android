@@ -29,7 +29,11 @@
     </style>
     <!-- ActionBar tabs text styles -->
     <style name="MyActionBarTabText"
+<<<<<<< HEAD
            parent="android:TextAppearance.Holo.Widget.ActionBar.Title">
+=======
+           parent="android:style/TextAppearance.Holo.Widget.ActionBar.Title">
+>>>>>>> 7791426adf1fa364fe1aef4a4fd4209ff8842b17
         <item name="android:textColor">#3BAAFF</item>
     </style>
 

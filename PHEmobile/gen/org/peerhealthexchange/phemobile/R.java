@@ -195,6 +195,7 @@ containing a value of this type.
         public static final int list_background_pressed=0x7f05000d;
         public static final int list_divider=0x7f05000e;
         public static final int list_item_title=0x7f05000b;
+        public static final int tab_text_color=0x7f050014;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 

@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import org.peerhealthexchange.phemobile.slidingmenu.adapter.TabsPagerAdapter;
 import org.peerhealthexchange.phemobile.slidingmenu.model.NavDrawerItem;
 
+import com.parse.Parse;
+
 import android.os.Bundle;
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
@@ -35,6 +37,9 @@ public class StartUp extends FragmentActivity implements ActionBar.TabListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.start_up_page);
+		
+		Parse.initialize(this, "DYgXFCYiB9j2MTxqL4FvNscHYhFs4r9TkRZbCi35",
+				"H8on7fpB4BcFlYvcQqQ7yjsqhSFQcPUjdqO4SYnu");
 		
 		viewPager = (ViewPager) findViewById(R.id.pager);
 		actionBar = getActionBar();
