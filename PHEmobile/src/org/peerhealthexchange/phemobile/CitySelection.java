@@ -2,10 +2,12 @@ package org.peerhealthexchange.phemobile;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class CitySelection extends Activity implements OnClickListener{
 	
@@ -17,6 +19,12 @@ public class CitySelection extends Activity implements OnClickListener{
 		setContentView(R.layout.city_selection);
 		
 		getActionBar().setTitle("Locations");
+		
+		int titleId = getResources().getIdentifier("action_bar_title", "id", "android");
+		
+		TextView yourTextView = (TextView) findViewById(titleId);
+		Typeface myTypeface = Typeface.createFromAsset(this.getAssets(), "fonts/HelveticaNeue-Light.otf");
+		yourTextView.setTypeface(myTypeface);
 		
 		// creating the buttons
 		bayOak = (Button) findViewById(R.id.bayOak);
