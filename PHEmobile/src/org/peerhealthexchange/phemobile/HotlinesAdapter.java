@@ -1,6 +1,7 @@
 package org.peerhealthexchange.phemobile;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,8 +24,9 @@ public class HotlinesAdapter extends ArrayAdapter<String> {
     LayoutInflater inflater = (LayoutInflater) context
         .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     View rowView = inflater.inflate(R.layout.hotlines_layout, parent, false);
-
+    Typeface myTypeface = Typeface.createFromAsset(context.getAssets(), "fonts/HelveticaNeue-Light.otf");
     TextView textView = (TextView) rowView.findViewById(R.id.textView1);
+    textView.setTypeface(myTypeface);
     ImageView imageView2 = (ImageView) rowView.findViewById(R.id.imageView2);
     ImageView imageView3 = (ImageView) rowView.findViewById(R.id.imageView3);
     
