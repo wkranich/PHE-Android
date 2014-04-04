@@ -70,6 +70,7 @@ public class StartUp extends FragmentActivity implements ActionBar.TabListener {
 			tab.setText(tab_name);
 			tab.setTypeface(myTypeface);
 			tab.setGravity(Gravity.CENTER);
+			tab.setPadding(0, 25, 0, 0);
 			actionBar.addTab(actionBar.newTab().setCustomView(tab)
 					.setTabListener(this));
 		}
