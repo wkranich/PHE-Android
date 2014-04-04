@@ -33,8 +33,8 @@ public class loading extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.loading_screen);
 
-		Parse.initialize(this, "DYgXFCYiB9j2MTxqL4FvNscHYhFs4r9TkRZbCi35",
-				"H8on7fpB4BcFlYvcQqQ7yjsqhSFQcPUjdqO4SYnu");
+		//Parse.initialize(this, "DYgXFCYiB9j2MTxqL4FvNscHYhFs4r9TkRZbCi35",
+		//		"H8on7fpB4BcFlYvcQqQ7yjsqhSFQcPUjdqO4SYnu");
 
 		db = new PHEdatabase(getApplicationContext());
 		//db.deleteDB(this);

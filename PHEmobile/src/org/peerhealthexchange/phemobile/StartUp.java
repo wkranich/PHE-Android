@@ -38,8 +38,8 @@ public class StartUp extends FragmentActivity implements ActionBar.TabListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.start_up_page);
 		
-		Parse.initialize(this, "DYgXFCYiB9j2MTxqL4FvNscHYhFs4r9TkRZbCi35",
-				"H8on7fpB4BcFlYvcQqQ7yjsqhSFQcPUjdqO4SYnu");
+		//Parse.initialize(this, "DYgXFCYiB9j2MTxqL4FvNscHYhFs4r9TkRZbCi35",
+		//		"H8on7fpB4BcFlYvcQqQ7yjsqhSFQcPUjdqO4SYnu");
 		
 		viewPager = (ViewPager) findViewById(R.id.pager);
 		actionBar = getActionBar();
