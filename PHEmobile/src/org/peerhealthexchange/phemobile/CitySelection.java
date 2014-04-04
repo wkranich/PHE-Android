@@ -69,45 +69,59 @@ public class CitySelection extends Activity implements OnClickListener{
 		switch (v.getId()){
 		case R.id.bayOak:
 			globalVars.city_id = db.getCity(bayOak.getText().toString()).getId();
+			globalVars.city_name = db.getCity(bayOak.getText().toString()).getName();
 			break;
 		case R.id.baySF:
 			globalVars.city_id = db.getCity(baySF.getText().toString()).getId();
+			globalVars.city_name = db.getCity(baySF.getText().toString()).getName();
 			break;
 		case R.id.bostonMain:
 			globalVars.city_id = db.getCity(bostonMain.getText().toString()).getId();
+			globalVars.city_name = db.getCity(bostonMain.getText().toString()).getName();
 			break;
 		case R.id.bostonOuter:
 			globalVars.city_id = db.getCity(bostonOuter.getText().toString()).getId();
+			globalVars.city_name = db.getCity(bostonOuter.getText().toString()).getName();
 			break;
 		case R.id.chicago:
 			globalVars.city_id = db.getCity(chicago.getText().toString()).getId();
+			globalVars.city_name = db.getCity(chicago.getText().toString()).getName();
 			break;
 		case R.id.laNorte:
 			globalVars.city_id = db.getCity(laNorte.getText().toString()).getId();
+			globalVars.city_name = db.getCity(laNorte.getText().toString()).getName();
 			break;
 		case R.id.laNorth:
 			globalVars.city_id = db.getCity(laNorth.getText().toString()).getId();
+			globalVars.city_name = db.getCity(laNorth.getText().toString()).getName();
 			break;
 		case R.id.laSouth:
 			globalVars.city_id = db.getCity(laSouth.getText().toString()).getId();
+			globalVars.city_name = db.getCity(laSouth.getText().toString()).getName();
 			break;
 		case R.id.laSur:
 			globalVars.city_id = db.getCity(laSur.getText().toString()).getId();
+			globalVars.city_name = db.getCity(laSur.getText().toString()).getName();
 			break;
 		case R.id.bronx:
 			globalVars.city_id = db.getCity(bronx.getText().toString()).getId();
+			globalVars.city_name = db.getCity(bronx.getText().toString()).getName();
 			break;
 		case R.id.brooklyn:
 			globalVars.city_id = db.getCity(brooklyn.getText().toString()).getId();
+			globalVars.city_name = db.getCity(brooklyn.getText().toString()).getName();
 			break;
 		case R.id.manhattan:
 			globalVars.city_id = db.getCity(manhattan.getText().toString()).getId();
+			globalVars.city_name = db.getCity(manhattan.getText().toString()).getName();
 			break;
 		case R.id.queens:
 			globalVars.city_id = db.getCity(queens.getText().toString()).getId();
+			globalVars.city_name = db.getCity(queens.getText().toString()).getName();
 			break;
 		case R.id.dc:
 			globalVars.city_id = db.getCity(dc.getText().toString()).getId();
+			globalVars.city_name = db.getCity(dc.getText().toString()).getName();
 			break;
 		}
 		

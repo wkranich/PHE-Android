@@ -7,6 +7,7 @@ import android.util.Log;
 
 public class globalVars {
 	public static String city_id;
+	public static String city_name;
 	public static List<Clinics> lHospitals = new ArrayList<Clinics>();
 	public static List<HotlineCategories> lCategories = new ArrayList<HotlineCategories>();
 	public static List<HotlinesInfo> lHotlines = new ArrayList<HotlinesInfo>();

@@ -42,6 +42,7 @@ int color pheblue 0x7f050012
 int color tab_text_color 0x7f050015
 int dimen activity_horizontal_margin 0x7f090000
 int dimen activity_vertical_margin 0x7f090001
+int dimen textsize 0x7f090002
 int drawable common_signin_btn_icon_dark 0x7f020000
 int drawable common_signin_btn_icon_disabled_dark 0x7f020001
 int drawable common_signin_btn_icon_disabled_focus_dark 0x7f020002

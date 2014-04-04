@@ -207,6 +207,7 @@ containing a value of this type.
          */
         public static final int activity_horizontal_margin=0x7f090000;
         public static final int activity_vertical_margin=0x7f090001;
+        public static final int textsize=0x7f090002;
     }
     public static final class drawable {
         public static final int common_signin_btn_icon_dark=0x7f020000;
