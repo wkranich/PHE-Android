@@ -187,15 +187,16 @@ containing a value of this type.
         public static final int common_signin_btn_light_text_disabled=0x7f050006;
         public static final int common_signin_btn_light_text_focused=0x7f050007;
         public static final int common_signin_btn_light_text_pressed=0x7f050005;
-        public static final int common_signin_btn_text_dark=0x7f050012;
-        public static final int common_signin_btn_text_light=0x7f050013;
+        public static final int common_signin_btn_text_dark=0x7f050013;
+        public static final int common_signin_btn_text_light=0x7f050014;
         public static final int counter_text_bg=0x7f05000f;
         public static final int counter_text_color=0x7f050010;
         public static final int list_background=0x7f05000c;
         public static final int list_background_pressed=0x7f05000d;
         public static final int list_divider=0x7f05000e;
         public static final int list_item_title=0x7f05000b;
-        public static final int tab_text_color=0x7f050014;
+        public static final int pheblue=0x7f050012;
+        public static final int tab_text_color=0x7f050015;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -436,30 +437,6 @@ containing a value of this type.
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
 
-
-    
-
-            Theme customizations available in newer API levels can go in
-            res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
-
-
-        
-
-        Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
-
-    
-
-            Theme customizations available in newer API levels can go in
-            res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
-
-        
-
-        Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
-
     
 
             Theme customizations available in newer API levels can go in
@@ -468,18 +445,17 @@ containing a value of this type.
 
         
          */
-        public static final int AppBaseTheme=0x7f0b0000;
+        public static final int AppBaseTheme=0x7f0b0004;
         /**  Application theme. 
- Application theme. 
- Application theme. 
          */
-        public static final int AppTheme=0x7f0b0001;
-        public static final int MyActionBar=0x7f0b0003;
+        public static final int AppTheme=0x7f0b0005;
+        public static final int MyActionBar=0x7f0b0001;
         /**  ActionBar tabs text styles 
+ ActionBar tabs text styles 
          */
-        public static final int MyActionBarTabText=0x7f0b0004;
-        public static final int MyTheme=0x7f0b0002;
-        public static final int pheButton=0x7f0b0005;
+        public static final int MyActionBarTabText=0x7f0b0002;
+        public static final int MyTheme=0x7f0b0000;
+        public static final int pheButton=0x7f0b0003;
     }
     public static final class xml {
         public static final int searchable=0x7f040000;

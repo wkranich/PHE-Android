@@ -43,7 +43,7 @@ public class StartUp extends FragmentActivity implements ActionBar.TabListener {
 		
 		viewPager = (ViewPager) findViewById(R.id.pager);
 		actionBar = getActionBar();
-		actionBar.setStackedBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.black)));
+		actionBar.setStackedBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.pheblue)));
 		mAdapter = new TabsPagerAdapter(getSupportFragmentManager());
 		
 		viewPager.setAdapter(mAdapter);

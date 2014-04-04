@@ -3,4 +3,6 @@
     android:id="@android:id/list"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:textColor="#f37510" />
+    android:textColor="#f37510"
+    android:divider="#D8D8D6"
+    android:dividerHeight="1dip" />
