@@ -100,21 +100,14 @@ public class loading extends Activity {
 		}
 		
 		if(!globalVars.ran){
-			Cities Boston = new Cities();
-			Boston = db.getCity("Boston");
-
-			globalVars.city_id = Boston.getId();
-			globalVars.lHospitals.addAll(db.getCityClinics(Boston.getId()));
 			globalVars.lCategories.addAll(db.getHotlineCategories());
-
 			db.close();
-			globalVars.hospitalNamesInflater();
 			globalVars.categoryNamesInflater();
 			
 			globalVars.ran = true;
 		}
 
-		Intent intent = new Intent(getApplicationContext(), StartUp.class);
+		Intent intent = new Intent(getApplicationContext(), CitySelection.class);
 		intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
 		startActivity(intent);
 		finish();
