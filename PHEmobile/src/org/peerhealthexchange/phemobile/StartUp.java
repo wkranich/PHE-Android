@@ -50,7 +50,7 @@ public class StartUp extends FragmentActivity implements ActionBar.TabListener {
 
 		viewPager = (ViewPager) findViewById(R.id.pager);
 		actionBar = getActionBar();
-		getActionBar().setTitle(globalVars.city_name + " Resources");
+		getActionBar().setTitle(globalVars.city_name + " : Resources");
 		int titleId = getResources().getIdentifier("action_bar_title", "id",
 				"android");
 

@@ -8,14 +8,24 @@ import android.util.Log;
 public class globalVars {
 	public static String city_id;
 	public static String city_name;
+	public static List<Cities> lCities = new ArrayList<Cities>();
 	public static List<Clinics> lHospitals = new ArrayList<Clinics>();
 	public static List<HotlineCategories> lCategories = new ArrayList<HotlineCategories>();
 	public static List<HotlinesInfo> lHotlines = new ArrayList<HotlinesInfo>();
+	public static String[] cityNames;
 	public static String[] hospitalNames;
 	public static String[] categoryNames;
 	public static String[] hotlineNames;
 	public static boolean ran = false;
 
+	public static void cityNamesInflater() {
+		cityNames = new String[lCities.size()];
+		for (int i = 0; i < lCities.size(); i++) {
+			cityNames[i] = lCities.get(i).getName();
+
+		}
+	}
+	
 	public static void hospitalNamesInflater() {
 		hospitalNames = new String[lHospitals.size()];
 		for (int i = 0; i < lHospitals.size(); i++) {

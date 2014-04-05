@@ -124,6 +124,27 @@ public class PHEdatabase extends SQLiteOpenHelper {
 
 		return city;
 	}
+	
+	public List<Cities> getCities(){
+		List<Cities> cities = new ArrayList<Cities>();
+
+		String selectQuery = "SELECT * FROM " + TABLE_CITIES;
+		SQLiteDatabase db = this.getReadableDatabase();
+
+		Cursor c = db.rawQuery(selectQuery, null);
+
+		if (c.moveToFirst()) {
+			do {
+				Cities city = new Cities();
+				city.setId(c.getString(c.getColumnIndex(KEY_ID)));
+				city.setName(c.getString(c.getColumnIndex(KEY_NAME)));
+
+				cities.add(city);
+			} while (c.moveToNext());
+		}
+		
+		return cities;
+	}
 
 	/*
 	 * Functions related to hospitals

@@ -100,8 +100,10 @@ public class loading extends Activity {
 		}
 		
 		if(!globalVars.ran){
+			globalVars.lCities.addAll(db.getCities());
 			globalVars.lCategories.addAll(db.getHotlineCategories());
 			db.close();
+			globalVars.cityNamesInflater();
 			globalVars.categoryNamesInflater();
 			
 			globalVars.ran = true;

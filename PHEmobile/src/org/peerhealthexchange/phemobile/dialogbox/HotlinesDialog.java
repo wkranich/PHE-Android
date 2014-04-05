@@ -8,11 +8,15 @@ import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.database.DataSetObserver;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 public class HotlinesDialog extends DialogFragment {
@@ -57,13 +61,14 @@ public class HotlinesDialog extends DialogFragment {
 
 	@Override
 	public Dialog onCreateDialog(Bundle savedInstanceState) {
-		Typeface myTypeface = Typeface.createFromAsset(getActivity().getAssets(),
+		final Typeface myTypeface = Typeface.createFromAsset(getActivity().getAssets(),
 				"fonts/HelveticaNeue-Light.otf");
 		String Hours = getArguments().getString("hours");
 		String Name = getArguments().getString("name");
 		final int position = getArguments().getInt("position");
 
 		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+		//TextView list = (TextView) dialog.findViewById(android.R.id.list);
 		TextView longText = new TextView(getActivity());
 		longText.setText(Name+"\n"+Hours);
 		longText.setTextAppearance(getActivity(), android.R.style.TextAppearance_DeviceDefault_DialogWindowTitle);
@@ -86,7 +91,10 @@ public class HotlinesDialog extends DialogFragment {
 						mListener.onChoiceClick(which + position);
 					}
 				});
-		return builder.create();
+		
+		AlertDialog dialog = builder.create();
+		
+		return dialog;
 
 	}
 }

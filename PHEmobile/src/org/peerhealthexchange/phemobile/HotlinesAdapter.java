@@ -8,11 +8,13 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class HotlinesAdapter extends ArrayAdapter<String> {
@@ -34,6 +36,7 @@ public class HotlinesAdapter extends ArrayAdapter<String> {
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		View rowView = inflater
 				.inflate(R.layout.hotlines_layout, parent, false);
+		LinearLayout linear = (LinearLayout) rowView.findViewById(R.id.linearLayout2);
 		Typeface myTypeface = Typeface.createFromAsset(context.getAssets(),
 				"fonts/HelveticaNeue-Light.otf");
 		TextView textView = (TextView) rowView.findViewById(R.id.textView1);
@@ -98,6 +101,12 @@ public class HotlinesAdapter extends ArrayAdapter<String> {
 				imageView3.setImageResource(0);
 			}
 
+		} else if (this.parentActivity == "cities") {
+			linear.setGravity(Gravity.CENTER);
+			imageView1.setImageResource(android.R.color.transparent);
+			imageView2.setImageResource(android.R.color.transparent);
+			imageView3.setImageResource(android.R.color.transparent);
+			
 		} else {
 			imageView1.setImageResource(android.R.color.transparent);
 			imageView2.setImageResource(android.R.color.transparent);

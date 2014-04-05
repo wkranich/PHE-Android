@@ -5,6 +5,7 @@ import org.peerhealthexchange.phemobile.dialogbox.HotlinesDialog;
 import android.app.Activity;
 import android.app.DialogFragment;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
@@ -24,11 +25,10 @@ public class SpecificHotlines extends Activity implements
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.hotline_categorized);
-
+		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT); // Fixed Portrait orientation
 		ListView listview = (ListView) findViewById(R.id.listview);
 		HotlinesAdapter adapter = new HotlinesAdapter(getApplicationContext(),
 				globalVars.hotlineNames, "hotlines");
-		Log.d("nameSize", Integer.toString(globalVars.lHotlines.size()));
 		listview.setAdapter(adapter);
 
 		listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
