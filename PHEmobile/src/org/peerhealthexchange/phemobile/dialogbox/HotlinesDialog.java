@@ -6,7 +6,9 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -14,6 +16,8 @@ import android.view.View;
 import android.widget.TextView;
 
 public class HotlinesDialog extends DialogFragment {
+	
+	Context context;
 
 	public static HotlinesDialog newInstance(String Hours, String Name,
 			int position) {
@@ -53,6 +57,8 @@ public class HotlinesDialog extends DialogFragment {
 
 	@Override
 	public Dialog onCreateDialog(Bundle savedInstanceState) {
+		Typeface myTypeface = Typeface.createFromAsset(getActivity().getAssets(),
+				"fonts/HelveticaNeue-Light.otf");
 		String Hours = getArguments().getString("hours");
 		String Name = getArguments().getString("name");
 		final int position = getArguments().getInt("position");
@@ -61,6 +67,7 @@ public class HotlinesDialog extends DialogFragment {
 		TextView longText = new TextView(getActivity());
 		longText.setText(Name+"\n"+Hours);
 		longText.setTextAppearance(getActivity(), android.R.style.TextAppearance_DeviceDefault_DialogWindowTitle);
+		longText.setTypeface(myTypeface);
 		longText.setGravity(Gravity.CENTER);
 		LayoutInflater inflater = getActivity().getLayoutInflater();
 
