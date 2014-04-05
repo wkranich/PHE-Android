@@ -37,7 +37,7 @@ public class Categories extends ListFragment {
 		
 		mListView = (ListView) inflater.inflate(R.layout.hotlines, container,
 				false);
-		HotlinesAdapter adapter = new HotlinesAdapter(getActivity(), globalVars.categoryNames);
+		HotlinesAdapter adapter = new HotlinesAdapter(getActivity(), globalVars.categoryNames, "categories");
 		setListAdapter(adapter);
 
 		return mListView;

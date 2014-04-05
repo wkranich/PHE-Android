@@ -27,7 +27,7 @@ public class SpecificHotlines extends Activity implements
 
 		ListView listview = (ListView) findViewById(R.id.listview);
 		HotlinesAdapter adapter = new HotlinesAdapter(getApplicationContext(),
-				globalVars.hotlineNames);
+				globalVars.hotlineNames, "hotlines");
 		Log.d("nameSize", Integer.toString(globalVars.lHotlines.size()));
 		listview.setAdapter(adapter);
 
