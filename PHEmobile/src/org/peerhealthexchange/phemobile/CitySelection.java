@@ -29,16 +29,16 @@ public class CitySelection extends Activity{
 		
 		// we need to find textview that is responsible for filling the title of the page
 		int titleId = getResources().getIdentifier("action_bar_title", "id", "android");
-		TextView yourTextView = (TextView) findViewById(titleId);
-		Typeface myTypeface = Typeface.createFromAsset(this.getAssets(), "fonts/HelveticaNeue-Light.otf");
-		yourTextView.setTypeface(myTypeface);
+		TextView textView = (TextView) findViewById(titleId);
+		Typeface typeface = Typeface.createFromAsset(this.getAssets(), "fonts/HelveticaNeue-Light.otf");
+		textView.setTypeface(typeface);
 		
 		// filling our listview with the city string array
-		ListView listview = (ListView) findViewById(R.id.listview);
+		ListView listView = (ListView) findViewById(R.id.listview);
 		ListAdapter adapter = new ListAdapter(getApplicationContext(), globalVars.cityNames, "cities");
-		listview.setAdapter(adapter);
+		listView.setAdapter(adapter);
 		
-		listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+		listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
 			@Override
 			public void onItemClick(AdapterView<?> parent, View arg1, int position,

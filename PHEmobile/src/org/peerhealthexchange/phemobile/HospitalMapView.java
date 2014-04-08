@@ -73,10 +73,10 @@ public class HospitalMapView extends Activity implements
 		// the page
 		int titleId = getResources().getIdentifier("action_bar_title", "id",
 				"android");
-		TextView yourTextView = (TextView) findViewById(titleId);
-		Typeface myTypeface = Typeface.createFromAsset(this.getAssets(),
+		TextView textView = (TextView) findViewById(titleId);
+		Typeface typeface = Typeface.createFromAsset(this.getAssets(),
 				"fonts/HelveticaNeue-Light.otf");
-		yourTextView.setTypeface(myTypeface);
+		textView.setTypeface(typeface);
 
 		map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map))
 				.getMap();
@@ -115,8 +115,8 @@ public class HospitalMapView extends Activity implements
 
 	}
 
-	public void hospitalOptions(String Hours, String Name) {
-		DialogFragment newFragment = MapsDialog.newInstance(Hours, Name);
+	public void hospitalOptions(String hours, String name) {
+		DialogFragment newFragment = MapsDialog.newInstance(hours, name);
 		newFragment.show(getFragmentManager(), "options");
 	}
 }

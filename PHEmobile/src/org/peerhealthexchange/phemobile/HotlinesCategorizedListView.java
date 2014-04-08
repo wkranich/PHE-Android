@@ -30,19 +30,19 @@ public class HotlinesCategorizedListView extends Activity implements
 		// the page
 		int titleId = getResources().getIdentifier("action_bar_title", "id",
 				"android");
-		TextView yourTextView = (TextView) findViewById(titleId);
-		Typeface myTypeface = Typeface.createFromAsset(this.getAssets(),
+		TextView textView = (TextView) findViewById(titleId);
+		Typeface typeface = Typeface.createFromAsset(this.getAssets(),
 				"fonts/HelveticaNeue-Light.otf");
-		yourTextView.setTypeface(myTypeface);
+		textView.setTypeface(typeface);
 		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT); // Fixed
 																			// Portrait
 																			// orientation
-		ListView listview = (ListView) findViewById(R.id.listview);
+		ListView listView = (ListView) findViewById(R.id.listview);
 		ListAdapter adapter = new ListAdapter(getApplicationContext(),
 				globalVars.hotlineNames, "hotlines");
-		listview.setAdapter(adapter);
+		listView.setAdapter(adapter);
 
-		listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+		listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
 			@Override
 			public void onItemClick(AdapterView<?> parent, View arg1,
@@ -61,8 +61,8 @@ public class HotlinesCategorizedListView extends Activity implements
 		startActivity(callIntent);
 	}
 
-	public void hotlineOptions(String Hours, String Name, int position) {
-		DialogFragment newFragment = HotlinesDialog.newInstance(Hours, Name,
+	public void hotlineOptions(String hours, String name, int position) {
+		DialogFragment newFragment = HotlinesDialog.newInstance(hours, name,
 				position);
 		newFragment.show(getFragmentManager(), "options");
 	}

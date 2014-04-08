@@ -31,7 +31,7 @@ public class TabContainer extends FragmentActivity implements
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.start_up_page);
-		Typeface myTypeface = Typeface.createFromAsset(this.getAssets(),
+		Typeface typeface = Typeface.createFromAsset(this.getAssets(),
 				"fonts/HelveticaNeue-Light.otf");
 		// Parse.initialize(this, "DYgXFCYiB9j2MTxqL4FvNscHYhFs4r9TkRZbCi35",
 		// "H8on7fpB4BcFlYvcQqQ7yjsqhSFQcPUjdqO4SYnu");
@@ -42,8 +42,8 @@ public class TabContainer extends FragmentActivity implements
 		int titleId = getResources().getIdentifier("action_bar_title", "id",
 				"android");
 
-		TextView yourTextView = (TextView) findViewById(titleId);
-		yourTextView.setTypeface(myTypeface);
+		TextView textView = (TextView) findViewById(titleId);
+		textView.setTypeface(typeface);
 		actionBar.setStackedBackgroundDrawable(new ColorDrawable(getResources()
 				.getColor(R.color.pheblue)));
 		mAdapter = new TabsPagerAdapter(getSupportFragmentManager());
@@ -56,7 +56,7 @@ public class TabContainer extends FragmentActivity implements
 			tab = new TextView(this);
 			tab.setTextSize(getResources().getDimension(R.dimen.textsize));
 			tab.setText(tab_name);
-			tab.setTypeface(myTypeface);
+			tab.setTypeface(typeface);
 			tab.setGravity(Gravity.CENTER);
 			tab.setPadding(0, 25, 0, 0);
 			actionBar.addTab(actionBar.newTab().setCustomView(tab)
