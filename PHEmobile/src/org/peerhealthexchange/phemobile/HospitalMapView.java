@@ -1,7 +1,5 @@
 package org.peerhealthexchange.phemobile;
 
-import org.peerhealthexchange.phemobile.dialogbox.MapsDialog.MapsDialogListener;
-
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.GoogleMap.InfoWindowAdapter;
@@ -18,7 +16,6 @@ import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 public class HospitalMapView extends Activity implements

@@ -3,19 +3,13 @@ package org.peerhealthexchange.phemobile;
 import org.peerhealthexchange.phemobile.adapters.ListAdapter;
 import org.peerhealthexchange.phemobile.objects.globalVars;
 
-import com.parse.ParseObject;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
-import android.widget.Toast;
 
 public class HospitalListFrag extends ListFragment {
 	private ListView mListView;

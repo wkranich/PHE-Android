@@ -1,6 +1,5 @@
 package org.peerhealthexchange.phemobile;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.peerhealthexchange.phemobile.objects.Category;
@@ -11,15 +10,10 @@ import org.peerhealthexchange.phemobile.objects.globalVars;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
-import android.util.Log;
 
-import com.parse.FindCallback;
-import com.parse.Parse;
-import com.parse.ParseAnalytics;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
