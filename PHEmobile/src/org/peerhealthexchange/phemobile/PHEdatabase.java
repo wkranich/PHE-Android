@@ -3,6 +3,11 @@ package org.peerhealthexchange.phemobile;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.peerhealthexchange.phemobile.objects.Category;
+import org.peerhealthexchange.phemobile.objects.City;
+import org.peerhealthexchange.phemobile.objects.Clinic;
+import org.peerhealthexchange.phemobile.objects.Hotline;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;

@@ -1,5 +1,8 @@
 package org.peerhealthexchange.phemobile;
 
+import org.peerhealthexchange.phemobile.adapters.ListAdapter;
+import org.peerhealthexchange.phemobile.objects.globalVars;
+
 import com.parse.ParseObject;
 
 import android.content.Intent;
@@ -20,7 +23,7 @@ public class HospitalListFrag extends ListFragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		mListView = (ListView) inflater.inflate(R.layout.hotlines, container,
+		mListView = (ListView) inflater.inflate(R.layout.list_fragment, container,
 				false);
 		
 		// fill our list the hospital string array

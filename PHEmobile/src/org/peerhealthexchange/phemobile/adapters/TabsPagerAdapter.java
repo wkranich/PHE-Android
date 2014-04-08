@@ -1,4 +1,4 @@
-package org.peerhealthexchange.phemobile.slidingmenu.adapter;
+package org.peerhealthexchange.phemobile.adapters;
 
 import org.peerhealthexchange.phemobile.HospitalListFrag;
 import org.peerhealthexchange.phemobile.CategoryListFrag;

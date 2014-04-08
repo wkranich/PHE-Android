@@ -1,6 +1,8 @@
 package org.peerhealthexchange.phemobile;
 
+import org.peerhealthexchange.phemobile.adapters.ListAdapter;
 import org.peerhealthexchange.phemobile.dialogbox.HotlinesDialog;
+import org.peerhealthexchange.phemobile.objects.globalVars;
 
 import android.app.Activity;
 import android.app.DialogFragment;
@@ -24,7 +26,7 @@ public class HotlinesCategorizedListView extends Activity implements
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.hotline_categorized);
+		setContentView(R.layout.list_activity);
 		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT); // Fixed Portrait orientation
 		ListView listview = (ListView) findViewById(R.id.listview);
 		ListAdapter adapter = new ListAdapter(getApplicationContext(),

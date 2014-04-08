@@ -1,4 +1,4 @@
-package org.peerhealthexchange.phemobile;
+package org.peerhealthexchange.phemobile.objects;
 
 public class City {
 	private String objectId;

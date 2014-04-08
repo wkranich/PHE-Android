@@ -1,5 +1,8 @@
 package org.peerhealthexchange.phemobile;
 
+import org.peerhealthexchange.phemobile.adapters.ListAdapter;
+import org.peerhealthexchange.phemobile.objects.globalVars;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -19,7 +22,7 @@ public class CitySelection extends Activity{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.city_selection);
+		setContentView(R.layout.list_activity);
 		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT); // Fixed Portrait orientation
 		
 		// set the page name

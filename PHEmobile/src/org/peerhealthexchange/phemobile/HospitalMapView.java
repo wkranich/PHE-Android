@@ -35,7 +35,7 @@ public class HospitalMapView extends Activity implements
 		private final View myContentsView;
 
 		MyInfoWindowsAdapter() {
-			myContentsView = getLayoutInflater().inflate(R.layout.custom_info,
+			myContentsView = getLayoutInflater().inflate(R.layout.custom_info_box,
 					null);
 		}
 
@@ -65,7 +65,7 @@ public class HospitalMapView extends Activity implements
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.test_speific_hospital);
+		setContentView(R.layout.hospital_map_layout);
 
 		map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map))
 				.getMap();

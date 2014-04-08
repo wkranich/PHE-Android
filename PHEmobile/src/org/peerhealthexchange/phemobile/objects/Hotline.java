@@ -1,4 +1,4 @@
-package org.peerhealthexchange.phemobile;
+package org.peerhealthexchange.phemobile.objects;
 
 public class Hotline {
 	private String objectId;

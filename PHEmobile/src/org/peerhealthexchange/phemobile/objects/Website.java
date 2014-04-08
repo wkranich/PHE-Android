@@ -1,16 +1,16 @@
-package org.peerhealthexchange.phemobile;
+package org.peerhealthexchange.phemobile.objects;
 
-public class Websites {
+public class Website {
 	private String objectId;
 	private String cityId;
 	private String hotlineTitleId;
 	private String name;
 	private String website;
 	
-	public Websites() {
+	public Website() {
 	}
 	
-	public Websites(String objectId, String cityId, String hotlineTitleId, String name, String website){
+	public Website(String objectId, String cityId, String hotlineTitleId, String name, String website){
 		this.objectId = objectId;
 		this.cityId = cityId;
 		this.hotlineTitleId = hotlineTitleId;

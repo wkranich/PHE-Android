@@ -1,4 +1,9 @@
-package org.peerhealthexchange.phemobile;
+package org.peerhealthexchange.phemobile.adapters;
+
+import org.peerhealthexchange.phemobile.R;
+import org.peerhealthexchange.phemobile.R.id;
+import org.peerhealthexchange.phemobile.R.layout;
+import org.peerhealthexchange.phemobile.objects.globalVars;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -24,7 +29,7 @@ public class ListAdapter extends ArrayAdapter<String> {
 
 	public ListAdapter(Context context, String[] values,
 			String parentActivity) {
-		super(context, R.layout.hotlines_layout, values);
+		super(context, R.layout.list_adapter_layout, values);
 		this.context = context;
 		this.values = values;
 		this.parentActivity = parentActivity;
@@ -35,7 +40,7 @@ public class ListAdapter extends ArrayAdapter<String> {
 		LayoutInflater inflater = (LayoutInflater) context
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		View rowView = inflater
-				.inflate(R.layout.hotlines_layout, parent, false);
+				.inflate(R.layout.list_adapter_layout, parent, false);
 		LinearLayout linear = (LinearLayout) rowView.findViewById(R.id.linearLayout2);
 		Typeface myTypeface = Typeface.createFromAsset(context.getAssets(),
 				"fonts/HelveticaNeue-Light.otf");

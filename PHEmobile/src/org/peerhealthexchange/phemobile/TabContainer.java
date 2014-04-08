@@ -1,35 +1,23 @@
 package org.peerhealthexchange.phemobile;
 
-import java.util.ArrayList;
-
-import org.peerhealthexchange.phemobile.slidingmenu.adapter.TabsPagerAdapter;
-import org.peerhealthexchange.phemobile.slidingmenu.model.NavDrawerItem;
-
-import com.parse.Parse;
+import org.peerhealthexchange.phemobile.adapters.TabsPagerAdapter;
+import org.peerhealthexchange.phemobile.objects.globalVars;
 
 import android.os.Bundle;
 import android.app.ActionBar;
 import android.app.ActionBar.LayoutParams;
 import android.app.ActionBar.Tab;
-import android.app.Activity;
 import android.app.FragmentTransaction;
-import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.content.res.TypedArray;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
-import android.support.v4.widget.DrawerLayout;
 import android.view.Gravity;
-import android.view.Menu;
-import android.view.View;
-import android.view.Window;
-import android.widget.Button;
-import android.widget.ListView;
 import android.widget.TextView;
 
-public class TabContainer extends FragmentActivity implements ActionBar.TabListener {
+public class TabContainer extends FragmentActivity implements
+		ActionBar.TabListener {
 
 	private ViewPager viewPager;
 	private TabsPagerAdapter mAdapter;

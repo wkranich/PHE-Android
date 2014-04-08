@@ -1,4 +1,4 @@
-package org.peerhealthexchange.phemobile;
+package org.peerhealthexchange.phemobile.objects;
 
 public class Clinic {
 	private String objectId;

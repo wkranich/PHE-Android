@@ -1,4 +1,4 @@
-package org.peerhealthexchange.phemobile;
+package org.peerhealthexchange.phemobile.objects;
 
 public class Category {
 	private String objectId;
