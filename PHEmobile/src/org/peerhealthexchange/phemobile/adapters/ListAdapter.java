@@ -62,7 +62,10 @@ public class ListAdapter extends ArrayAdapter<String> {
 			myOptions.inPurgeable = true;
 
 			Bitmap.Config conf = Bitmap.Config.ARGB_8888;
-
+			
+			final float scale = context.getResources().getDisplayMetrics().density;
+			int px2 = 70;
+			
 			if (globalVars.lHospitals.get(position).getLowCost()) {
 				// green color circle
 				Bitmap bmp = Bitmap.createBitmap(100, 100, conf);
@@ -73,6 +76,8 @@ public class ListAdapter extends ArrayAdapter<String> {
 				canvas.drawCircle(60, 50, 25, paint);
 				imageView1.setAdjustViewBounds(true);
 				imageView1.setImageBitmap(bmp);
+				imageView1.getLayoutParams().height = px2;
+				imageView1.getLayoutParams().width = px2;
 			} else {
 				imageView1.setImageResource(0);
 			}
@@ -87,6 +92,8 @@ public class ListAdapter extends ArrayAdapter<String> {
 				canvas.drawCircle(60, 50, 25, paint);
 				imageView2.setAdjustViewBounds(true);
 				imageView2.setImageBitmap(bmp);
+				imageView2.getLayoutParams().height = px2;
+				imageView2.getLayoutParams().width = px2;
 			}
 			else {
 				imageView2.setImageResource(0);
@@ -102,6 +109,8 @@ public class ListAdapter extends ArrayAdapter<String> {
 				canvas.drawCircle(60, 50, 25, paint);
 				imageView3.setAdjustViewBounds(true);
 				imageView3.setImageBitmap(bmp);
+				imageView3.getLayoutParams().height = px2;
+				imageView3.getLayoutParams().width = px2;
 			} else {
 				imageView3.setImageResource(0);
 			}
