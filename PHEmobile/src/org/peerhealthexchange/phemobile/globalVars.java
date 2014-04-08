@@ -5,13 +5,15 @@ import java.util.List;
 
 import android.util.Log;
 
+// this will the container for our global variables
+
 public class globalVars {
 	public static String city_id;
 	public static String city_name;
-	public static List<Cities> lCities = new ArrayList<Cities>();
-	public static List<Clinics> lHospitals = new ArrayList<Clinics>();
-	public static List<HotlineCategories> lCategories = new ArrayList<HotlineCategories>();
-	public static List<HotlinesInfo> lHotlines = new ArrayList<HotlinesInfo>();
+	public static List<City> lCities = new ArrayList<City>();
+	public static List<Clinic> lHospitals = new ArrayList<Clinic>();
+	public static List<Category> lCategories = new ArrayList<Category>();
+	public static List<Hotline> lHotlines = new ArrayList<Hotline>();
 	public static String[] cityNames;
 	public static String[] hospitalNames;
 	public static String[] categoryNames;
@@ -29,7 +31,7 @@ public class globalVars {
 	public static void hospitalNamesInflater() {
 		hospitalNames = new String[lHospitals.size()];
 		for (int i = 0; i < lHospitals.size(); i++) {
-			Clinics hospital = lHospitals.get(i);
+			Clinic hospital = lHospitals.get(i);
 			hospitalNames[i] = hospital.getName();
 
 		}
@@ -38,7 +40,7 @@ public class globalVars {
 	public static void categoryNamesInflater(){
 		categoryNames = new String[lCategories.size()];
 		for (int i = 0; i < lCategories.size(); i++) {
-			HotlineCategories category = lCategories.get(i);
+			Category category = lCategories.get(i);
 			categoryNames[i] = category.getHotlineTitle();
 		}
 	}
@@ -46,7 +48,7 @@ public class globalVars {
 	public static void hotlineNamesInflater(){
 		hotlineNames = new String[lHotlines.size()];
 		for (int i = 0; i < lHotlines.size(); i++) {
-			HotlinesInfo hotline = lHotlines.get(i);
+			Hotline hotline = lHotlines.get(i);
 			hotlineNames[i] = hotline.getName();
 		}
 	}

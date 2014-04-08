@@ -1,14 +1,14 @@
 package org.peerhealthexchange.phemobile;
 
-public class Cities {
+public class City {
 	private String objectId;
     private String name;
  
     // constructors
-    public Cities() {
+    public City() {
     }
  
-    public Cities(String id, String name) {
+    public City(String id, String name) {
         this.objectId= id;
         this.name = name;
     }

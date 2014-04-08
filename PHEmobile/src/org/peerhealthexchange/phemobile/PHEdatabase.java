@@ -96,7 +96,7 @@ public class PHEdatabase extends SQLiteOpenHelper {
 	/*
 	 * Functions related to cities
 	 */
-	public void createCities(Cities city) {
+	public void createCities(City city) {
 		SQLiteDatabase db = this.getWritableDatabase();
 
 		ContentValues values = new ContentValues();
@@ -108,7 +108,7 @@ public class PHEdatabase extends SQLiteOpenHelper {
 		db.close();
 	}
 
-	public Cities getCity(String city_name) {
+	public City getCity(String city_name) {
 		SQLiteDatabase db = this.getReadableDatabase();
 
 		String selectQuery = "SELECT * FROM " + TABLE_CITIES + " WHERE "
@@ -119,14 +119,14 @@ public class PHEdatabase extends SQLiteOpenHelper {
 			c.moveToFirst();
 		}
 
-		Cities city = new Cities(c.getString(c.getColumnIndex(KEY_ID)),
+		City city = new City(c.getString(c.getColumnIndex(KEY_ID)),
 				c.getString(c.getColumnIndex(KEY_NAME)));
 
 		return city;
 	}
 	
-	public List<Cities> getCities(){
-		List<Cities> cities = new ArrayList<Cities>();
+	public List<City> getCities(){
+		List<City> cities = new ArrayList<City>();
 
 		String selectQuery = "SELECT * FROM " + TABLE_CITIES;
 		SQLiteDatabase db = this.getReadableDatabase();
@@ -135,7 +135,7 @@ public class PHEdatabase extends SQLiteOpenHelper {
 
 		if (c.moveToFirst()) {
 			do {
-				Cities city = new Cities();
+				City city = new City();
 				city.setId(c.getString(c.getColumnIndex(KEY_ID)));
 				city.setName(c.getString(c.getColumnIndex(KEY_NAME)));
 
@@ -149,7 +149,7 @@ public class PHEdatabase extends SQLiteOpenHelper {
 	/*
 	 * Functions related to hospitals
 	 */
-	public void createClinics(Clinics clinic) {
+	public void createClinics(Clinic clinic) {
 		SQLiteDatabase db = this.getWritableDatabase();
 
 		ContentValues values = new ContentValues();
@@ -170,7 +170,7 @@ public class PHEdatabase extends SQLiteOpenHelper {
 		db.close();
 	}
 
-	public Clinics getClinic(String clinic_name) {
+	public Clinic getClinic(String clinic_name) {
 		SQLiteDatabase db = this.getReadableDatabase();
 
 		String selectQuery = "SELECT * FROM " + TABLE_CLINICS + " WHERE "
@@ -181,7 +181,7 @@ public class PHEdatabase extends SQLiteOpenHelper {
 			c.moveToFirst();
 		}
 
-		Clinics clinic = new Clinics();
+		Clinic clinic = new Clinic();
 		clinic.setId(c.getString(c.getColumnIndex(KEY_ID)));
 		clinic.setCityId(c.getString(c.getColumnIndex(KEY_CITY)));
 		clinic.setName(c.getString(c.getColumnIndex(KEY_NAME)));
@@ -199,8 +199,8 @@ public class PHEdatabase extends SQLiteOpenHelper {
 		return clinic;
 	}
 
-	public List<Clinics> getCityClinics(String city_id) {
-		List<Clinics> cityClinics = new ArrayList<Clinics>();
+	public List<Clinic> getCityClinics(String city_id) {
+		List<Clinic> cityClinics = new ArrayList<Clinic>();
 
 		String selectQuery = "SELECT * FROM " + TABLE_CLINICS + " WHERE "
 				+ KEY_CITY + " = " + "'" + city_id + "'";
@@ -210,7 +210,7 @@ public class PHEdatabase extends SQLiteOpenHelper {
 
 		if (c.moveToFirst()) {
 			do {
-				Clinics clinic = new Clinics();
+				Clinic clinic = new Clinic();
 				clinic.setId(c.getString(c.getColumnIndex(KEY_ID)));
 				clinic.setCityId(c.getString(c.getColumnIndex(KEY_CITY)));
 				clinic.setName(c.getString(c.getColumnIndex(KEY_NAME)));
@@ -237,7 +237,7 @@ public class PHEdatabase extends SQLiteOpenHelper {
 	 * Functions related to hotline categories
 	 */
 
-	public void createCategories(HotlineCategories category) {
+	public void createCategories(Category category) {
 		SQLiteDatabase db = this.getWritableDatabase();
 
 		ContentValues values = new ContentValues();
@@ -248,8 +248,8 @@ public class PHEdatabase extends SQLiteOpenHelper {
 		db.close();
 	}
 
-	public List<HotlineCategories> getHotlineCategories() {
-		List<HotlineCategories> categories = new ArrayList<HotlineCategories>();
+	public List<Category> getHotlineCategories() {
+		List<Category> categories = new ArrayList<Category>();
 
 		String selectQuery = "SELECT * FROM " + TABLE_CATEGORIES;
 		SQLiteDatabase db = this.getReadableDatabase();
@@ -258,7 +258,7 @@ public class PHEdatabase extends SQLiteOpenHelper {
 
 		if (c.moveToFirst()) {
 			do {
-				HotlineCategories category = new HotlineCategories();
+				Category category = new Category();
 				category.setId(c.getString(c.getColumnIndex(KEY_ID)));
 				category.setName(c.getString(c.getColumnIndex(KEY_NAME)));
 
@@ -273,7 +273,7 @@ public class PHEdatabase extends SQLiteOpenHelper {
 	 * Functions related to hotlines
 	 */
 	
-	public void createHotlines(HotlinesInfo hotline){
+	public void createHotlines(Hotline hotline){
 		SQLiteDatabase db = this.getWritableDatabase();
 		
 		ContentValues values = new ContentValues();
@@ -288,8 +288,8 @@ public class PHEdatabase extends SQLiteOpenHelper {
 		db.close();
 	}
 	
-	public List<HotlinesInfo> getHotlines(String cityId, String hotlineCatId) {
-		List<HotlinesInfo> hotlines = new ArrayList<HotlinesInfo>();
+	public List<Hotline> getHotlines(String cityId, String hotlineCatId) {
+		List<Hotline> hotlines = new ArrayList<Hotline>();
 		String selectQuery = "SELECT * FROM " + TABLE_HOTLINES + " WHERE "
 				+ KEY_CITY + " = " + "'" + cityId + "'" + " AND " + KEY_HOTLINE + " = " + "'" + hotlineCatId + "'";
 		SQLiteDatabase db = this.getReadableDatabase();
@@ -298,7 +298,7 @@ public class PHEdatabase extends SQLiteOpenHelper {
 		
 		if(c.moveToFirst()){
 			do {
-				HotlinesInfo hotline = new HotlinesInfo();
+				Hotline hotline = new Hotline();
 				hotline.setId(c.getString(c.getColumnIndex(KEY_ID)));
 				hotline.setCityId(c.getString(c.getColumnIndex(KEY_CITY)));
 				hotline.setHotlineTitleId(c.getString(c.getColumnIndex(KEY_HOTLINE)));

@@ -14,7 +14,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.Toast;
 
-public class hospitalsMap extends ListFragment {
+public class HospitalListFrag extends ListFragment {
 	private ListView mListView;
 
 	@Override
@@ -23,9 +23,8 @@ public class hospitalsMap extends ListFragment {
 		mListView = (ListView) inflater.inflate(R.layout.hotlines, container,
 				false);
 		
-		
-	
-		HotlinesAdapter adapter = new HotlinesAdapter(getActivity(), globalVars.hospitalNames, "hospitals");
+		// fill our list the hospital string array
+		ListAdapter adapter = new ListAdapter(getActivity(), globalVars.hospitalNames, "hospitals");
 		setListAdapter(adapter);
 
 		return mListView;
@@ -36,7 +35,7 @@ public class hospitalsMap extends ListFragment {
 		/*Toast.makeText(getActivity(),
 				"Click ListItem Number " + position, Toast.LENGTH_LONG)
 				.show();*/
-		Intent intent = new Intent(getActivity(), hospitalPage.class);
+		Intent intent = new Intent(getActivity(), HospitalMapView.class);
 		intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 		intent.putExtra("position", position);
 	    this.startActivity(intent);

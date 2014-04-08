@@ -1,14 +1,14 @@
 package org.peerhealthexchange.phemobile;
 
-public class HotlineCategories {
+public class Category {
 	private String objectId;
     private String hotlineTitle;
  
     // constructors
-    public HotlineCategories() {
+    public Category() {
     }
  
-    public HotlineCategories(String id, String hotlineTitle) {
+    public Category(String id, String hotlineTitle) {
         this.objectId= id;
         this.hotlineTitle = hotlineTitle;
     }

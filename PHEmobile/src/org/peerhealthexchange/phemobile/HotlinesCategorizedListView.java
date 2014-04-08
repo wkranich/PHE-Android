@@ -18,7 +18,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.Toast;
 
-public class SpecificHotlines extends Activity implements
+public class HotlinesCategorizedListView extends Activity implements
 		HotlinesDialog.HotlinesDialogListener {
 
 	@Override
@@ -27,7 +27,7 @@ public class SpecificHotlines extends Activity implements
 		setContentView(R.layout.hotline_categorized);
 		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT); // Fixed Portrait orientation
 		ListView listview = (ListView) findViewById(R.id.listview);
-		HotlinesAdapter adapter = new HotlinesAdapter(getApplicationContext(),
+		ListAdapter adapter = new ListAdapter(getApplicationContext(),
 				globalVars.hotlineNames, "hotlines");
 		listview.setAdapter(adapter);
 

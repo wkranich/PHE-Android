@@ -18,7 +18,8 @@ import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 
-public class loading extends Activity {
+// this is the first activity that gets called when the app starts
+public class LoadingScreen extends Activity {
 	List<ParseObject> listHospitals;
 	List<ParseObject> listHotlineCategories;
 	List<ParseObject> listHotlines;
@@ -33,12 +34,10 @@ public class loading extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.loading_screen);
 
-		//Parse.initialize(this, "DYgXFCYiB9j2MTxqL4FvNscHYhFs4r9TkRZbCi35",
-		//		"H8on7fpB4BcFlYvcQqQ7yjsqhSFQcPUjdqO4SYnu");
-
 		db = new PHEdatabase(getApplicationContext());
 		//db.deleteDB(this);
 
+		// we need to check if the database exists so we don't end up adding duplicates 
 		if (!checkDataBase()) {
 			ParseQuery<ParseObject> query1 = ParseQuery
 					.getQuery("healthClinics");
@@ -57,7 +56,7 @@ public class loading extends Activity {
 			}
 
 			for (ParseObject hospital : listHospitals) {
-				Clinics aClinic = new Clinics(hospital.getObjectId(),
+				Clinic aClinic = new Clinic(hospital.getObjectId(),
 						hospital.getString("cityID"),
 						hospital.getString("name"),
 						hospital.getString("address"),
@@ -72,13 +71,13 @@ public class loading extends Activity {
 			}
 
 			for (ParseObject city : listCities) {
-				Cities aCity = new Cities(city.getObjectId(),
+				City aCity = new City(city.getObjectId(),
 						city.getString("name"));
 				db.createCities(aCity);
 			}
 
 			for (ParseObject category : listHotlineCategories) {
-				HotlineCategories aCategory = new HotlineCategories(
+				Category aCategory = new Category(
 						category.getObjectId(),
 						category.getString("hotlineTitle"));
 
@@ -86,7 +85,7 @@ public class loading extends Activity {
 			}
 
 			for (ParseObject hotline : listHotlines) {
-				HotlinesInfo aHotline = new HotlinesInfo(hotline.getObjectId(),
+				Hotline aHotline = new Hotline(hotline.getObjectId(),
 						hotline.getString("cityID"),
 						hotline.getString("hotlineTitleID"),
 						hotline.getString("name"),
@@ -99,6 +98,7 @@ public class loading extends Activity {
 			globalVars.ran=false;
 		}
 		
+		// we want to avoid adding additional objects to our global variables
 		if(!globalVars.ran){
 			globalVars.lCities.addAll(db.getCities());
 			globalVars.lCategories.addAll(db.getHotlineCategories());

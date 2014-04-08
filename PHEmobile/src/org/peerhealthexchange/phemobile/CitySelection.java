@@ -22,17 +22,18 @@ public class CitySelection extends Activity{
 		setContentView(R.layout.city_selection);
 		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT); // Fixed Portrait orientation
 		
-		
+		// set the page name
 		getActionBar().setTitle("Locations");
 		
+		// we need to find textview that is responsible for filling the title of the page
 		int titleId = getResources().getIdentifier("action_bar_title", "id", "android");
-		
 		TextView yourTextView = (TextView) findViewById(titleId);
 		Typeface myTypeface = Typeface.createFromAsset(this.getAssets(), "fonts/HelveticaNeue-Light.otf");
 		yourTextView.setTypeface(myTypeface);
 		
+		// filling our listview with the city string array
 		ListView listview = (ListView) findViewById(R.id.listview);
-		HotlinesAdapter adapter = new HotlinesAdapter(getApplicationContext(), globalVars.cityNames, "cities");
+		ListAdapter adapter = new ListAdapter(getApplicationContext(), globalVars.cityNames, "cities");
 		listview.setAdapter(adapter);
 		
 		listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -50,7 +51,7 @@ public class CitySelection extends Activity{
 				
 				db.close();
 				globalVars.hospitalNamesInflater();
-				Intent intent = new Intent(getApplicationContext(), StartUp.class);
+				Intent intent = new Intent(getApplicationContext(), TabContainer.class);
 				intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
 				startActivity(intent);
 				

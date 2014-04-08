@@ -1,8 +1,6 @@
 package org.peerhealthexchange.phemobile;
 
-public class HotlinesInfo {
-	// there will be no setters as any updates will simply drop the tables and
-	// recreate everything
+public class Hotline {
 	private String objectId;
 	private String cityId;
 	private String hotlineTitleId;
@@ -11,11 +9,11 @@ public class HotlinesInfo {
 	private String extraDetails;
 
 	// empty constructor
-	public HotlinesInfo() {
+	public Hotline() {
 	};
 
 	// this is the constructor to use
-	public HotlinesInfo(String objectId, String cityId, String hotlineTitleId, 
+	public Hotline(String objectId, String cityId, String hotlineTitleId, 
 			String Name, String phoneNumber, String extraDetails) {
 		this.objectId = objectId;
 		this.cityId = cityId;

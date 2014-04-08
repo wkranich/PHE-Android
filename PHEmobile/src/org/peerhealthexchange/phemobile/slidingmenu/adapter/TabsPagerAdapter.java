@@ -1,7 +1,7 @@
 package org.peerhealthexchange.phemobile.slidingmenu.adapter;
 
-import org.peerhealthexchange.phemobile.hospitalsMap;
-import org.peerhealthexchange.phemobile.Categories;
+import org.peerhealthexchange.phemobile.HospitalListFrag;
+import org.peerhealthexchange.phemobile.CategoryListFrag;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -20,10 +20,10 @@ public class TabsPagerAdapter extends FragmentPagerAdapter {
         switch (index) {
         case 0:
             // Top Rated fragment activity
-            return new hospitalsMap();
+            return new HospitalListFrag();
         case 1:
             // Games fragment activity
-            return new Categories();
+            return new CategoryListFrag();
         }
  
         return null;

@@ -29,7 +29,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class StartUp extends FragmentActivity implements ActionBar.TabListener {
+public class TabContainer extends FragmentActivity implements ActionBar.TabListener {
 
 	private ViewPager viewPager;
 	private TabsPagerAdapter mAdapter;

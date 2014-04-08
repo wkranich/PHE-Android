@@ -14,22 +14,9 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.Toast;
 
-public class Categories extends ListFragment {
+public class CategoryListFrag extends ListFragment {
 	PHEdatabase db;
-	//String[] values = new String[globalVars.lHospitals.size()];
 	private ListView mListView;
-
-	/*
-	 * @Override public void onActivityCreated(Bundle savedInstanceState) {
-	 * super.onActivityCreated(savedInstanceState); String[] values = new
-	 * String[] { "Android", "iPhone", "WindowsMobile", "Blackberry", "WebOS",
-	 * "Ubuntu", "Windows7", "Max OS X", "Linux", "OS/2" }; HotlinesAdapter
-	 * adapter = new HotlinesAdapter(getActivity(), values);
-	 * setListAdapter(adapter); ActionBar locationPage =
-	 * getActivity().getActionBar(); locationPage.setTitle("Hotlines");
-	 * 
-	 * }
-	 */
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -37,7 +24,7 @@ public class Categories extends ListFragment {
 		
 		mListView = (ListView) inflater.inflate(R.layout.hotlines, container,
 				false);
-		HotlinesAdapter adapter = new HotlinesAdapter(getActivity(), globalVars.categoryNames, "categories");
+		ListAdapter adapter = new ListAdapter(getActivity(), globalVars.categoryNames, "categories");
 		setListAdapter(adapter);
 
 		return mListView;
@@ -46,18 +33,20 @@ public class Categories extends ListFragment {
 	@Override
 	public void onListItemClick(ListView l, View v, int position, long id) {
 		db = new PHEdatabase(getActivity());
-		/*Toast.makeText(getActivity(),
-				"Click ListItem Number " + position, Toast.LENGTH_LONG)
-				.show();*/
-		Log.d("nameSize",globalVars.lCategories.get(position).getId());
-		Log.d("nameSize",globalVars.city_id);
+		
+		// make sure we clear our list of categorized hotlines
 		globalVars.lHotlines.clear();
+		
+		// find all hotlines related to the category and city that got selected
 		globalVars.lHotlines.addAll(db.getHotlines(globalVars.city_id, globalVars.lCategories.get(position).getId()));
+		
+		// inflate the strings
 		globalVars.hotlineNamesInflater();
 		db.close();
-		Intent intent = new Intent(getActivity(), SpecificHotlines.class);
+		
+		// call up the next activity
+		Intent intent = new Intent(getActivity(), HotlinesCategorizedListView.class);
 		intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-		intent.putExtra("position", position);
 	    this.startActivity(intent);
 	}
 }

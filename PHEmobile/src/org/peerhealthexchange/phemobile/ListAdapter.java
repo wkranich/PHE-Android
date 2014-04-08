@@ -17,12 +17,12 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class HotlinesAdapter extends ArrayAdapter<String> {
+public class ListAdapter extends ArrayAdapter<String> {
 	private final Context context;
 	private final String[] values;
 	private final String parentActivity;
 
-	public HotlinesAdapter(Context context, String[] values,
+	public ListAdapter(Context context, String[] values,
 			String parentActivity) {
 		super(context, R.layout.hotlines_layout, values);
 		this.context = context;

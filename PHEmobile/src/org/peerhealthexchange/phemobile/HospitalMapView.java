@@ -20,7 +20,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class hospitalPage extends Activity implements
+public class HospitalMapView extends Activity implements
 		MapsDialog.MapsDialogListener {
 
 	private GoogleMap map;

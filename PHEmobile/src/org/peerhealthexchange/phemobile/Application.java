@@ -16,7 +16,7 @@ import com.parse.PushService;
       Parse.initialize(this, "DYgXFCYiB9j2MTxqL4FvNscHYhFs4r9TkRZbCi35",
 				"H8on7fpB4BcFlYvcQqQ7yjsqhSFQcPUjdqO4SYnu");
     // Specify an Activity to handle all pushes by default.
-       PushService.setDefaultPushCallback(this, StartUp.class);
+       PushService.setDefaultPushCallback(this, TabContainer.class);
   }
 
 
