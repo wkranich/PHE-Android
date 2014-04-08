@@ -50,6 +50,8 @@ public class CategoryListFrag extends ListFragment {
 		// call up the next activity
 		Intent intent = new Intent(getActivity(), HotlinesCategorizedListView.class);
 		intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+		// passing on the category name to the next activity
+		intent.putExtra("category", globalVars.categoryNames[position]);
 	    this.startActivity(intent);
 	}
 }

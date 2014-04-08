@@ -70,7 +70,12 @@ public class HotlinesDialog extends DialogFragment {
 		AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 		//TextView list = (TextView) dialog.findViewById(android.R.id.list);
 		TextView longText = new TextView(getActivity());
-		longText.setText(Name+"\n"+Hours);
+		if(Hours != null){
+			longText.setText(Name+"\n"+Hours);
+		} else {
+			longText.setText(Name);
+		}
+		
 		longText.setTextAppearance(getActivity(), android.R.style.TextAppearance_DeviceDefault_DialogWindowTitle);
 		longText.setTypeface(myTypeface);
 		longText.setGravity(Gravity.CENTER);

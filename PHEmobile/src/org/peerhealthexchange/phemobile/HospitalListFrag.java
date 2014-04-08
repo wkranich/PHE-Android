@@ -35,12 +35,10 @@ public class HospitalListFrag extends ListFragment {
 
 	@Override
 	public void onListItemClick(ListView l, View v, int position, long id) {
-		/*Toast.makeText(getActivity(),
-				"Click ListItem Number " + position, Toast.LENGTH_LONG)
-				.show();*/
 		Intent intent = new Intent(getActivity(), HospitalMapView.class);
 		intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-		intent.putExtra("position", position);
+		// pass on the name of the hospital that was selected
+		intent.putExtra("hospital", globalVars.hospitalNames[position]);
 	    this.startActivity(intent);
 	}
 }

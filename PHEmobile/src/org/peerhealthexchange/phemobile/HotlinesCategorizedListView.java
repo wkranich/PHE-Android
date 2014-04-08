@@ -8,6 +8,7 @@ import android.app.Activity;
 import android.app.DialogFragment;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
@@ -18,6 +19,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class HotlinesCategorizedListView extends Activity implements
@@ -27,7 +29,20 @@ public class HotlinesCategorizedListView extends Activity implements
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.list_activity);
-		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT); // Fixed Portrait orientation
+		// set the page name from the category that was selected
+		getActionBar().setTitle(getIntent().getStringExtra("category"));
+
+		// we need to find textview that is responsible for filling the title of
+		// the page
+		int titleId = getResources().getIdentifier("action_bar_title", "id",
+				"android");
+		TextView yourTextView = (TextView) findViewById(titleId);
+		Typeface myTypeface = Typeface.createFromAsset(this.getAssets(),
+				"fonts/HelveticaNeue-Light.otf");
+		yourTextView.setTypeface(myTypeface);
+		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT); // Fixed
+																			// Portrait
+																			// orientation
 		ListView listview = (ListView) findViewById(R.id.listview);
 		ListAdapter adapter = new ListAdapter(getApplicationContext(),
 				globalVars.hotlineNames, "hotlines");
@@ -47,8 +62,8 @@ public class HotlinesCategorizedListView extends Activity implements
 	}
 
 	public void onChoiceClick(int which) {
-		Intent callIntent = new Intent(Intent.ACTION_CALL,
-				Uri.parse("tel:"+globalVars.lHotlines.get(which).getPhoneNumber()));
+		Intent callIntent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:"
+				+ globalVars.lHotlines.get(which).getPhoneNumber()));
 		startActivity(callIntent);
 	}
 

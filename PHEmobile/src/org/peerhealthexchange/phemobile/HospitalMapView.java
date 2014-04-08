@@ -14,6 +14,7 @@ import org.peerhealthexchange.phemobile.dialogbox.*;
 import android.app.Activity;
 import android.app.DialogFragment;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -35,8 +36,8 @@ public class HospitalMapView extends Activity implements
 		private final View myContentsView;
 
 		MyInfoWindowsAdapter() {
-			myContentsView = getLayoutInflater().inflate(R.layout.custom_info_box,
-					null);
+			myContentsView = getLayoutInflater().inflate(
+					R.layout.custom_info_box, null);
 		}
 
 		@Override
@@ -44,7 +45,8 @@ public class HospitalMapView extends Activity implements
 
 			TextView hospitalName = ((TextView) myContentsView
 					.findViewById(R.id.name));
-			TextView hospitalHours = ((TextView) myContentsView.findViewById(R.id.hours));
+			TextView hospitalHours = ((TextView) myContentsView
+					.findViewById(R.id.hours));
 			TextView hospitalAddress = ((TextView) myContentsView
 					.findViewById(R.id.address));
 
@@ -67,6 +69,18 @@ public class HospitalMapView extends Activity implements
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.hospital_map_layout);
 
+		// set the page name from the hospital that was selected
+		getActionBar().setTitle(getIntent().getStringExtra("hospital"));
+
+		// we need to find textview that is responsible for filling the title of
+		// the page
+		int titleId = getResources().getIdentifier("action_bar_title", "id",
+				"android");
+		TextView yourTextView = (TextView) findViewById(titleId);
+		Typeface myTypeface = Typeface.createFromAsset(this.getAssets(),
+				"fonts/HelveticaNeue-Light.otf");
+		yourTextView.setTypeface(myTypeface);
+
 		map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map))
 				.getMap();
 		map.setInfoWindowAdapter(new MyInfoWindowsAdapter());
@@ -78,7 +92,7 @@ public class HospitalMapView extends Activity implements
 
 			@Override
 			public void onInfoWindowClick(Marker marker) {
-				hospitalOptions(Hours,Name);
+				hospitalOptions(Hours, Name);
 
 			}
 		});
@@ -90,8 +104,10 @@ public class HospitalMapView extends Activity implements
 	public void onChoiceClick(int which) {
 		switch (which) {
 		case 0:
-			String uri = "geo:0,0?q="+buSHS.latitude+","+buSHS.longitude+"("+Name+")";
-			startActivity(new Intent(android.content.Intent.ACTION_VIEW, Uri.parse(uri)));
+			String uri = "geo:0,0?q=" + buSHS.latitude + "," + buSHS.longitude
+					+ "(" + Name + ")";
+			startActivity(new Intent(android.content.Intent.ACTION_VIEW,
+					Uri.parse(uri)));
 			break;
 		case 1:
 			Intent callIntent = new Intent(Intent.ACTION_CALL,
@@ -103,7 +119,7 @@ public class HospitalMapView extends Activity implements
 	}
 
 	public void hospitalOptions(String Hours, String Name) {
-		DialogFragment newFragment = MapsDialog.newInstance(Hours,Name);
+		DialogFragment newFragment = MapsDialog.newInstance(Hours, Name);
 		newFragment.show(getFragmentManager(), "options");
 	}
 }
