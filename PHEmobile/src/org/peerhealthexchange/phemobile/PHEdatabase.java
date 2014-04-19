@@ -7,6 +7,7 @@ import org.peerhealthexchange.phemobile.objects.Category;
 import org.peerhealthexchange.phemobile.objects.City;
 import org.peerhealthexchange.phemobile.objects.Clinic;
 import org.peerhealthexchange.phemobile.objects.Hotline;
+import org.peerhealthexchange.phemobile.objects.Website;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -16,11 +17,12 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 public class PHEdatabase extends SQLiteOpenHelper {
-	// + KEY_NUM + " INTEGER PRIMARY KEY,"
 	private static final String TABLE_CITIES = "cities";
 	private static final String TABLE_CLINICS = "clinics";
 	private static final String TABLE_CATEGORIES = "categories";
 	private static final String TABLE_HOTLINES = "hotlines";
+	private static final String TABLE_WEBSITES = "websites";
+	private static final String TABLE_REMEMBERCITY = "remembered_city";
 
 	private static final String DATABASE_NAME = "pheDatabase";
 	private static final int DATABASE_VERSION = 1;
@@ -32,7 +34,6 @@ public class PHEdatabase extends SQLiteOpenHelper {
 	private static final String KEY_CITY = "city_id";
 	private static final String KEY_EXTRA = "extra_Details";
 	private static final String KEY_PHONE = "phone";
-	// private static final String KEY_CREATED_AT = "created_at";
 
 	// CITIES Table - column names
 	// welp they're common
@@ -47,6 +48,9 @@ public class PHEdatabase extends SQLiteOpenHelper {
 
 	// HOTLINES table - column names
 	private static final String KEY_HOTLINE = "hotline_id";
+
+	// WEBSITES table - column names
+	private static final String KEY_WEBSITE = "website";
 
 	// Cities table create statement
 	private static final String CREATE_TABLE_CITIES = "CREATE TABLE "
@@ -74,6 +78,17 @@ public class PHEdatabase extends SQLiteOpenHelper {
 			+ KEY_NAME + " TEXT," + KEY_PHONE + " TEXT," + KEY_EXTRA + " TEXT"
 			+ ")";
 
+	// Websites table create statement
+	private static final String CREATE_TABLE_WEBSITES = "CREATE TABLE "
+			+ TABLE_WEBSITES + "(" + KEY_NUM + " INTEGER PRIMARY KEY," + KEY_ID
+			+ " TEXT," + KEY_CITY + " TEXT," + KEY_HOTLINE + " TEXT,"
+			+ KEY_NAME + " TEXT," + KEY_WEBSITE + " TEXT" + ")";
+
+	// Remembered City table create statement
+	private static final String CREATE_TABLE_REMEMBERED_CITY = "CREATE TABLE "
+			+ TABLE_REMEMBERCITY + "(" + KEY_NUM + " INTEGER PRIMARY KEY,"
+			+ KEY_NAME + " TEXT" + ")";
+
 	public PHEdatabase(Context context) {
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);
 		// TODO Auto-generated constructor stub
@@ -85,6 +100,8 @@ public class PHEdatabase extends SQLiteOpenHelper {
 		db.execSQL(CREATE_TABLE_CLINICS);
 		db.execSQL(CREATE_TABLE_CATEGORIES);
 		db.execSQL(CREATE_TABLE_HOTLINES);
+		db.execSQL(CREATE_TABLE_WEBSITES);
+		db.execSQL(CREATE_TABLE_REMEMBERED_CITY);
 	}
 
 	@Override
@@ -93,6 +110,8 @@ public class PHEdatabase extends SQLiteOpenHelper {
 		db.execSQL("DROP TABLE IF EXISTS " + TABLE_CLINICS);
 		db.execSQL("DROP TABLE IF EXISTS " + TABLE_CATEGORIES);
 		db.execSQL("DROP TABLE IF EXISTS " + TABLE_HOTLINES);
+		db.execSQL("DROP TABLE IF EXISTS " + TABLE_WEBSITES);
+		db.execSQL("DROP TABLE IF EXISTS " + TABLE_REMEMBERCITY);
 
 		onCreate(db);
 	}
@@ -128,8 +147,8 @@ public class PHEdatabase extends SQLiteOpenHelper {
 
 		return city;
 	}
-	
-	public List<City> getCities(){
+
+	public List<City> getCities() {
 		List<City> cities = new ArrayList<City>();
 
 		String selectQuery = "SELECT * FROM " + TABLE_CITIES;
@@ -146,7 +165,7 @@ public class PHEdatabase extends SQLiteOpenHelper {
 				cities.add(city);
 			} while (c.moveToNext());
 		}
-		
+
 		return cities;
 	}
 
@@ -272,14 +291,14 @@ public class PHEdatabase extends SQLiteOpenHelper {
 
 		return categories;
 	}
-	
+
 	/*
 	 * Functions related to hotlines
 	 */
-	
-	public void createHotlines(Hotline hotline){
+
+	public void createHotlines(Hotline hotline) {
 		SQLiteDatabase db = this.getWritableDatabase();
-		
+
 		ContentValues values = new ContentValues();
 		values.put(KEY_ID, hotline.getId());
 		values.put(KEY_CITY, hotline.getCityId());
@@ -287,34 +306,112 @@ public class PHEdatabase extends SQLiteOpenHelper {
 		values.put(KEY_NAME, hotline.getName());
 		values.put(KEY_PHONE, hotline.getPhoneNumber());
 		values.put(KEY_EXTRA, hotline.getExtraDetails());
-		
+
 		db.insert(TABLE_HOTLINES, null, values);
 		db.close();
 	}
-	
+
 	public List<Hotline> getHotlines(String cityId, String hotlineCatId) {
 		List<Hotline> hotlines = new ArrayList<Hotline>();
 		String selectQuery = "SELECT * FROM " + TABLE_HOTLINES + " WHERE "
-				+ KEY_CITY + " = " + "'" + cityId + "'" + " AND " + KEY_HOTLINE + " = " + "'" + hotlineCatId + "'";
+				+ KEY_CITY + " = " + "'" + cityId + "'" + " AND " + KEY_HOTLINE
+				+ " = " + "'" + hotlineCatId + "'";
 		SQLiteDatabase db = this.getReadableDatabase();
-		
+
 		Cursor c = db.rawQuery(selectQuery, null);
-		
-		if(c.moveToFirst()){
+
+		if (c.moveToFirst()) {
 			do {
 				Hotline hotline = new Hotline();
 				hotline.setId(c.getString(c.getColumnIndex(KEY_ID)));
 				hotline.setCityId(c.getString(c.getColumnIndex(KEY_CITY)));
-				hotline.setHotlineTitleId(c.getString(c.getColumnIndex(KEY_HOTLINE)));
+				hotline.setHotlineTitleId(c.getString(c
+						.getColumnIndex(KEY_HOTLINE)));
 				hotline.setName(c.getString(c.getColumnIndex(KEY_NAME)));
 				hotline.setPhoneNumber(c.getString(c.getColumnIndex(KEY_PHONE)));
 				hotline.setExtraDetails(c.getString(c.getColumnIndex(KEY_EXTRA)));
-				
+
 				hotlines.add(hotline);
-			} while(c.moveToNext());
+			} while (c.moveToNext());
 		}
-		
+
 		return hotlines;
+	}
+
+	/*
+	 * Functions related to websites
+	 */
+
+	public void createWebsites(Website website) {
+		SQLiteDatabase db = this.getWritableDatabase();
+
+		ContentValues values = new ContentValues();
+		values.put(KEY_ID, website.getId());
+		values.put(KEY_CITY, website.getCityId());
+		values.put(KEY_HOTLINE, website.getHotlineId());
+		values.put(KEY_NAME, website.getName());
+		values.put(KEY_WEBSITE, website.getWebsite());
+
+		db.insert(TABLE_WEBSITES, null, values);
+		db.close();
+	}
+
+	public List<Website> getWebsites(String cityId, String hotlineCatId) {
+		List<Website> websites = new ArrayList<Website>();
+		String selectQuery = "SELECT * FROM " + TABLE_WEBSITES + " WHERE "
+				+ KEY_CITY + " = " + "'" + cityId + "'" + " AND " + KEY_HOTLINE
+				+ " = " + "'" + hotlineCatId + "'";
+		SQLiteDatabase db = this.getReadableDatabase();
+
+		Cursor c = db.rawQuery(selectQuery, null);
+
+		if (c.moveToFirst()) {
+			do {
+				Website website = new Website();
+				website.setId(c.getString(c.getColumnIndex(KEY_ID)));
+				website.setCityId(c.getString(c.getColumnIndex(KEY_CITY)));
+				website.setHotlineTitleId(c.getString(c
+						.getColumnIndex(KEY_HOTLINE)));
+				website.setName(c.getString(c.getColumnIndex(KEY_NAME)));
+				website.setWebsite(c.getString(c.getColumnIndex(KEY_WEBSITE)));
+
+				websites.add(website);
+			} while (c.moveToNext());
+		}
+
+		return websites;
+	}
+
+	/*
+	 * Functions related to Remembered City
+	 */
+
+	public void createRememberCity(String cityName) {
+		SQLiteDatabase db = this.getWritableDatabase();
+
+		// drop this particular table since the user wants another city to remember
+		db.delete(TABLE_REMEMBERCITY, null, null);
+
+		ContentValues values = new ContentValues();
+		values.put(KEY_NAME, cityName);
+
+		db.insert(TABLE_REMEMBERCITY, null, values);
+		db.close();
+	}
+
+	public String getRememberCity() {
+		String selectQuery = "SELECT * FROM " + TABLE_REMEMBERCITY + " WHERE "
+				+ KEY_NUM + " = " + 1;
+		SQLiteDatabase db = this.getReadableDatabase();
+
+		Cursor c = db.rawQuery(selectQuery, null);
+		if (c != null && c.getCount() > 0) {
+			c.moveToFirst();
+		} else {
+			return null;
+		}
+
+		return c.getString(c.getColumnIndex(KEY_NAME));
 	}
 
 	/*

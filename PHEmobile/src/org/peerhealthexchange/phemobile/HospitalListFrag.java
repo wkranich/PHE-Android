@@ -29,10 +29,11 @@ public class HospitalListFrag extends ListFragment {
 
 	@Override
 	public void onListItemClick(ListView l, View v, int position, long id) {
-		Intent intent = new Intent(getActivity(), HospitalMapView.class);
+		Intent intent = new Intent(getActivity(), ClinicInfo.class);
 		intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 		// pass on the name of the hospital that was selected
-		intent.putExtra("hospital", globalVars.hospitalNames[position]);
+		globalVars.clinic_number = position;
+		intent.putExtra("clinic", globalVars.clinic_number);
 	    this.startActivity(intent);
 	}
 }

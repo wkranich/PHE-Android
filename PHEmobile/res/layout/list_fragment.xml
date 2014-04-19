@@ -5,4 +5,7 @@
     android:layout_height="wrap_content"
     android:textColor="#f37510"
     android:divider="#D8D8D6"
-    android:dividerHeight="1dip" />
+    android:dividerHeight="1dip"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp" 
+    android:scrollbarStyle="outsideOverlay"/>

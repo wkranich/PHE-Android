@@ -41,6 +41,17 @@ public class Website {
 	}
 	
 	//get values
+	public String getId(){
+		return this.objectId;
+	}
+	
+	public String getCityId(){
+		return this.cityId;
+	}
+	
+	public String getHotlineId(){
+		return this.hotlineTitleId;
+	}
 	
 	public String getName(){
 		return this.name;

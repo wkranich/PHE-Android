@@ -8,12 +8,17 @@ import android.app.ActionBar;
 import android.app.ActionBar.LayoutParams;
 import android.app.ActionBar.Tab;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.Gravity;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.TextView;
 
 public class TabContainer extends FragmentActivity implements
@@ -23,7 +28,7 @@ public class TabContainer extends FragmentActivity implements
 	private TabsPagerAdapter mAdapter;
 	private ActionBar actionBar;
 	// Tab Titles
-	private String[] tabs = { "Hospitals", "Hotlines" };
+	private String[] tabs = { "Clinics", "Hotlines" };
 	TextView tab;
 	LayoutParams lp;
 
@@ -31,6 +36,28 @@ public class TabContainer extends FragmentActivity implements
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.start_up_page);
+		if (savedInstanceState != null) {
+			Log.d("bundler", "I'm restoring tab container");
+			PHEdatabase db = new PHEdatabase(getApplicationContext());
+
+			// we grab the values we saved
+			globalVars.city_id = savedInstanceState.getString("city_id");
+			globalVars.city_name = savedInstanceState.getString("city_name");
+
+			// now we have to redo the setup
+			globalVars.lCities.clear();
+			globalVars.lCategories.clear();
+			globalVars.lClinics.clear();
+			globalVars.lCities.addAll(db.getCities());
+			globalVars.lCategories.addAll(db.getHotlineCategories());
+			globalVars.lClinics.addAll(db.getCityClinics(globalVars.city_id));
+
+			globalVars.cityNamesInflater();
+			globalVars.categoryNamesInflater();
+			globalVars.hospitalNamesInflater();
+			db.close();
+			savedInstanceState.clear();
+		}
 		Typeface typeface = Typeface.createFromAsset(this.getAssets(),
 				"fonts/HelveticaNeue-Light.otf");
 		// Parse.initialize(this, "DYgXFCYiB9j2MTxqL4FvNscHYhFs4r9TkRZbCi35",
@@ -105,6 +132,39 @@ public class TabContainer extends FragmentActivity implements
 	public void onTabUnselected(Tab tab, FragmentTransaction ft) {
 		// TODO Auto-generated method stub
 
+	}
+
+	@Override
+	public void onSaveInstanceState(Bundle savedInstanceState) {
+		Log.d("bundler", "I'm saving tab container");
+		savedInstanceState.putString("city_name", globalVars.city_name);
+		savedInstanceState.putString("city_id", globalVars.city_id);
+		super.onSaveInstanceState(savedInstanceState);
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu items for use in the action bar
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.tab_container, menu);
+		return super.onCreateOptionsMenu(menu);
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// Handle presses on the action bar items
+		switch (item.getItemId()) {
+		case R.id.newCity:
+			Intent intent = new Intent(getApplicationContext(),
+					CitySelection.class);
+			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+			startActivity(intent);
+			finish();
+			return true;
+		default:
+			return false;
+
+		}
 	}
 
 }

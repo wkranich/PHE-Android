@@ -33,12 +33,16 @@ public class CategoryListFrag extends ListFragment {
 		
 		// make sure we clear our list of categorized hotlines
 		globalVars.lHotlines.clear();
+		globalVars.lWebsites.clear();
 		
-		// find all hotlines related to the category and city that got selected
-		globalVars.lHotlines.addAll(db.getHotlines(globalVars.city_id, globalVars.lCategories.get(position).getId()));
+		globalVars.category_name = globalVars.lCategories.get(position).getId();
+		// find all hotlines and websites related to the category and city that got selected
+		globalVars.lHotlines.addAll(db.getHotlines(globalVars.city_id, globalVars.category_name));
+		globalVars.lWebsites.addAll(db.getWebsites(globalVars.city_id, globalVars.category_name));
 		
 		// inflate the strings
 		globalVars.hotlineNamesInflater();
+		//globalVars.websiteNamesInflater();
 		db.close();
 		
 		// call up the next activity

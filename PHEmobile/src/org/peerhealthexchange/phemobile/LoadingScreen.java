@@ -6,6 +6,7 @@ import org.peerhealthexchange.phemobile.objects.Category;
 import org.peerhealthexchange.phemobile.objects.City;
 import org.peerhealthexchange.phemobile.objects.Clinic;
 import org.peerhealthexchange.phemobile.objects.Hotline;
+import org.peerhealthexchange.phemobile.objects.Website;
 import org.peerhealthexchange.phemobile.objects.globalVars;
 
 import android.app.Activity;
@@ -13,6 +14,8 @@ import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
+import android.os.Handler;
+import android.util.Log;
 
 import com.parse.ParseException;
 import com.parse.ParseObject;
@@ -24,6 +27,9 @@ public class LoadingScreen extends Activity {
 	List<ParseObject> listHotlineCategories;
 	List<ParseObject> listHotlines;
 	List<ParseObject> listCities;
+	List<ParseObject> listWebsites;
+
+	public static globalVars gVars;
 
 	String DB_FULL_PATH = "//data/data/org.peerhealthexchange.phemobile/databases/pheDatabase";
 
@@ -32,24 +38,51 @@ public class LoadingScreen extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+
 		setContentView(R.layout.loading_screen);
+		getActionBar().hide();
+		new Handler().postDelayed(new Runnable(){
+	        @Override
+	        public void run() {
+	        /* Create an Intent that will start the InfralineTabWidget-Activity. */
+	        	loadMethod();
+	        }
+	    }, 3000);
+		
+	}
+	
+	public void loadMethod(){
+		gVars = new globalVars();
 
 		db = new PHEdatabase(getApplicationContext());
 		//db.deleteDB(this);
 
-		// we need to check if the database exists so we don't end up adding duplicates 
+		// we need to check if the database exists so we don't end up adding
+		// duplicates
 		if (!checkDataBase()) {
 			ParseQuery<ParseObject> query1 = ParseQuery
 					.getQuery("healthClinics");
+			query1.setLimit(1000);
+			query1.orderByAscending("name");
 			ParseQuery<ParseObject> query2 = ParseQuery
 					.getQuery("hotlineCategories");
+			query2.setLimit(1000);
+			query2.orderByAscending("name");
 			ParseQuery<ParseObject> query3 = ParseQuery.getQuery("hotlines");
+			query3.setLimit(1000);
+			query3.orderByAscending("name");
 			ParseQuery<ParseObject> query4 = ParseQuery.getQuery("cities");
+			query4.setLimit(1000);
+			query4.orderByAscending("name");
+			ParseQuery<ParseObject> query5 = ParseQuery.getQuery("websites");
+			query5.setLimit(1000);
+			query5.orderByAscending("name");
 			try {
 				listHospitals = query1.find();
 				listHotlineCategories = query2.find();
 				listHotlines = query3.find();
 				listCities = query4.find();
+				listWebsites = query5.find();
 			} catch (ParseException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
@@ -62,7 +95,7 @@ public class LoadingScreen extends Activity {
 						hospital.getString("address"),
 						hospital.getString("hoursDetails"),
 						hospital.getString("phone"),
-						hospital.getString("Details"),
+						hospital.getString("extraDetails"),
 						hospital.getBoolean("isConfidential"),
 						hospital.getBoolean("isLowCost"),
 						hospital.getBoolean("isOnlyReproductive"),
@@ -77,8 +110,7 @@ public class LoadingScreen extends Activity {
 			}
 
 			for (ParseObject category : listHotlineCategories) {
-				Category aCategory = new Category(
-						category.getObjectId(),
+				Category aCategory = new Category(category.getObjectId(),
 						category.getString("hotlineTitle"));
 
 				db.createCategories(aCategory);
@@ -91,28 +123,55 @@ public class LoadingScreen extends Activity {
 						hotline.getString("name"),
 						hotline.getString("phoneNumber"),
 						hotline.getString("extraDetails"));
-				
+
 				db.createHotlines(aHotline);
 			}
-			
-			globalVars.ran=false;
-		}
-		
-		// we want to avoid adding additional objects to our global variables
-		if(!globalVars.ran){
-			globalVars.lCities.addAll(db.getCities());
-			globalVars.lCategories.addAll(db.getHotlineCategories());
-			db.close();
-			globalVars.cityNamesInflater();
-			globalVars.categoryNamesInflater();
-			
-			globalVars.ran = true;
+
+			for (ParseObject website : listWebsites) {
+				Website aWebsite = new Website(website.getObjectId(),
+						website.getString("cityID"),
+						website.getString("hotlineTitleID"),
+						website.getString("name"), website.getString("website"));
+				
+				db.createWebsites(aWebsite);
+			}
+
+			globalVars.ran = false;
 		}
 
-		Intent intent = new Intent(getApplicationContext(), CitySelection.class);
-		intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-		startActivity(intent);
-		finish();
+		// we want to avoid adding additional objects to our global variables
+		if (!globalVars.ran) {
+			// we CAN NOT make the assumption that the system deletes the
+			// variables after app shutdown
+			globalVars.clear();
+			globalVars.lCities.addAll(db.getCities());
+			globalVars.lCategories.addAll(db.getHotlineCategories());
+			//db.close();
+			globalVars.cityNamesInflater();
+			globalVars.categoryNamesInflater();
+
+			globalVars.ran = true;
+		}
+		
+		if(db.getRememberCity() == null){
+			Intent intent = new Intent(getApplicationContext(), CitySelection.class);
+			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+			db.close();
+			startActivity(intent);
+			finish();
+		} else {
+			globalVars.lClinics.clear();
+			globalVars.hospitalNames = null;
+			globalVars.city_name = db.getRememberCity();
+			globalVars.city_id = db.getCity(globalVars.city_name).getId();
+			globalVars.lClinics.addAll(db.getCityClinics(globalVars.city_id));
+			db.close();
+			globalVars.hospitalNamesInflater();
+			Intent intent = new Intent(getApplicationContext(), TabContainer.class);
+			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+			startActivity(intent);
+			finish();
+		}
 	}
 
 	private boolean checkDataBase() {
