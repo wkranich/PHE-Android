@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">PHEmobile</string>
+    <string name="app_name">Teen Health Resource</string>
 
     <string-array name="categories">
         <item>Fitness</item>

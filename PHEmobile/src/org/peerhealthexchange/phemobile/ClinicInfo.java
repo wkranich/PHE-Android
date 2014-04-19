@@ -112,8 +112,7 @@ public class ClinicInfo extends Activity {
 			point = new LatLng(Float.parseFloat(geopoint[0]),
 					Float.parseFloat(geopoint[1]));
 
-			Marker clinic = map.addMarker(new MarkerOptions().position(point)
-					.title(selectedClinic.getName()));
+			Marker clinic = map.addMarker(new MarkerOptions().position(point));
 
 			map.moveCamera(CameraUpdateFactory.newLatLngZoom(point, 15));
 		}
